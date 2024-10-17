@@ -1,0 +1,32 @@
+[
+	{
+		"id": "550e8400-e29b-41d4-a716-446655440000",
+		"name": "nucleic_acid_extraction_method_2024_v8",
+		"protocolUrl": "https://protocols.io/view/sample-preparation-1",
+		"content": "The workflow for high molecular weight (HMW) DNA extraction at the Wellcome Sanger Institute (WSI) Tree of Life Core Laboratory includes a sequence of core procedures: sample preparation and homogenisation, DNA extraction, fragmentation and purification. Detailed protocols are available on protocols.io (Denton et al., 2023b). The fSolSol10 sample was weighed and dissected on dry ice (Jay et al., 2023) and gonad tissue was cryogenically disrupted using the Covaris cryoPREP® Automated Dry Pulverizer (Narváez-Gómez et al., 2023).\nHMW DNA was extracted using the Automated MagAttract v1 protocol (Sheerin et al., 2023). DNA was sheared into an average fragment size of 12–20 kb in a Megaruptor 3 system (Todorovic et al., 2023). Sheared DNA was purified by solid-phase reversible immobilisation, using AMPure PB beads to eliminate shorter fragments and concentrate the DNA (Strickland et al., 2023). The concentration of the sheared and purified DNA was assessed using a Nanodrop spectrophotometer and Qubit Fluorometer using the Qubit dsDNA High Sensitivity Assay kit. Fragment size distribution was evaluated by running the sample on the FemtoPulse system.\nRNA was extracted from gonad tissue of fSolSol7 in the Tree of Life Laboratory at the WSI using the RNA Extraction: Automated MagMax™ mirVana protocol (do Amaral et al., 2023). The RNA concentration was assessed using a Nanodrop spectrophotometer and a Qubit Fluorometer using the Qubit RNA Broad-Range Assay kit. Analysis of the integrity of the RNA was done using the Agilent RNA 6000 Pico Kit and Eukaryotic Total RNA assay. "
+	},
+	{
+		"id": "81b48400-e29b-41d4-a716-446655440000",
+		"name": "debM_library_prep_2021",
+		"protocolUrl": "https://protocols.io/view/library-prep-1",
+		"content": "Pacific Biosciences SMRTbell libraries were constructed using the Revio HiFi prep kit, according to the manufacturers' instructions. DNA sequencing was performed by the Scientific Operations core at the WSI on a Pacific Biosciences Revio instrument.\nFor Hi-C library preparation, DNA was fragmented to a size of 400 to 600 bp using a Covaris E220 sonicator. The DNA was then enriched, barcoded, and amplified using the NEBNext Ultra II DNA Library Prep Kit following manufacturers' instructions. The Hi-C sequencing was performed using paired-end sequencing with a read length of 150 bp on an Illumina NovaSeq 6000 instrument.\nPoly(A) RNA-Seq libraries were constructed using the NEB Ultra II RNA Library Prep kit, following the manufacturer's instructions. RNA sequencing was performed on the Illumina NovaSeq 6000 instrument."
+	},
+	{
+		"id": "a1b2c300-e29b-41d4-a716-446655440000",
+		"name": "avian_genome_sequencing_2022",
+		"protocolUrl": "",
+		"content": "Genomic DNA was extracted from avian blood samples using the Qiagen DNeasy Blood & Tissue Kit. The extracted DNA was quantified using a Qubit Fluorometer and quality checked using a Nanodrop spectrophotometer. Libraries were prepared using the NEBNext Ultra II DNA Library Prep Kit, following the manufacturer's instructions. Sequencing was performed on an Illumina NovaSeq 6000 platform with paired-end reads of 150 bp. Data analysis included quality control using FastQC, read alignment with BWA, and variant calling with GATK."
+	},
+	{
+		"id": "d4e5f600-e29b-41d4-a716-446655440000",
+		"name": "marine_invertebrate_sequencing_2023",
+		"protocolUrl": "",
+		"content": "DNA was extracted from marine invertebrate tissue samples using the CTAB method. The quality and quantity of the extracted DNA were assessed using a Qubit Fluorometer and an Agilent 2100 Bioanalyzer. Libraries were prepared using the TruSeq DNA PCR-Free Library Prep Kit. Sequencing was conducted on a PacBio Sequel II system, generating HiFi reads. The sequencing data were processed using SMRT Link software for read quality filtering and genome assembly."
+	},
+	{
+		"id": "c7h8i900-e29b-41d4-a716-446655440000",
+		"name": "mammalian_rna_seq_2023",
+		"protocolUrl": "https://protocols.io/view/mammalian-rna-seq-1",
+		"content": "Total RNA was extracted from mammalian tissue samples using the RNeasy Mini Kit (Qiagen). RNA integrity was assessed using an Agilent 2100 Bioanalyzer. Poly(A) RNA was enriched using the NEBNext Poly(A) mRNA Magnetic Isolation Module. Libraries were prepared using the NEBNext Ultra II RNA Library Prep Kit. Sequencing was performed on an Illumina NovaSeq 6000 platform with paired-end reads of 150 bp. Data analysis included quality control with FastQC, read alignment with STAR, and differential expression analysis with DESeq2."
+	}
+]

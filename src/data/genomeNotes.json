@@ -366,7 +366,7 @@
 		"scaffoldCount": 60,
 		"scaffoldN50": 55.0,
 		"longestScaffold": 110.0,
-		"QV": 61.5,
+		"QV": 48.5,
 		"k_mer": 100.0,
 		"buscoString": "C:97.5%[S:93.5%,D:4.0%],F:2.0%,M:0.5%,n:4,500",
 		"assemblyPercent": 99.0,

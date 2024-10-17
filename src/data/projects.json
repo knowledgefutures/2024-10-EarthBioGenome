@@ -1,0 +1,158 @@
+[
+	{
+		"id": "1e7d1f4e-8b1e-4f3b-9c1e-1d2f3b4e5f6a",
+		"name": "North American Genomics Initiative",
+		"slug": "north-american-genomics-initiative",
+		"website": "https://northamericangenomics.org"
+	},
+	{
+		"id": "2f8e2f5e-9c2e-5f4b-0d3e-2e3f4b5e6f7b",
+		"name": "European Genome Project",
+		"slug": "european-genome-project",
+		"website": "https://europeangenomeproject.eu"
+	},
+	{
+		"id": "3g9f3g6f-0d3f-6g5c-1e4f-3f4g5c6f7g8c",
+		"name": "Tokyo Biodiversity Network",
+		"slug": "tokyo-biodiversity-network",
+		"website": "https://tokyobiodiversitynetwork.jp"
+	},
+	{
+		"id": "4h0g4h7g-1e4g-7h6d-2f5g-4g5h6d7g8h9d",
+		"name": "Cape Town Genomics Consortium",
+		"slug": "cape-town-genomics-consortium",
+		"website": "https://capetowngenomics.org"
+	},
+	{
+		"id": "5i1h5i8h-2f5h-8i7e-3g6h-5h6i7e8h9i0e",
+		"name": "São Paulo Genome Alliance",
+		"slug": "sao-paulo-genome-alliance",
+		"website": "https://saopaulogenome.org"
+	},
+	{
+		"id": "6j2i6j9i-3g6i-9j8f-4h7i-6i7j8f9i0j1f",
+		"name": "Genomic Horizons Initiative",
+		"slug": "genomic-horizons-initiative",
+		"website": "https://genomichorizons.org"
+	},
+	{
+		"id": "7k3j7k0j-4h7j-0k9g-5i8j-7j8k9g0j1k2g",
+		"name": "Antarctic Genome Research",
+		"slug": "antarctic-genome-research",
+		"website": "https://antarcticgenome.org"
+	},
+	{
+		"id": "8l4k8l1k-5i8k-1l0h-6j9k-8k9l0h1k2l3h",
+		"name": "Dubai Genomics Network",
+		"slug": "dubai-genomics-network",
+		"website": "https://dubaigenomics.org"
+	},
+	{
+		"id": "9m5l9m2l-6j9l-2m1i-7k0l-9l0m1i2l3m4i",
+		"name": "Genetic Diversity Project",
+		"slug": "genetic-diversity-project",
+		"website": "https://geneticdiversity.org"
+	},
+	{
+		"id": "0n6m0n3m-7k0m-3n2j-8l1m-0m1n2j3m4n5j",
+		"name": "Caribbean Genomics Initiative",
+		"slug": "caribbean-genomics-initiative",
+		"website": "https://caribbeangenomics.org"
+	},
+	{
+		"id": "1o7n1o4n-8l1n-4o3k-9m2n-1n2o3k4n5o6k",
+		"name": "Pacific Islands Genome Network",
+		"slug": "pacific-islands-genome-network",
+		"website": "https://pacificislandgenome.org"
+	},
+	{
+		"id": "2p8o2p5o-9c3o-5p4l-0e4o-2e3p4l5o6p7c",
+		"name": "New York Genomics Foundation",
+		"slug": "new-york-genomics-foundation",
+		"website": "https://nygenomicsfoundation.org"
+	},
+	{
+		"id": "3q9p3q6p-0e4p-6q5m-1f5p-3f4q5m6p7q8d",
+		"name": "London Genome Project",
+		"slug": "london-genome-project",
+		"website": "https://londongenomeproject.uk"
+	},
+	{
+		"id": "4r0q4r7q-1f5q-7r6n-2g6q-4g5r6n7q8r9e",
+		"name": "Berlin Genomics Initiative",
+		"slug": "berlin-genomics-initiative",
+		"website": "https://berlingenomics.de"
+	},
+	{
+		"id": "5s1r5s8r-2g6r-8s7o-3h7r-5h6s7o8r9s0f",
+		"name": "Moscow Genome Network",
+		"slug": "moscow-genome-network",
+		"website": "https://moscowgenome.ru"
+	},
+	{
+		"id": "6t2s6t9s-3h7s-9t8p-4i8s-6i7t8p9s0t1g",
+		"name": "Beijing Genomics Consortium",
+		"slug": "beijing-genomics-consortium",
+		"website": "https://beijinggenomics.cn"
+	},
+	{
+		"id": "7u3t7u0t-4i8t-0u9q-5j9t-7j8u9q0t1u2h",
+		"name": "Seoul Genome Project",
+		"slug": "seoul-genome-project",
+		"website": "https://seoulgenome.kr"
+	},
+	{
+		"id": "8v4u8v1u-5j9u-1v0r-6k0u-8k9v0r1u2v3i",
+		"name": "Genome Research Alliance",
+		"slug": "genome-research-alliance",
+		"website": "https://genomeresearchalliance.org"
+	},
+	{
+		"id": "9w5v9w2v-6k0v-2w1s-7l1v-9l0w1s2v3w4j",
+		"name": "Buenos Aires Genome Network",
+		"slug": "buenos-aires-genome-network",
+		"website": "https://buenosairesgenome.org"
+	},
+	{
+		"id": "0x6w0x3w-7l1w-3x2t-8m2w-0m1x2t3w4x5k",
+		"name": "Johannesburg Genomics Foundation",
+		"slug": "johannesburg-genomics-foundation",
+		"website": "https://johannesburggenomics.org"
+	},
+	{
+		"id": "1y7x1y4x-8m2x-4y3u-9n3x-1n2y3u4x5y6l",
+		"name": "Bangkok Genome Project",
+		"slug": "bangkok-genome-project",
+		"website": "https://bangkokgenome.org"
+	},
+	{
+		"id": "2z8y2z5y-9n3y-5z4v-0o4y-2o3z4v5y6z7m",
+		"name": "Singapore Genomics Network",
+		"slug": "singapore-genomics-network",
+		"website": "https://singaporegenomics.sg"
+	},
+	{
+		"id": "3a9z3a6z-0o4z-6a5w-1p5z-3p4a5w6z7a8n",
+		"name": "Hong Kong Genome Initiative",
+		"slug": "hong-kong-genome-initiative",
+		"website": "https://hongkonggenome.hk"
+	},
+	{
+		"id": "4b0a4b7a-1p5a-7b6x-2q6a-4q5b6x7a8b9o",
+		"name": "Toronto Genomics Consortium",
+		"slug": "toronto-genomics-consortium",
+		"website": "https://torontogenomics.ca"
+	},
+	{
+		"id": "5c1b5c8b-2q6b-8c7y-3r7b-5r6c7y8b9c0p",
+		"name": "Los Angeles Genome Project",
+		"slug": "los-angeles-genome-project",
+		"website": "https://losangelesgenome.org"
+	},
+	{
+		"id": "6d2c6d9c-3r7c-9d8z-4s8c-6s7d8z9c0d1q",
+		"name": "Chicago Genomics Initiative",
+		"slug": "chicago-genomics-initiative",
+		"website": "https://chicagogenomics.org"
+	}
+]

@@ -1,0 +1,797 @@
+[
+	{
+		"id": "d06fd5f6-559c-422e-8f8c-241d212f8cd7",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440000",
+		"roles": [
+			"Formal analysis"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "8e71b7c1-3bde-460e-ba42-99886dfdf6eb",
+		"authorId": "1b9e6d2z-yyyd-4c1f-9d38-f4e5f5f4c94e",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440000",
+		"roles": [
+			"Resources",
+			"Validation",
+			"Investigation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "db910976-bda0-456c-9808-153750806661",
+		"authorId": "5f3i0h2d-ccch-4g5f-9h42-j8i9j9j8g38i",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440000",
+		"roles": [
+			"Investigation"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "5560dfd0-24b9-46ee-bade-cf8d869a2f95",
+		"authorId": "2i0l7k2g-ffgj-4j2f-8k19-m5l6m6m5j05l",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440000",
+		"roles": [
+			"Investigation",
+			"Writing – original draft"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "d83233c9-74ac-4720-bdb0-6df0072abbce",
+		"authorId": "4e2h9g2c-bbbg-4f4f-8g41-i7h8i8i7f27h",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440000",
+		"roles": [
+			"Supervision",
+			"Funding acquisition",
+			"Methodology"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "db2f74f9-4906-47c3-971c-a1617aa29b58",
+		"authorId": "1h9k6j2f-eefi-4i1f-9j18-l4k5l5l4i94k",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440001",
+		"roles": [
+			"Supervision"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "92b3ab78-471d-4b00-a076-65f08e240a76",
+		"authorId": "5v3y0x2t-sssx-4w5f-9x32-z8y9z9z8w38y",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440001",
+		"roles": [
+			"Investigation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "38909a59-1d7d-432b-b967-d1e5d13ebc66",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440001",
+		"roles": [
+			"Methodology",
+			"Conceptualization"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "40a6db43-752e-4a51-9634-7b5eb705ea22",
+		"authorId": "6c4f1e2a-99da-4d6f-8e13-g9f0g0g9d49f",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440001",
+		"roles": [
+			"Methodology",
+			"Conceptualization",
+			"Writing – original draft"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "040face3-28a5-4d2e-85bd-4a77eb08c4c7",
+		"authorId": "5f3i0h2d-ccch-4g5f-9h42-j8i9j9j8g38i",
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440001",
+		"roles": [
+			"Formal analysis",
+			"Visualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "03d81b60-3866-4c48-8d50-02b73cc26755",
+		"authorId": "7n5q2p2l-kklp-4o7f-9p24-r0q1r1r0o50q",
+		"genomeNoteId": "550e8400-e44b-41d4-a716-446655440033",
+		"roles": [
+			"Resources",
+			"Writing – review & editing",
+			"Supervision"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "62dfb741-8ffe-419f-a139-daf97ccccffc",
+		"authorId": "7d5g2f2b-aaeb-4e7f-9f14-h0g1h1h0e50g",
+		"genomeNoteId": "550e8400-e44b-41d4-a716-446655440033",
+		"roles": [
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "5b6f455d-1579-457f-bf57-63830e610a3a",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-e44b-41d4-a716-446655440033",
+		"roles": [
+			"Conceptualization",
+			"Methodology"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "4cc01349-bd30-4c4d-a34c-b03490101346",
+		"authorId": "9f7i4h2d-ccgd-4g9f-9h16-j2i3j3j2g72i",
+		"genomeNoteId": "550e8400-e55b-41d4-a716-446655440044",
+		"roles": [
+			"Writing – review & editing"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "1b08d4f7-f9db-427d-9c9d-a42d33436391",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-e55b-41d4-a716-446655440044",
+		"roles": [
+			"Writing – original draft",
+			"Validation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "756c6ff7-b28a-416d-b6af-18c849b2aa37",
+		"authorId": "1r9u6t2p-ooqt-4s1f-9t28-v4u5v5v4s94u",
+		"genomeNoteId": "550e8400-e55b-41d4-a716-446655440044",
+		"roles": [
+			"Data curation",
+			"Supervision",
+			"Investigation"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "3858ef21-6592-4dc4-a409-62e53ac6ba11",
+		"authorId": "4e2h9g2c-bbbg-4f4f-8g41-i7h8i8i7f27h",
+		"genomeNoteId": "550e8400-e55b-41d4-a716-446655440044",
+		"roles": [
+			"Funding acquisition",
+			"Conceptualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "01e9d10c-d52a-4940-bca3-a4eeb7ac357c",
+		"authorId": "6c4f1e2a-99da-4d6f-8e13-g9f0g0g9d49f",
+		"genomeNoteId": "550e8400-e55b-41d4-a716-446655440044",
+		"roles": [
+			"Resources"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "cb078bc1-f78d-4784-bfd0-21689fd2af24",
+		"authorId": "4u2x9w2s-rrsw-4v4f-8w31-y7x8y8y7v27x",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Visualization",
+			"Supervision"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "f0aba82a-65a5-4d5c-8aac-698777724317",
+		"authorId": "7n5q2p2l-kklp-4o7f-9p24-r0q1r1r0o50q",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Resources",
+			"Conceptualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "585dfe38-3dc8-4bf0-adf8-2fa1e1bf82ce",
+		"authorId": "2s0v7u2q-ppqu-4t2f-8u29-w5v6w6w5t05v",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Funding acquisition",
+			"Supervision"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "8479afad-1eb9-4d5b-92d8-ad40adaa4eac",
+		"authorId": "1b9e6d2z-yyyd-4c1f-9d38-f4e5f5f4c94e",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Funding acquisition",
+			"Software"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "6feb26fd-23f4-47c1-823a-048b7c8e8f12",
+		"authorId": "8e6h3g2c-bbfc-4f8f-8g15-i1h2i2i1f61h",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Validation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "d9242411-6ad3-4512-93b7-94e8ea363bc5",
+		"authorId": "6w4z1y2u-ttty-4x6f-8y33-a9z0a0a9x49z",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Visualization",
+			"Writing – review & editing",
+			"Funding acquisition"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "a94d9513-f330-4c38-b777-b8394680dba3",
+		"authorId": "3j1m8l2h-gghk-4k3f-9l20-n6m7n7n6k16m",
+		"genomeNoteId": "550e8400-e66b-41d4-a716-446655440055",
+		"roles": [
+			"Methodology",
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "5ff46c0d-fa59-487a-8263-6dee100cd72a",
+		"authorId": "3d1g8f2b-aaaf-4e3f-9f40-h6g7h7h6e16g",
+		"genomeNoteId": "550e8400-e77b-41d4-a716-446655440066",
+		"roles": [
+			"Formal analysis",
+			"Data curation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "6e79f908-096e-4254-b619-1663759f7051",
+		"authorId": "5b3e0d29-88c9-4c5f-9d12-f9e9f9f8c38e",
+		"genomeNoteId": "550e8400-e88b-41d4-a716-446655440077",
+		"roles": [
+			"Formal analysis",
+			"Conceptualization",
+			"Investigation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "422c2c2f-ed2a-4a1f-bca2-282f90291bab",
+		"authorId": "6g4j1i2e-dddi-4h6f-8i43-k9j0k0k9h49j",
+		"genomeNoteId": "550e8400-e88b-41d4-a716-446655440077",
+		"roles": [
+			"Software"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "7a38175d-c6e6-48de-8380-856c547523be",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Project administration",
+			"Formal analysis"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "cd0b7694-ebe5-4dd0-a5c4-2135212aa2e7",
+		"authorId": "4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Project administration",
+			"Formal analysis",
+			"Conceptualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "01585adc-633e-4899-af5c-ab4809bceeab",
+		"authorId": "7n5q2p2l-kklp-4o7f-9p24-r0q1r1r0o50q",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Validation",
+			"Project administration",
+			"Supervision"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "0eb80f7d-9540-45c0-8209-298229383406",
+		"authorId": "3j1m8l2h-gghk-4k3f-9l20-n6m7n7n6k16m",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Methodology",
+			"Writing – original draft",
+			"Visualization"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": true,
+		"hicCollector": true
+	},
+	{
+		"id": "91895dc3-2a85-41b5-9084-4cf1e6bc0238",
+		"authorId": "7d5g2f2b-aaeb-4e7f-9f14-h0g1h1h0e50g",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Data curation",
+			"Project administration",
+			"Methodology"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "766589ef-3825-4201-9e30-0a3ca0b11c62",
+		"authorId": "9f7i4h2d-ccgd-4g9f-9h16-j2i3j3j2g72i",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Funding acquisition"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "706eb219-f42f-435f-a3bd-e6a97df5b811",
+		"authorId": "8e6h3g2c-bbfc-4f8f-8g15-i1h2i2i1f61h",
+		"genomeNoteId": "550e8400-e99b-41d4-a716-446655440088",
+		"roles": [
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "6ae90afc-776f-4e35-b9b5-1e8bbb9e118c",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-eaab-41d4-a716-446655440099",
+		"roles": [
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "ac119286-b0fe-4082-a10b-bc907b2cb424",
+		"authorId": "3t1w8v2r-qqrv-4u3f-9v30-x6w7x7x6u16w",
+		"genomeNoteId": "550e8400-ebbb-41d4-a716-446655440100",
+		"roles": [
+			"Writing – original draft"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "6420ad35-8cb0-48da-bf32-e15759be9c7b",
+		"authorId": "9p7s4r2n-mmnr-4q9f-9r26-t2s3t3t2q72s",
+		"genomeNoteId": "550e8400-ebbb-41d4-a716-446655440100",
+		"roles": [
+			"Conceptualization",
+			"Project administration",
+			"Data curation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "27e9d653-faf1-409b-8300-a56f511a7920",
+		"authorId": "0g8j5i2e-ddhe-4h0f-8i17-k3j4k4k3h83j",
+		"genomeNoteId": "550e8400-eccc-41d4-a716-446655440111",
+		"roles": [
+			"Writing – original draft",
+			"Investigation",
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "4206040c-7933-4f99-8820-2dc6290acf59",
+		"authorId": "4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d",
+		"genomeNoteId": "550e8400-eccc-41d4-a716-446655440111",
+		"roles": [
+			"Conceptualization",
+			"Visualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "3f782b45-c56c-409c-b94d-f9e6fee39e37",
+		"authorId": "1r9u6t2p-ooqt-4s1f-9t28-v4u5v5v4s94u",
+		"genomeNoteId": "550e8400-eccc-41d4-a716-446655440111",
+		"roles": [
+			"Visualization",
+			"Writing – review & editing",
+			"Validation"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "aad298be-a2f5-4b7d-a962-ed30bc097863",
+		"authorId": "4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d",
+		"genomeNoteId": "550e8400-eddd-41d4-a716-446655440122",
+		"roles": [
+			"Supervision",
+			"Software",
+			"Formal analysis"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "55ee1e2c-5b96-40ca-aec7-34e76365b9d4",
+		"authorId": "8e6h3g2c-bbfc-4f8f-8g15-i1h2i2i1f61h",
+		"genomeNoteId": "550e8400-eddd-41d4-a716-446655440122",
+		"roles": [
+			"Methodology",
+			"Supervision",
+			"Validation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "85ed7fdd-f9fd-4aa1-a246-f3a423e31324",
+		"authorId": "4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d",
+		"genomeNoteId": "550e8400-eeff-41d4-a716-446655440133",
+		"roles": [
+			"Validation",
+			"Visualization",
+			"Conceptualization"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "d3f48d83-8cfe-4922-9a86-5557252acb94",
+		"authorId": "5b3e0d29-88c9-4c5f-9d12-f9e9f9f8c38e",
+		"genomeNoteId": "550e8400-eeff-41d4-a716-446655440133",
+		"roles": [
+			"Formal analysis"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "0cb3e7c2-f097-4d3d-a1c9-cae93bb25cb4",
+		"authorId": "7h5k2j2f-eeej-4i7f-9j44-l0k1l1l0i50k",
+		"genomeNoteId": "550e8400-eeff-41d4-a716-446655440133",
+		"roles": [
+			"Resources",
+			"Supervision"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "ed70e1f8-73fe-4e8b-baa1-8f64ac9f0a30",
+		"authorId": "7d5g2f2b-aaeb-4e7f-9f14-h0g1h1h0e50g",
+		"genomeNoteId": "550e8400-efff-41d4-a716-446655440144",
+		"roles": [
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "32da9841-8013-4cb5-ae06-a57b3a8c3036",
+		"authorId": "4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d",
+		"genomeNoteId": "550e8400-efff-41d4-a716-446655440144",
+		"roles": [
+			"Supervision",
+			"Resources",
+			"Conceptualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": true
+	},
+	{
+		"id": "79a503c1-83c7-4d43-a22a-006cfbb18a22",
+		"authorId": "0g8j5i2e-ddhe-4h0f-8i17-k3j4k4k3h83j",
+		"genomeNoteId": "550e8400-efff-41d4-a716-446655440144",
+		"roles": [
+			"Writing – review & editing"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "2ff323b8-e725-495d-a404-a34dc35cb4e4",
+		"authorId": "0a8d5c2y-xxxc-4b0f-8c37-e3d4e4e3b83d",
+		"genomeNoteId": "550e8400-efff-41d4-a716-446655440144",
+		"roles": [
+			"Visualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "300514c6-079a-4ac4-ab4e-f8ac5ff4da61",
+		"authorId": "0g8j5i2e-ddhe-4h0f-8i17-k3j4k4k3h83j",
+		"genomeNoteId": "550e8400-f111-41d4-a716-446655440155",
+		"roles": [
+			"Software",
+			"Conceptualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "5c723e10-00be-4fa8-b369-b131e6c491a5",
+		"authorId": "5f3i0h2d-ccch-4g5f-9h42-j8i9j9j8g38i",
+		"genomeNoteId": "550e8400-f111-41d4-a716-446655440155",
+		"roles": [
+			"Supervision"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "b324d489-b94f-4eae-b4dd-441e3aa81a90",
+		"authorId": "1h9k6j2f-eefi-4i1f-9j18-l4k5l5l4i94k",
+		"genomeNoteId": "550e8400-f111-41d4-a716-446655440155",
+		"roles": [
+			"Validation",
+			"Software"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "6c9bf402-2bbb-43ef-8f78-dc59f028fd90",
+		"authorId": "2i0l7k2g-ffgj-4j2f-8k19-m5l6m6m5j05l",
+		"genomeNoteId": "550e8400-f111-41d4-a716-446655440155",
+		"roles": [
+			"Supervision",
+			"Investigation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "fbc4c0ba-50a4-499b-946a-f311f0521139",
+		"authorId": "8o6r3q2m-llmq-4p8f-8q25-s1r2s2s1p61r",
+		"genomeNoteId": "550e8400-f222-41d4-a716-446655440166",
+		"roles": [
+			"Supervision",
+			"Data curation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": true
+	},
+	{
+		"id": "d022080c-3665-4a16-aac8-1c0e0426e426",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-f222-41d4-a716-446655440166",
+		"roles": [
+			"Project administration",
+			"Software",
+			"Data curation"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "3f0ee6bb-6770-48be-b2d6-b3dbdc4d74e4",
+		"authorId": "1r9u6t2p-ooqt-4s1f-9t28-v4u5v5v4s94u",
+		"genomeNoteId": "550e8400-f222-41d4-a716-446655440166",
+		"roles": [
+			"Visualization",
+			"Validation",
+			"Funding acquisition"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "e6d7c894-e0a2-47ee-bea2-d2789388aadc",
+		"authorId": "3d1g8f2b-aaaf-4e3f-9f40-h6g7h7h6e16g",
+		"genomeNoteId": "550e8400-f222-41d4-a716-446655440166",
+		"roles": [
+			"Software",
+			"Visualization",
+			"Investigation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "a322c47e-3e61-49b4-86f1-f187c9cc3003",
+		"authorId": "6c4f1e2a-99da-4d6f-8e13-g9f0g0g9d49f",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Formal analysis",
+			"Software",
+			"Funding acquisition"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "1758e418-9541-4564-9268-6c96dc866746",
+		"authorId": "1r9u6t2p-ooqt-4s1f-9t28-v4u5v5v4s94u",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Data curation",
+			"Visualization",
+			"Writing – original draft"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "1694db14-6450-41c0-80ee-4dc5f036b110",
+		"authorId": "4u2x9w2s-rrsw-4v4f-8w31-y7x8y8y7v27x",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Resources",
+			"Data curation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": true
+	},
+	{
+		"id": "07418382-13b7-433b-8906-6ad4646484f4",
+		"authorId": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Formal analysis",
+			"Investigation",
+			"Project administration"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": true,
+		"hicCollector": false
+	},
+	{
+		"id": "10351e5f-a640-42d5-8b32-5d6ad3f0dc76",
+		"authorId": "9f7i4h2d-ccgd-4g9f-9h16-j2i3j3j2g72i",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Visualization"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": false,
+		"hicCollector": false
+	},
+	{
+		"id": "31dbb8ce-52a8-4b59-b76c-58a573742fdc",
+		"authorId": "7h5k2j2f-eeej-4i7f-9j44-l0k1l1l0i50k",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Supervision"
+		],
+		"pacbioCollector": true,
+		"rnaCollector": true,
+		"hicCollector": true
+	},
+	{
+		"id": "f7ff8e4d-ea4f-4ac7-97c6-8afc9a85c9de",
+		"authorId": "3j1m8l2h-gghk-4k3f-9l20-n6m7n7n6k16m",
+		"genomeNoteId": "550e8400-f333-41d4-a716-446655440177",
+		"roles": [
+			"Funding acquisition",
+			"Data curation"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": true
+	},
+	{
+		"id": "32891791-b916-4a5e-8226-d3ac0254b664",
+		"authorId": "0g8j5i2e-ddhe-4h0f-8i17-k3j4k4k3h83j",
+		"genomeNoteId": "550e8400-f444-41d4-a716-446655440188",
+		"roles": [
+			"Conceptualization"
+		],
+		"pacbioCollector": false,
+		"rnaCollector": false,
+		"hicCollector": false
+	}
+]

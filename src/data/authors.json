@@ -1,247 +1,247 @@
 [
 	{
 		"id": "3b1d8c27-66b7-4a3f-9b10-d9c7e7e6a26c",
-		"title": "Jane Thompson",
+		"name": "Jane Thompson",
 		"slug": "jane-thompson",
 		"affiliation": "University of California, Berkeley",
-		"ORCID": "0000-0001-5234-1234"
+		"orcid": "0000-0001-5234-1234"
 	},
 	{
 		"id": "4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d",
-		"title": "Carlos Martinez",
+		"name": "Carlos Martinez",
 		"slug": "carlos-martinez",
 		"affiliation": "Stanford University",
-		"ORCID": "0000-0002-1234-5678"
+		"orcid": "0000-0002-1234-5678"
 	},
 	{
 		"id": "5b3e0d29-88c9-4c5f-9d12-f9e9f9f8c38e",
-		"title": "Aisha Khan",
+		"name": "Aisha Khan",
 		"slug": "aisha-khan",
 		"affiliation": "Harvard University",
-		"ORCID": "0000-0003-2345-6789"
+		"orcid": "0000-0003-2345-6789"
 	},
 	{
 		"id": "6c4f1e2a-99da-4d6f-8e13-g9f0g0g9d49f",
-		"title": "Liu Wei",
+		"name": "Liu Wei",
 		"slug": "liu-wei",
 		"affiliation": "Tsinghua University",
-		"ORCID": "0000-0004-3456-7890"
+		"orcid": "0000-0004-3456-7890"
 	},
 	{
 		"id": "7d5g2f2b-aaeb-4e7f-9f14-h0g1h1h0e50g",
-		"title": "Olivia Brown",
+		"name": "Olivia Brown",
 		"slug": "olivia-brown",
 		"affiliation": "University of Oxford",
-		"ORCID": "0000-0005-4567-8901"
+		"orcid": "0000-0005-4567-8901"
 	},
 	{
 		"id": "8e6h3g2c-bbfc-4f8f-8g15-i1h2i2i1f61h",
-		"title": "Raj Patel",
+		"name": "Raj Patel",
 		"slug": "raj-patel",
 		"affiliation": "Indian Institute of Science",
-		"ORCID": "0000-0006-5678-9012"
+		"orcid": "0000-0006-5678-9012"
 	},
 	{
 		"id": "9f7i4h2d-ccgd-4g9f-9h16-j2i3j3j2g72i",
-		"title": "Emma Johnson",
+		"name": "Emma Johnson",
 		"slug": "emma-johnson",
 		"affiliation": "University of Toronto",
-		"ORCID": "0000-0007-6789-0123"
+		"orcid": "0000-0007-6789-0123"
 	},
 	{
 		"id": "0g8j5i2e-ddhe-4h0f-8i17-k3j4k4k3h83j",
-		"title": "Mohammed Ali",
+		"name": "Mohammed Ali",
 		"slug": "mohammed-ali",
 		"affiliation": "King Saud University",
-		"ORCID": "0000-0008-7890-1234"
+		"orcid": "0000-0008-7890-1234"
 	},
 	{
 		"id": "1h9k6j2f-eefi-4i1f-9j18-l4k5l5l4i94k",
-		"title": "Sophia Garcia",
+		"name": "Sophia Garcia",
 		"slug": "sophia-garcia",
 		"affiliation": "University of Buenos Aires",
-		"ORCID": "0000-0009-8901-2345"
+		"orcid": "0000-0009-8901-2345"
 	},
 	{
 		"id": "2i0l7k2g-ffgj-4j2f-8k19-m5l6m6m5j05l",
-		"title": "Yuki Tanaka",
+		"name": "Yuki Tanaka",
 		"slug": "yuki-tanaka",
 		"affiliation": "University of Tokyo",
-		"ORCID": "0000-0010-9012-3456"
+		"orcid": "0000-0010-9012-3456"
 	},
 	{
 		"id": "3j1m8l2h-gghk-4k3f-9l20-n6m7n7n6k16m",
-		"title": "Anna Müller",
+		"name": "Anna Müller",
 		"slug": "anna-muller",
 		"affiliation": "University of Zurich",
-		"ORCID": "0000-0011-0123-4567"
+		"orcid": "0000-0011-0123-4567"
 	},
 	{
 		"id": "4k2n9m2i-hhil-4l4f-8m21-o7n8o8o7l27n",
-		"title": "Isabella Rossi",
+		"name": "Isabella Rossi",
 		"slug": "isabella-rossi",
 		"affiliation": "University of Milan",
-		"ORCID": "0000-0012-1234-5678"
+		"orcid": "0000-0012-1234-5678"
 	},
 	{
 		"id": "5l3o0n2j-iijm-4m5f-9n22-p8o9p9p8m38o",
-		"title": "Liam Smith",
+		"name": "Liam Smith",
 		"slug": "liam-smith",
 		"affiliation": "University of Sydney",
-		"ORCID": "0000-0013-2345-6789"
+		"orcid": "0000-0013-2345-6789"
 	},
 	{
 		"id": "6m4p1o2k-jjkn-4n6f-8o23-q9p0q0q9n49p",
-		"title": "Chloe Martin",
+		"name": "Chloe Martin",
 		"slug": "chloe-martin",
 		"affiliation": "University of Cape Town",
-		"ORCID": "0000-0014-3456-7890"
+		"orcid": "0000-0014-3456-7890"
 	},
 	{
 		"id": "7n5q2p2l-kklp-4o7f-9p24-r0q1r1r0o50q",
-		"title": "Noah Wilson",
+		"name": "Noah Wilson",
 		"slug": "noah-wilson",
 		"affiliation": "University of Melbourne",
-		"ORCID": "0000-0015-4567-8901"
+		"orcid": "0000-0015-4567-8901"
 	},
 	{
 		"id": "8o6r3q2m-llmq-4p8f-8q25-s1r2s2s1p61r",
-		"title": "Mia Davis",
+		"name": "Mia Davis",
 		"slug": "mia-davis",
 		"affiliation": "University of British Columbia",
-		"ORCID": "0000-0016-5678-9012"
+		"orcid": "0000-0016-5678-9012"
 	},
 	{
 		"id": "9p7s4r2n-mmnr-4q9f-9r26-t2s3t3t2q72s",
-		"title": "Lucas Brown",
+		"name": "Lucas Brown",
 		"slug": "lucas-brown",
 		"affiliation": "University of Auckland",
-		"ORCID": "0000-0017-6789-0123"
+		"orcid": "0000-0017-6789-0123"
 	},
 	{
 		"id": "0q8t5s2o-nnos-4r0f-8s27-u3t4u4u3r83t",
-		"title": "Amelia Johnson",
+		"name": "Amelia Johnson",
 		"slug": "amelia-johnson",
 		"affiliation": "University of Edinburgh",
-		"ORCID": "0000-0018-7890-1234"
+		"orcid": "0000-0018-7890-1234"
 	},
 	{
 		"id": "1r9u6t2p-ooqt-4s1f-9t28-v4u5v5v4s94u",
-		"title": "Ethan White",
+		"name": "Ethan White",
 		"slug": "ethan-white",
 		"affiliation": "University of Glasgow",
-		"ORCID": "0000-0019-8901-2345"
+		"orcid": "0000-0019-8901-2345"
 	},
 	{
 		"id": "2s0v7u2q-ppqu-4t2f-8u29-w5v6w6w5t05v",
-		"title": "Ava Harris",
+		"name": "Ava Harris",
 		"slug": "ava-harris",
 		"affiliation": "University of Manchester",
-		"ORCID": "0000-0020-9012-3456"
+		"orcid": "0000-0020-9012-3456"
 	},
 	{
 		"id": "3t1w8v2r-qqrv-4u3f-9v30-x6w7x7x6u16w",
-		"title": "James Clark",
+		"name": "James Clark",
 		"slug": "james-clark",
 		"affiliation": "University of Birmingham",
-		"ORCID": "0000-0021-0123-4567"
+		"orcid": "0000-0021-0123-4567"
 	},
 	{
 		"id": "4u2x9w2s-rrsw-4v4f-8w31-y7x8y8y7v27x",
-		"title": "Sophia Lewis",
+		"name": "Sophia Lewis",
 		"slug": "sophia-lewis",
 		"affiliation": "University of Bristol",
-		"ORCID": "0000-0022-1234-5678"
+		"orcid": "0000-0022-1234-5678"
 	},
 	{
 		"id": "5v3y0x2t-sssx-4w5f-9x32-z8y9z9z8w38y",
-		"title": "Benjamin Walker",
+		"name": "Benjamin Walker",
 		"slug": "benjamin-walker",
 		"affiliation": "University of Leeds",
-		"ORCID": "0000-0023-2345-6789"
+		"orcid": "0000-0023-2345-6789"
 	},
 	{
 		"id": "6w4z1y2u-ttty-4x6f-8y33-a9z0a0a9x49z",
-		"title": "Emily Hall",
+		"name": "Emily Hall",
 		"slug": "emily-hall",
 		"affiliation": "University of Sheffield",
-		"ORCID": "0000-0024-3456-7890"
+		"orcid": "0000-0024-3456-7890"
 	},
 	{
 		"id": "7x5a2z2v-uuuz-4y7f-9z34-b0a1b1b0y50a",
-		"title": "Daniel Young",
+		"name": "Daniel Young",
 		"slug": "daniel-young",
 		"affiliation": "University of Nottingham",
-		"ORCID": "0000-0025-4567-8901"
+		"orcid": "0000-0025-4567-8901"
 	},
 	{
 		"id": "8y6b3a2w-vvva-4z8f-8a35-c1b2c2c1z61b",
-		"title": "Grace King",
+		"name": "Grace King",
 		"slug": "grace-king",
 		"affiliation": "University of Southampton",
-		"ORCID": "0000-0026-5678-9012"
+		"orcid": "0000-0026-5678-9012"
 	},
 	{
 		"id": "9z7c4b2x-wwwb-4a9f-9b36-d2c3d3d2a72c",
-		"title": "Henry Wright",
+		"name": "Henry Wright",
 		"slug": "henry-wright",
 		"affiliation": "University of Liverpool",
-		"ORCID": "0000-0027-6789-0123"
+		"orcid": "0000-0027-6789-0123"
 	},
 	{
 		"id": "0a8d5c2y-xxxc-4b0f-8c37-e3d4e4e3b83d",
-		"title": "Ella Scott",
+		"name": "Ella Scott",
 		"slug": "ella-scott",
 		"affiliation": "University of Leicester",
-		"ORCID": "0000-0028-7890-1234"
+		"orcid": "0000-0028-7890-1234"
 	},
 	{
 		"id": "1b9e6d2z-yyyd-4c1f-9d38-f4e5f5f4c94e",
-		"title": "Jack Green",
+		"name": "Jack Green",
 		"slug": "jack-green",
 		"affiliation": "University of Exeter",
-		"ORCID": "0000-0029-8901-2345"
+		"orcid": "0000-0029-8901-2345"
 	},
 	{
 		"id": "2c0f7e2a-zzze-4d2f-8e39-g5f6g6g5d05f",
-		"title": "Lily Adams",
+		"name": "Lily Adams",
 		"slug": "lily-adams",
 		"affiliation": "University of Warwick",
-		"ORCID": "0000-0030-9012-3456"
+		"orcid": "0000-0030-9012-3456"
 	},
 	{
 		"id": "3d1g8f2b-aaaf-4e3f-9f40-h6g7h7h6e16g",
-		"title": "Michael Baker",
+		"name": "Michael Baker",
 		"slug": "michael-baker",
 		"affiliation": "University of Bath",
-		"ORCID": "0000-0031-0123-4567"
+		"orcid": "0000-0031-0123-4567"
 	},
 	{
 		"id": "4e2h9g2c-bbbg-4f4f-8g41-i7h8i8i7f27h",
-		"title": "Zoe Turner",
+		"name": "Zoe Turner",
 		"slug": "zoe-turner",
 		"affiliation": "University of Reading",
-		"ORCID": "0000-0032-1234-5678"
+		"orcid": "0000-0032-1234-5678"
 	},
 	{
 		"id": "5f3i0h2d-ccch-4g5f-9h42-j8i9j9j8g38i",
-		"title": "William Parker",
+		"name": "William Parker",
 		"slug": "william-parker",
 		"affiliation": "University of Surrey",
-		"ORCID": "0000-0033-2345-6789"
+		"orcid": "0000-0033-2345-6789"
 	},
 	{
 		"id": "6g4j1i2e-dddi-4h6f-8i43-k9j0k0k9h49j",
-		"title": "Charlotte Evans",
+		"name": "Charlotte Evans",
 		"slug": "charlotte-evans",
 		"affiliation": "University of Sussex",
-		"ORCID": "0000-0034-3456-7890"
+		"orcid": "0000-0034-3456-7890"
 	},
 	{
 		"id": "7h5k2j2f-eeej-4i7f-9j44-l0k1l1l0i50k",
-		"title": "Oliver Collins",
+		"name": "Oliver Collins",
 		"slug": "oliver-collins",
 		"affiliation": "University of Kent",
-		"ORCID": "0000-0035-4567-8901"
+		"orcid": "0000-0035-4567-8901"
 	}
 ]

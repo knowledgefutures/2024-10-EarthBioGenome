@@ -1,7 +1,6 @@
-interface Genome {
+export interface Genome {
 	id: string;
 	slug: string;
-	// Need all the specifics, like taxon etc.
 	commonName: string;
 	species: string;
 	phylum: string;
@@ -10,14 +9,13 @@ interface Genome {
 	family: string;
 	taxonomyAuthor: string;
 	ncbiTaxId: string;
-};
+}
 
-interface GenomeNote {
+export interface GenomeNote {
 	id: string;
 	genomeId: string;
 	content: string;
 	DOI: string;
-	
 
 	bioproject: string;
 	biosample: string;
@@ -40,7 +38,7 @@ interface GenomeNote {
 	scaffoldCount: number;
 	scaffoldN50: number;
 	longestScaffold: number;
-	
+
 	QV: number;
 	k_mer: number;
 	buscoString: string;
@@ -53,7 +51,6 @@ interface GenomeNote {
 	proteinGeneCount: number;
 	nonCodingCount: number;
 	transcriptCount: number;
-
 
 	observedSex: string;
 	pacbioCollectionLocation: string;
@@ -76,79 +73,112 @@ interface GenomeNote {
 	buscoCompleteness: number;
 	buscoSingle: number;
 	buscoDuplicated: number;
-};
+}
 
-interface Protocol {
+export interface Protocol {
 	id: string;
-	protocolUrl: string; // link to protocols.io 
+	name: string;
+	protocolUrl: string; // link to protocols.io
 	content: string; // freeform markdown
-};
+}
 
-interface ProtocolUse { 
+export interface ProtocolUse {
 	id: string;
 	protocolId: string;
 	genomeNoteId: string;
 }
 
-interface TechnicalReview {
+export interface TechnicalReview {
 	id: string;
 	genomeNoteId: string;
-	/* Need fields that will be completed here */
-};
 
-interface ManualReview {
+	contigN50Pass: boolean;
+	scaffoldN50Pass: boolean;
+	gapsPass: boolean;
+	qvPass: boolean;
+	kmerPass: boolean;
+	buscoPass: boolean;
+	percentAssemblyPass: boolean;
+	sexChromosomePass: boolean;
+	organellePass: boolean;
+}
+
+export interface ManualReview {
 	id: string;
-	author: string;
+	authorId: string;
+	genomeNoteId: string;
 	content: string;
-	genomeNoteId: string;
-};
+	sufficientMethodsForReplication: boolean;
+	protocolsAppropriate: boolean;
+	technicallySound: boolean;
+	competingInterests: string;
+}
 
-interface Comment {
+export interface Comment {
 	id: string;
-	author: string;
-	genomeNoteId: string;
+	authorId: string;
+	genomeId: string;
 	postId: string;
 	parentCommentId: string;
 	content: string;
-};
+}
 
-interface Post {
+export interface Post {
 	id: string;
 	authorId: string;
+	slug: string;
+	title: string;
 	content: string;
-};
+}
 
-interface Author {
+export interface Author {
 	id: string;
 	name: string;
 	slug: string;
 	orcid: string;
 	affiliation: string;
-};
+}
 
-interface Contributor {
+export const roles = [
+	'Conceptualization',
+	'Data curation',
+	'Formal analysis',
+	'Funding acquisition',
+	'Investigation',
+	'Methodology',
+	'Project administration',
+	'Software',
+	'Resources',
+	'Supervision',
+	'Validation',
+	'Visualization',
+	'Writing – original draft',
+	'Writing – review & editing',
+];
+export interface Contributor {
 	id: string;
 	authorId: string;
 	genomeNoteId: string;
-	roles: ("Conceptualization" | "Data curation" | "Formal analysis" | "Funding acquisition" | "Investigation" | "Methodology" | "Project administration" | "Software" | "Resources" | "Supervision" | "Validation" | "Visualization" | "Writing – original draft" | "Writing – review & editing")[]
+	roles: typeof roles;
 	pacbioCollector: boolean;
 	rnaCollector: boolean;
 	hicCollector: boolean;
 }
 
-interface Project {
+export interface Project {
 	id: string;
 	name: string;
+	slug: string;
 	website: string;
 }
 
-interface ProjectMember {
+export interface ProjectMember {
 	id: string;
 	authorId: string;
 	projectId: string;
 }
 
-interface ProjectGenomeNotes {
+export interface ProjectGenomeNote {
 	id: string;
 	genomeNoteId: string;
 	projectId: string;
