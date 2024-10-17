@@ -1,0 +1,38 @@
+---
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
+
+// const { href, title, body } = Astro.props;
+import logo from '~/assets/logo.png';
+import { Image } from 'astro:assets';
+const isLanding = Astro.url.pathname === '/';
+const links = [
+	{ title: 'Gallery', href: '/', active: isLanding },
+	{ title: 'AMQ Cafe', href: '/cafe', active: Astro.url.pathname.startsWith('/cafe') },
+	{ title: 'Directory', href: '/directory', active: Astro.url.pathname.startsWith('/directory') },
+	{ title: 'About', href: '/about', active: Astro.url.pathname.startsWith('/about') },
+];
+---
+
+<nav
+	class={`py-4 flex justify-between items-center ${isLanding ? '' : 'border-b'} border-b-neutral-300`}
+>
+	<a href="/"><Image class="mix-blend-darken h-8 w-auto" src={logo} alt="logo" /></a>
+	<div class="flex space-x-8">
+		{
+			links.map((link) => {
+				return (
+					<a
+						href={link.href}
+						class={link.active ? 'underline underline-offset-4' : 'underline-offset-4'}
+					>
+						{link.title}
+					</a>
+				);
+			})
+		}
+	</div>
+</nav>
