@@ -2,7 +2,8 @@ import genomes from '~/data/genomes.json';
 import genomeNotes from '~/data/genomeNotes.json';
 import posts from '~/data/posts.json';
 import authors from '~/data/authors.json';
-import type { Genome, GenomeNote, Post, Author } from '~/types/pubs';
+import projects from '~/data/projects.json';
+import type { Genome, GenomeNote, Post, Author, Project } from '~/types/pubs';
 
 export const getGenomeNote = (genomeNoteId: string): GenomeNote => {
 	const genomeNote = genomeNotes.find((genomeNote) => {
@@ -42,4 +43,14 @@ export const getAuthor = (authorId: string): Author => {
 		throw new Error(`Incorrect authorId somewhere! ${authorId}`);
 	}
 	return author;
+};
+
+export const getProject = (projectId: string): Project => {
+	const project = projects.find((project) => {
+		return project.id === projectId;
+	});
+	if (!project) {
+		throw new Error(`Incorrect projectId somewhere! ${projectId}`);
+	}
+	return project;
 };

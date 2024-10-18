@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import projects from '~/data/projects.json';
+import genomeNotes from '~/data/genomeNotes.json';
+import genomes from '~/data/genomes.json';
+import projectGenomeNotes from '~/data/projectGenomeNotes.json';
+import ProjectHeader from '~/components/ProjectHeader.astro';
+import { getGenomeNote, getGenome } from '~/lib/populateData';
+
+export function getStaticPaths() {
+	return projects.map((project) => {
+		return { params: { slug: project.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeProject = projects.find((project) => {
+	return project.slug === slug;
+});
+if (!activeProject) {
+	return null;
+}
+
+const activeProjectGenomeNotes = projectGenomeNotes.filter((projectGenomeNote) => {
+	return projectGenomeNote.projectId === activeProject.id;
+});
+const populatedProjectGenomeNotes = activeProjectGenomeNotes.map((projectGenomeNote) => {
+	const genomeNote = getGenomeNote(projectGenomeNote.genomeNoteId);
+	const genome = getGenome(genomeNote.genomeId);
+	return { ...projectGenomeNote, genomeNote, genome };
+});
+---
+
+<Layout title={`${activeProject.name} · UGNR`}>
+	<main class="max-w-screen-lg m-auto">
+		<ProjectHeader project={activeProject} />
+		<section class="">
+			{
+				populatedProjectGenomeNotes.map(({ genome }) => {
+					return (
+						<div>
+							<a href={`/genome/${genome.slug}`}>
+								{genome.species} · {genome.commonName}
+							</a>
+						</div>
+					);
+				})
+			}
+		</section>
+	</main>
+</Layout>

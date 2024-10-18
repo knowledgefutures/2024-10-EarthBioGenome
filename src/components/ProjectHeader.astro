@@ -1,0 +1,43 @@
+---
+import type { Project } from '~/types/pubs';
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+
+const tabs = [
+	{
+		title: 'Genome Notes',
+		href: `/project/${project.slug}`,
+		active: Astro.url.pathname.endsWith(project.slug),
+	},
+	{
+		title: 'Members',
+		href: `/project/${project.slug}/members`,
+		active: Astro.url.pathname.endsWith('/members'),
+	},
+];
+---
+
+<section class="">
+	<div class="py-8">
+		<h2 class="text-4xl font-bold">{project.name}</h2>
+		<div>{project.website}</div>
+	</div>
+	<div class="flex space-x-8 py-4">
+		{
+			tabs.map((tab) => {
+				return (
+					<a
+						href={tab.href}
+						class={tab.active ? 'underline underline-offset-4' : 'underline-offset-4'}
+					>
+						{tab.title}
+					</a>
+				);
+			})
+		}
+	</div>
+</section>

@@ -1,11 +1,21 @@
 ---
-import type { Author } from '~/types/pubs';
+import type { Author, ProjectMember } from '~/types/pubs';
+import projectMembers from '~/data/projectMembers.json';
+import { getProject } from '~/lib/populateData';
+import { undefined } from 'astro:schema';
 
 interface Props {
 	author: Author;
 }
 
 const { author } = Astro.props;
+
+const associatedProjectMember = projectMembers.find((projectMember) => {
+	return projectMember.authorId === author.id;
+});
+const associatedProject = associatedProjectMember
+	? getProject(associatedProjectMember.projectId)
+	: undefined;
 
 const tabs = [
 	{
@@ -42,6 +52,13 @@ const tabs = [
 			<h2 class="text-4xl font-bold">{author.name}</h2>
 			<div>{author.affiliation}</div>
 			<div>ORCID: {author.orcid}</div>
+			{
+				associatedProject && (
+					<div>
+						<a href={`/project/${associatedProject.slug}`}>{associatedProject.name}</a>
+					</div>
+				)
+			}
 		</div>
 	</div>
 	<div class="flex space-x-8 py-4">

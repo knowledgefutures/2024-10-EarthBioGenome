@@ -1,0 +1,47 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import projects from '~/data/projects.json';
+import genomeNotes from '~/data/genomeNotes.json';
+import genomes from '~/data/genomes.json';
+import projectMembers from '~/data/projectMembers.json';
+import ProjectHeader from '~/components/ProjectHeader.astro';
+import { getGenomeNote, getGenome, getAuthor } from '~/lib/populateData';
+
+export function getStaticPaths() {
+	return projects.map((project) => {
+		return { params: { slug: project.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeProject = projects.find((project) => {
+	return project.slug === slug;
+});
+if (!activeProject) {
+	return null;
+}
+
+const activeProjectMembers = projectMembers.filter((projectMember) => {
+	return projectMember.projectId === activeProject.id;
+});
+const populatedProjectMembers = activeProjectMembers.map((projectMember) => {
+	const author = getAuthor(projectMember.authorId);
+	return { ...projectMember, author };
+});
+---
+
+<Layout title={`${activeProject.name} · UGNR`}>
+	<main class="max-w-screen-lg m-auto">
+		<ProjectHeader project={activeProject} />
+		<section class="">
+			{
+				populatedProjectMembers.map(({ author }) => {
+					return (
+						<div>
+							<a href={`/author/${author.slug}`}>{author.name}</a>
+						</div>
+					);
+				})
+			}
+		</section>
+	</main>
+</Layout>

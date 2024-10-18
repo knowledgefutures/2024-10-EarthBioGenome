@@ -14,10 +14,18 @@ type ThingType = typeof things;
 <Layout title="Welcome to Astro.">
 	<main>
 		<input />
-		
+
 		<div>Powered by the network of Earth BioGenome projects</div>
-		<div>{projects.map((project)=>{
-			return <div>{project.name}</div>
-		})}</div>
+		<div>
+			{
+				projects.map((project) => {
+					return (
+						<div>
+							<a href={`/project/${project.slug}`}>{project.name}</a>
+						</div>
+					);
+				})
+			}
+		</div>
 	</main>
 </Layout>
