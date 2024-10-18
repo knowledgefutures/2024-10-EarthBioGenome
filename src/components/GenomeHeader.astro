@@ -1,0 +1,48 @@
+---
+import { getGenome } from '~/lib/populateData';
+import type { Genome } from '~/types/pubs';
+
+interface Props {
+	genome: Genome;
+}
+
+const { genome } = Astro.props;
+// const genome = getGenome(genomeNote.genomeId);
+const tabs = [
+	{
+		title: 'Genome Note',
+		href: `/genome/${genome.slug}`,
+		active: Astro.url.pathname.endsWith(genome.slug),
+	},
+	{
+		title: 'Data',
+		href: `/genome/${genome.slug}/data`,
+		active: Astro.url.pathname.endsWith('/data'),
+	},
+	{
+		title: 'Conversation',
+		href: `/genome/${genome.slug}/conversation`,
+		active: Astro.url.pathname.endsWith('/conversation'),
+	},
+];
+---
+
+<section class="">
+	<div class="py-8">
+		<h2 class="text-4xl font-bold">{genome.commonName} · {genome.species}</h2>
+	</div>
+	<div class="flex space-x-8 py-4">
+		{
+			tabs.map((tab) => {
+				return (
+					<a
+						href={tab.href}
+						class={tab.active ? 'underline underline-offset-4' : 'underline-offset-4'}
+					>
+						{tab.title}
+					</a>
+				);
+			})
+		}
+	</div>
+</section>

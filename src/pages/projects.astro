@@ -1,0 +1,24 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import projects from '~/data/projects.json';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<div class="py-8">
+			<h2 class="text-4xl font-bold">Projects</h2>
+		</div>
+
+		<div>
+			{
+				projects.map((project) => {
+					return (
+						<div>
+							<a href={`/project/${project.slug}`}>{project.name}</a>
+						</div>
+					);
+				})
+			}
+		</div>
+	</main>
+</Layout>

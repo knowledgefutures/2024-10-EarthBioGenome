@@ -195,7 +195,7 @@ const toadConvo = [
 		authorId: '4a2d9c28-77b8-4b4f-8c11-e9d8e8e7b27d',
 		genomeId: '550e8400-e77b-41d4-a716-446655440066',
 		postId: '',
-		parentCommentId: '',
+		parentCommentId: '1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p',
 		content: 'Yes, the assembly quality is remarkable. The contig N50 is quite high.',
 	},
 	{
@@ -203,7 +203,7 @@ const toadConvo = [
 		authorId: '5b3e0d29-88c9-4c5f-9d12-f9e9f9f8c38e',
 		genomeId: '550e8400-e77b-41d4-a716-446655440066',
 		postId: '',
-		parentCommentId: '',
+		parentCommentId: '2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q',
 		content: 'I noticed that too. The BUSCO scores indicate a very complete genome.',
 	},
 	{
@@ -211,7 +211,7 @@ const toadConvo = [
 		authorId: '6c4f1e2a-99da-4d6f-8e13-g9f0g0g9d49f',
 		genomeId: '550e8400-e77b-41d4-a716-446655440066',
 		postId: '',
-		parentCommentId: '',
+		parentCommentId: '1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p',
 		content:
 			'The gene annotation is also impressive. Many unique metabolic pathways were identified.',
 	},
@@ -220,7 +220,7 @@ const toadConvo = [
 		authorId: '7d5g2f2b-aaeb-4e7f-9f14-h0g1h1h0e50g',
 		genomeId: '550e8400-e77b-41d4-a716-446655440066',
 		postId: '',
-		parentCommentId: '',
+		parentCommentId: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
 		content:
 			'Indeed. The repeat content analysis revealed some interesting transposable elements.',
 	},
@@ -238,7 +238,7 @@ const toadConvo = [
 		authorId: '9f7i4h2d-ccgd-4g9f-9h16-j2i3j3j2g72i',
 		genomeId: '550e8400-e77b-41d4-a716-446655440066',
 		postId: '',
-		parentCommentId: '',
+		parentCommentId: '6f7g8h9i-0j1k-2l3m-4n5o-6p7q8r9s0t1u',
 		content:
 			'Possibly. The high GC content in certain regions might also play a role in genome stability.',
 	},
@@ -249,7 +249,7 @@ const toadConvo = [
 		postId: '',
 		parentCommentId: '',
 		content:
-			'The mitochondrial genome is also well-assembled. It could provide insights into their energy metabolism.',
+			'The mitochondrial genome is well-assembled. It could provide insights into their energy metabolism.',
 	},
 	{
 		id: '9i0j1k2l-3m4n-5o6p-7q8r-9s0t1u2v3w4x',
@@ -265,7 +265,7 @@ const toadConvo = [
 		authorId: '2i0l7k2g-ffgj-4j2f-8k19-m5l6m6m5j05l',
 		genomeId: '550e8400-e77b-41d4-a716-446655440066',
 		postId: '',
-		parentCommentId: '',
+		parentCommentId: '9i0j1k2l-3m4n-5o6p-7q8r-9s0t1u2v3w4x',
 		content:
 			'Absolutely. This could pave the way for more detailed studies on the Common Toad’s genetics.',
 	},
