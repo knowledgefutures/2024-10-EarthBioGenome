@@ -1,0 +1,31 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import genomeNotes from '~/data/genomeNotes.json';
+import genomes from '~/data/genomes.json';
+import GenomeHeader from '~/components/GenomeHeader.astro';
+
+export function getStaticPaths() {
+	return genomes.map((genome) => {
+		return { params: { slug: genome.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeGenome = genomes.find((genome) => {
+	return genome.slug === slug;
+});
+if (!activeGenome) {
+	return null;
+}
+const activeGenomeNote = genomeNotes.find((genomeNote) => {
+	return genomeNote.genomeId === activeGenome.id;
+});
+---
+
+<Layout title={`${activeGenome.commonName} · UGNR`}>
+	<main class="">
+		<GenomeHeader genome={activeGenome} />
+		<section class="">
+			<pre>{JSON.stringify({...activeGenome, ...activeGenomeNote}, null, 2)}</pre>
+		</section>
+	</main>
+</Layout>
