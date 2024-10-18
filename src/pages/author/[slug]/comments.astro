@@ -1,0 +1,54 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import authors from '~/data/authors.json';
+import comments from '~/data/comments';
+import genomes from '~/data/genomes.json';
+import AuthorHeader from '~/components/AuthorHeader.astro';
+import { getGenome, getPost } from '~/lib/populateData';
+
+export function getStaticPaths() {
+	return authors.map((author) => {
+		return { params: { slug: author.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeAuthor = authors.find((author) => {
+	return author.slug === slug;
+});
+if (!activeAuthor) {
+	return null;
+}
+const activeComments = comments.filter((comment) => {
+	return comment.authorId === activeAuthor.id;
+});
+const populatedComments = activeComments.map((comment) => {
+	const genome = comment.genomeId ? getGenome(comment.genomeId) : undefined;
+	const post = comment.postId ? getPost(comment.postId) : undefined;
+	return { ...comment, genome, post };
+});
+---
+
+<Layout title={`${activeAuthor.name} · UGNR`}>
+	<main class="max-w-screen-lg m-auto">
+		<AuthorHeader author={activeAuthor} />
+		<section class="">
+			{
+				populatedComments.map((populatedComment) => {
+					const { genome, post } = populatedComment;
+					return (
+						<div>
+							<div>
+								Commented on
+								{genome && (
+									<a href={`/genomes/${genome.slug}`}>{genome.commonName}</a>
+								)}
+								{post && <a href={`/posts/${post.slug}`}>{post.title}</a>}
+							</div>
+							<div>{populatedComment.content}</div>
+						</div>
+					);
+				})
+			}
+		</section>
+	</main>
+</Layout>

@@ -1,0 +1,39 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import authors from '~/data/authors.json';
+import posts from '~/data/posts.json';
+import AuthorHeader from '~/components/AuthorHeader.astro';
+
+export function getStaticPaths() {
+	return authors.map((author) => {
+		return { params: { slug: author.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeAuthor = authors.find((author) => {
+	return author.slug === slug;
+});
+if (!activeAuthor) {
+	return null;
+}
+const activePosts = posts.filter((post) => {
+	return post.authorId === activeAuthor.id;
+});
+---
+
+<Layout title={`${activeAuthor.name} · UGNR`}>
+	<main class="max-w-screen-lg m-auto">
+		<AuthorHeader author={activeAuthor} />
+		<section class="">
+			{
+				activePosts.map((post) => {
+					return (
+						<div>
+							<a href={`/post/${post.slug}`}>{post.title}</a>
+						</div>
+					);
+				})
+			}
+		</section>
+	</main>
+</Layout>

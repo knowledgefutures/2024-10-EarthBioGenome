@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Button } from '~/components/ui/button';
-
+import projects from '~/data/projects.json';
 const things = {
 	dog: 'string',
 	cat: 5,
@@ -13,16 +13,11 @@ type ThingType = typeof things;
 
 <Layout title="Welcome to Astro.">
 	<main>
-		Hello Landing
-		{
-			Object.keys(things).map((key) => {
-				return (
-					<div>
-						{key}: {typeof things[key]}
-					</div>
-				);
-			})
-		}
-		<Button>Hello World</Button>
+		<input />
+		
+		<div>Powered by the network of Earth BioGenome projects</div>
+		<div>{projects.map((project)=>{
+			return <div>{project.name}</div>
+		})}</div>
 	</main>
 </Layout>

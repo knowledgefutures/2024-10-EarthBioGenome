@@ -1,5 +1,5 @@
 {
-  "name": "site-v1",
+  "name": "2024-10-earthbiogenome",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,10 +9,10 @@
     "preview": "astro preview",
     "astro": "astro",
     "buildTechReviews": "tsx ./scripts/buildTechnicalReviews.ts",
-	"buildContributors": "tsx ./scripts/buildContributors.ts",
-	"buildProjectMembers": "tsx ./scripts/buildProjectMembers.ts",
-	"buildProjectGenomeNotes": "tsx ./scripts/buildProjectGenomeNotes.ts",
-	"buildAll": "npm run buildTechReviews && npm run buildContributors && npm run buildProjectMembers && npm run buildProjectGenomeNotes"
+    "buildContributors": "tsx ./scripts/buildContributors.ts",
+    "buildProjectMembers": "tsx ./scripts/buildProjectMembers.ts",
+    "buildProjectGenomeNotes": "tsx ./scripts/buildProjectGenomeNotes.ts",
+    "buildAll": "npm run buildTechReviews && npm run buildContributors && npm run buildProjectMembers && npm run buildProjectGenomeNotes"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

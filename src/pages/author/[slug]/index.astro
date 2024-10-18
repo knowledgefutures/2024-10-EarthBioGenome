@@ -1,0 +1,64 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import authors from '~/data/authors.json';
+import genomeNotes from '~/data/genomeNotes.json';
+import genomes from '~/data/genomes.json';
+import contributors from '~/data/contributors.json';
+import AuthorHeader from '~/components/AuthorHeader.astro';
+import { getGenomeNote, getGenome } from '~/lib/populateData';
+
+export function getStaticPaths() {
+	return authors.map((author) => {
+		return { params: { slug: author.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeAuthor = authors.find((author) => {
+	return author.slug === slug;
+});
+if (!activeAuthor) {
+	return null;
+}
+
+const activeContributors = contributors.filter((contributor) => {
+	return contributor.authorId === activeAuthor.id;
+});
+const populatedContributors = activeContributors.map((contributor) => {
+	const genomeNote = getGenomeNote(contributor.genomeNoteId);
+	const genome = getGenome(genomeNote.genomeId);
+	return { ...contributor, genomeNote, genome };
+});
+---
+
+<Layout title={`${activeAuthor.name} · UGNR`}>
+	<main class="max-w-screen-lg m-auto">
+		<AuthorHeader author={activeAuthor} />
+		<section class="">
+			{
+				populatedContributors.map((populatedContributor) => {
+					return (
+						<div>
+							<a href={`/genome/${populatedContributor.genome.slug}`}>
+								{populatedContributor.genome.species} ·{' '}
+								{populatedContributor.genome.commonName}
+							</a>
+						</div>
+					);
+				})
+			}
+			<!-- {
+				activeArticles.map((article) => {
+					return (
+						<a href={`/articles/${article.slug}`}>
+							<div class="text-xl font-bold truncate">{article.title}</div>
+							<div class="text-base text-neutral-500 -mt-1">
+								{article.date} ·{' '}
+								<span class="italic">by {getArticleAuthors(article.id)}</span>
+							</div>
+						</a>
+					);
+				})
+			} -->
+		</section>
+	</main>
+</Layout>

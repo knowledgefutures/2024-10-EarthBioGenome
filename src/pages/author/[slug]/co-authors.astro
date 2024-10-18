@@ -1,0 +1,110 @@
+---
+import ForceGraph2D from 'react-force-graph-2d';
+import Layout from '~/layouts/Layout.astro';
+import authors from '~/data/authors.json';
+import contributors from '~/data/contributors.json';
+import AuthorHeader from '~/components/AuthorHeader.astro';
+import { getGenome, getGenomeNote, getAuthor } from '~/lib/populateData';
+import type { Author, Contributor, Genome } from '~/types/pubs';
+
+export function getStaticPaths() {
+	return authors.map((author) => {
+		return { params: { slug: author.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeAuthor = authors.find((author) => {
+	return author.slug === slug;
+});
+if (!activeAuthor) {
+	return null;
+}
+// const activeArticleIds = articleLinks
+// 	.filter((link) => {
+// 		return link.target === activeTheme.id;
+// 	})
+// 	.map((link) => {
+// 		return link.sourceArticle;
+// 	});
+// const activeArticles = articles.filter((article) => {
+// 	return activeArticleIds.includes(article.id);
+// });
+const genomeNoteIdsWithAuthor = contributors
+	.filter((contributor) => {
+		return contributor.authorId === activeAuthor.id;
+	})
+	.map((contributor) => {
+		return contributor.genomeNoteId;
+	});
+type CoauthorContributor = Contributor & { genomes: Genome[]; author: Author };
+const coauthorContributors = contributors
+	.filter((contributor) => {
+		return genomeNoteIdsWithAuthor.includes(contributor.genomeNoteId);
+	})
+	.filter((contributor) => {
+		return contributor.authorId !== activeAuthor.id;
+	})
+	.map((contributor) => {
+		const genomeNote = getGenomeNote(contributor.genomeNoteId);
+		const genome = getGenome(genomeNote.genomeId);
+		return { ...contributor, genome };
+	})
+	.reduce((acc: CoauthorContributor[], contributor) => {
+		const existingIndex = acc.findIndex((item) => item.authorId === contributor.authorId);
+		if (existingIndex !== -1) {
+			const existing = acc[existingIndex];
+			const updated = {
+				...existing,
+				genomes: [...existing.genomes, contributor.genome],
+			};
+			return [...acc.slice(0, existingIndex), updated, ...acc.slice(existingIndex + 1)];
+		}
+		const newContributor = {
+			...contributor,
+			genomes: [contributor.genome],
+			author: getAuthor(contributor.authorId),
+		};
+		return [...acc, newContributor];
+	}, [])
+	.sort((foo, bar) => {
+		if (foo.genomes.length < bar.genomes.length) {
+			return 1;
+		}
+		if (foo.genomes.length > bar.genomes.length) {
+			return -1;
+		}
+		return 0;
+	});
+---
+
+<Layout title={`${activeAuthor.name} · UGNR`}>
+	<main class="max-w-screen-lg m-auto">
+		<AuthorHeader author={activeAuthor} />
+		<section class="">
+			{
+				coauthorContributors.map((coauthorContributor) => {
+					return (
+						<div>
+							<div>
+								<a href={`/author/${coauthorContributor.author.slug}`}>
+									{coauthorContributor.author.name}
+								</a>
+							</div>
+							<div class="pl-4">
+								{coauthorContributor.genomes.map((genome) => {
+									return (
+										<div>
+											<a href={`/genome/${genome.slug}`}>
+												{genome.commonName}
+											</a>
+										</div>
+									);
+								})}
+							</div>
+						</div>
+					);
+				})
+			}
+		</section>
+	</main>
+</Layout>
