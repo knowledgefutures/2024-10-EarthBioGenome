@@ -22,7 +22,12 @@ import projects from '~/data/projects.json';
 								<>
 									{index !== 0 && <span class="">•</span>}
 									<span class="hover:text-black/90">
-										<a href={`/project/${project.slug}`}>{project.name}</a>
+										<a
+											class="hover:no-underline"
+											href={`/project/${project.slug}`}
+										>
+											{project.name}
+										</a>
 									</span>
 								</>
 							);
@@ -45,7 +50,7 @@ import projects from '~/data/projects.json';
 		<section class="bg-[#f6f3ee] py-20">
 			<div class="w-content-narrow text-center text-2xl leading-relaxed">
 				<p>
-					The University Genome Note Repository enables the affordable, open publication
+					The Universal Genome Note Repository enables the affordable, open publication
 					of vast numbers of genome notes, along with their technical reviews, data, and
 					public commentary. It serves as a common, interoperable home for work that
 					exists in other databases and systems, making it easy for projects to connect
