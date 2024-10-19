@@ -43,19 +43,6 @@ const activeGenomes: PopulatedGenome[] = populatedContributors.map((populatedCon
 		<AuthorHeader author={activeAuthor} />
 		<section class="w-content-narrow">
 			<GenomeList genomes={activeGenomes} client:only="react" />
-			<!-- {
-				activeArticles.map((article) => {
-					return (
-						<a href={`/articles/${article.slug}`}>
-							<div class="text-xl font-bold truncate">{article.title}</div>
-							<div class="text-base text-neutral-500 -mt-1">
-								{article.date} ·{' '}
-								<span class="italic">by {getArticleAuthors(article.id)}</span>
-							</div>
-						</a>
-					);
-				})
-			} -->
 		</section>
 	</main>
 </Layout>

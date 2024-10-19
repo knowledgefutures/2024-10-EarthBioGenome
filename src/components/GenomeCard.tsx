@@ -9,7 +9,13 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 	return (
 		<div className="max-w-sm rounded overflow-hidden border p-2">
 			<a href={`/genome/${genome.slug}`}>
-				{genome.species} · {genome.commonName}
+				<div className="text-xl font-bold truncate capitalize">
+					{genome.commonName} · <i>{genome.species}</i>
+				</div>
+				<div className="text-base text-neutral-500 -mt-1">
+					<span className="italic">People's names here</span>
+					{/* <span class="italic">by {getArticleAuthors(article.id)}</span> */}
+				</div>
 			</a>
 		</div>
 	);
