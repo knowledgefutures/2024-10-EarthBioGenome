@@ -6,6 +6,8 @@ import genomes from '~/data/genomes.json';
 import contributors from '~/data/contributors.json';
 import AuthorHeader from '~/components/AuthorHeader.astro';
 import { getGenomeNote, getGenome } from '~/lib/populateData';
+import GenomeList from '~/components/GenomeList';
+import type { PopulatedGenome } from '~/types/pubs';
 
 export function getStaticPaths() {
 	return authors.map((author) => {
@@ -28,24 +30,19 @@ const populatedContributors = activeContributors.map((contributor) => {
 	const genome = getGenome(genomeNote.genomeId);
 	return { ...contributor, genomeNote, genome };
 });
+const activeGenomes: PopulatedGenome[] = populatedContributors.map((populatedContributors) => {
+	return {
+		...populatedContributors.genome,
+		genomeNote: populatedContributors.genomeNote,
+	};
+});
 ---
 
 <Layout title={`${activeAuthor.name} · UGNR`}>
 	<main class="">
 		<AuthorHeader author={activeAuthor} />
 		<section class="w-content-narrow">
-			{
-				populatedContributors.map((populatedContributor) => {
-					return (
-						<div>
-							<a href={`/genome/${populatedContributor.genome.slug}`}>
-								{populatedContributor.genome.species} ·{' '}
-								{populatedContributor.genome.commonName}
-							</a>
-						</div>
-					);
-				})
-			}
+			<GenomeList genomes={activeGenomes} client:only="react" />
 			<!-- {
 				activeArticles.map((article) => {
 					return (

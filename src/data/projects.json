@@ -1,15 +1,21 @@
 [
 	{
-		"id": "1e7d1f4e-8b1e-4f3b-9c1e-1d2f3b4e5f6a",
-		"name": "North American Genomics Initiative",
-		"slug": "north-american-genomics-initiative",
-		"website": "https://northamericangenomics.org"
+		"id": "7k3j7k0j-4h7j-0k9g-5i8j-7j8k9g0j1k2g",
+		"name": "Antarctic Genome Research",
+		"slug": "antarctic-genome-research",
+		"website": "https://antarcticgenome.org"
 	},
 	{
 		"id": "2f8e2f5e-9c2e-5f4b-0d3e-2e3f4b5e6f7b",
 		"name": "European Genome Project",
 		"slug": "european-genome-project",
 		"website": "https://europeangenomeproject.eu"
+	},
+	{
+		"id": "1e7d1f4e-8b1e-4f3b-9c1e-1d2f3b4e5f6a",
+		"name": "North American Genomics Initiative",
+		"slug": "north-american-genomics-initiative",
+		"website": "https://northamericangenomics.org"
 	},
 	{
 		"id": "3g9f3g6f-0d3f-6g5c-1e4f-3f4g5c6f7g8c",
@@ -34,12 +40,6 @@
 		"name": "Genomic Horizons Initiative",
 		"slug": "genomic-horizons-initiative",
 		"website": "https://genomichorizons.org"
-	},
-	{
-		"id": "7k3j7k0j-4h7j-0k9g-5i8j-7j8k9g0j1k2g",
-		"name": "Antarctic Genome Research",
-		"slug": "antarctic-genome-research",
-		"website": "https://antarcticgenome.org"
 	},
 	{
 		"id": "8l4k8l1k-5i8k-1l0h-6j9k-8k9l0h1k2l3h",
