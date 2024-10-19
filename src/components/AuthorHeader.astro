@@ -2,7 +2,7 @@
 import type { Author, ProjectMember } from '~/types/pubs';
 import projectMembers from '~/data/projectMembers.json';
 import { getProject } from '~/lib/populateData';
-import { undefined } from 'astro:schema';
+import AuthorAvatar from './AuthorAvatar.astro';
 
 interface Props {
 	author: Author;
@@ -15,7 +15,7 @@ const associatedProjectMember = projectMembers.find((projectMember) => {
 });
 const associatedProject = associatedProjectMember
 	? getProject(associatedProjectMember.projectId)
-	: undefined;
+	: null;
 
 const tabs = [
 	{
@@ -41,38 +41,40 @@ const tabs = [
 ];
 ---
 
-<section class="">
-	<div class="py-8 flex space-x-4">
-		<div
-			class="rounded w-32 h-32 bg-neutral-400 flex items-center justify-center text-7xl font-bold text-white"
-		>
-			{author.name[0]}
+<section class="bg-[#f6f3ee]">
+	<div class="w-content-narrow">
+		<div class="py-8 flex space-x-4">
+			<AuthorAvatar text={author.name[0]} />
+			<div class="p-4">
+				<h2 class="text-4xl font-bold">{author.name}</h2>
+				<div>{author.affiliation}</div>
+				<div>ORCID: {author.orcid}</div>
+				{
+					associatedProject && (
+						<div>
+							<a href={`/project/${associatedProject.slug}`}>
+								{associatedProject.name}
+							</a>
+						</div>
+					)
+				}
+			</div>
 		</div>
-		<div>
-			<h2 class="text-4xl font-bold">{author.name}</h2>
-			<div>{author.affiliation}</div>
-			<div>ORCID: {author.orcid}</div>
+		<div class="flex space-x-8 py-4">
 			{
-				associatedProject && (
-					<div>
-						<a href={`/project/${associatedProject.slug}`}>{associatedProject.name}</a>
-					</div>
-				)
+				tabs.map((tab) => {
+					return (
+						<a
+							href={tab.href}
+							class={
+								tab.active ? 'underline underline-offset-4' : 'underline-offset-4'
+							}
+						>
+							{tab.title}
+						</a>
+					);
+				})
 			}
 		</div>
-	</div>
-	<div class="flex space-x-8 py-4">
-		{
-			tabs.map((tab) => {
-				return (
-					<a
-						href={tab.href}
-						class={tab.active ? 'underline underline-offset-4' : 'underline-offset-4'}
-					>
-						{tab.title}
-					</a>
-				);
-			})
-		}
 	</div>
 </section>

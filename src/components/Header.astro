@@ -6,8 +6,10 @@
 // }
 // const { href, title, body } = Astro.props;
 
-import logo from '~/assets/logo.png';
+import logoWhite from '~/assets/logoWhite.png';
 import { Image } from 'astro:assets';
+import { Input } from '~/components/ui/input';
+
 const isLanding = Astro.url.pathname === '/';
 const links = [
 	{ title: 'Explore', href: '/explore', active: Astro.url.pathname.startsWith('/explore') },
@@ -17,22 +19,34 @@ const links = [
 ];
 ---
 
-<nav
-	class={`py-4 flex justify-between items-center ${isLanding ? '' : 'border-b'} border-b-neutral-300`}
->
-	<a href="/"><Image class="mix-blend-darken h-16 w-auto" src={logo} alt="logo" /></a>
-	<div class="flex space-x-8">
-		{
-			links.map((link) => {
-				return (
-					<a
-						href={link.href}
-						class={link.active ? 'underline underline-offset-4' : 'underline-offset-4'}
-					>
-						{link.title}
-					</a>
-				);
-			})
-		}
-	</div>
-</nav>
+<section class={`bg-[url('/header-bg.jpg')] bg-cover`}>
+	<nav class={`w-content py-4 flex justify-between items-center border-b-neutral-300 text-white`}>
+		<a href="/"><Image class="h-16 w-auto" src={logoWhite} alt="logo" /></a>
+		<div class="flex space-x-8">
+			{
+				links.map((link) => {
+					return (
+						<a
+							href={link.href}
+							class={
+								link.active ? 'underline underline-offset-4' : 'underline-offset-4'
+							}
+						>
+							{link.title}
+						</a>
+					);
+				})
+			}
+		</div>
+	</nav>
+	{
+		isLanding && (
+			<div class="flex items-center">
+				<Input
+					className="mt-48 mb-32 max-w-screen-sm mx-auto text-xl py-8 bg-white/75"
+					placeholder="Search by species or common name..."
+				/>
+			</div>
+		)
+	}
+</section>

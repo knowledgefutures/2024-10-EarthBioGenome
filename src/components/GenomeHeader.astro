@@ -1,5 +1,4 @@
 ---
-import { getGenome } from '~/lib/populateData';
 import type { Genome } from '~/types/pubs';
 
 interface Props {
@@ -27,22 +26,26 @@ const tabs = [
 ];
 ---
 
-<section class="">
-	<div class="py-8">
-		<h2 class="text-4xl font-bold">{genome.commonName} · {genome.species}</h2>
-	</div>
-	<div class="flex space-x-8 py-4">
-		{
-			tabs.map((tab) => {
-				return (
-					<a
-						href={tab.href}
-						class={tab.active ? 'underline underline-offset-4' : 'underline-offset-4'}
-					>
-						{tab.title}
-					</a>
-				);
-			})
-		}
+<section class="bg-[#f6f3ee]">
+	<div class="w-content">
+		<div class="py-8">
+			<h2 class="text-4xl font-bold">{genome.commonName} · {genome.species}</h2>
+		</div>
+		<div class="flex space-x-8 py-4">
+			{
+				tabs.map((tab) => {
+					return (
+						<a
+							href={tab.href}
+							class={
+								tab.active ? 'underline underline-offset-4' : 'underline-offset-4'
+							}
+						>
+							{tab.title}
+						</a>
+					);
+				})
+			}
+		</div>
 	</div>
 </section>

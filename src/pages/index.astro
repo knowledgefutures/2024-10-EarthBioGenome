@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Button } from '~/components/ui/button';
+import Marquee from '~/components/ui/marquee';
+
 import projects from '~/data/projects.json';
 const things = {
 	dog: 'string',
@@ -13,19 +15,24 @@ type ThingType = typeof things;
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<input />
-
-		<div>Powered by the network of Earth BioGenome projects</div>
-		<div>
-			{
-				projects.map((project) => {
-					return (
-						<div>
-							<a href={`/project/${project.slug}`}>{project.name}</a>
-						</div>
-					);
-				})
-			}
-		</div>
+		<section class="w-content">
+			<div class="text-lg text-center font-bold py-12">
+				Powered by the network of Earth BioGenome projects
+			</div>
+				<div class="uppercase flex flex-wrap space-x-4 space-y-4justify-between max-w-screen-sm m-auto ">
+					{
+						projects.map((project, index) => {
+							return (
+								<>
+									{/* {index !== 0 && <span class="px-3">•</span>} */}
+									<span class="p-4 w-32 h-24 text-xs border border-neutral-200 rounded flex justify-center align-middle text-center">
+										<a href={`/project/${project.slug}`}>{project.name}</a>
+									</span>
+								</>
+							);
+						})
+					}
+				</div>
+		</section>
 	</main>
 </Layout>

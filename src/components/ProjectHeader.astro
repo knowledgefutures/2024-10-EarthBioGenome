@@ -1,5 +1,6 @@
 ---
 import type { Project } from '~/types/pubs';
+import ProjectAvatar from '~/components/ProjectAvatar.astro';
 
 interface Props {
 	project: Project;
@@ -21,23 +22,30 @@ const tabs = [
 ];
 ---
 
-<section class="">
-	<div class="py-8">
-		<h2 class="text-4xl font-bold">{project.name}</h2>
-		<div>{project.website}</div>
-	</div>
-	<div class="flex space-x-8 py-4">
-		{
-			tabs.map((tab) => {
-				return (
-					<a
-						href={tab.href}
-						class={tab.active ? 'underline underline-offset-4' : 'underline-offset-4'}
-					>
-						{tab.title}
-					</a>
-				);
-			})
-		}
+<section class="bg-[#f6f3ee]">
+	<div class="w-content-narrow">
+		<div class="py-8 flex">
+			<ProjectAvatar text={project.name[0]} />
+			<div class="p-4">
+				<h2 class="text-4xl font-bold">{project.name}</h2>
+				<div>{project.website}</div>
+			</div>
+		</div>
+		<div class="flex space-x-8 py-4">
+			{
+				tabs.map((tab) => {
+					return (
+						<a
+							href={tab.href}
+							class={
+								tab.active ? 'underline underline-offset-4' : 'underline-offset-4'
+							}
+						>
+							{tab.title}
+						</a>
+					);
+				})
+			}
+		</div>
 	</div>
 </section>
