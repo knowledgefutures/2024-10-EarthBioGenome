@@ -1,31 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Button } from '~/components/ui/button';
-import Marquee from '~/components/ui/marquee';
+import AnimatedGridPattern from '~/components/ui/animated-grid-pattern';
+import { cn } from '~/lib/utils';
 
 import projects from '~/data/projects.json';
-const things = {
-	dog: 'string',
-	cat: 5,
-	fish: ['a', 'b'],
-};
-
-type ThingType = typeof things;
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="w-content">
-			<div class="text-lg text-center font-bold py-12">
-				Powered by the network of Earth BioGenome projects
-			</div>
-				<div class="uppercase flex flex-wrap space-x-4 space-y-4justify-between max-w-screen-sm m-auto ">
+		<section class="py-20 relative overflow-hidden">
+			<div class="w-content">
+				<div class="text-2xl text-center font-bold pb-12">
+					Powered by the network of Earth BioGenome projects
+				</div>
+				<div
+					class="text-justify text-2xl text-black/35 uppercase font-extrabold leading-relaxed tracking-wider"
+				>
 					{
 						projects.map((project, index) => {
 							return (
 								<>
-									{/* {index !== 0 && <span class="px-3">•</span>} */}
-									<span class="p-4 w-32 h-24 text-xs border border-neutral-200 rounded flex justify-center align-middle text-center">
+									{index !== 0 && <span class="">•</span>}
+									<span class="hover:text-black/90">
 										<a href={`/project/${project.slug}`}>{project.name}</a>
 									</span>
 								</>
@@ -33,6 +29,29 @@ type ThingType = typeof things;
 						})
 					}
 				</div>
+			</div>
+			<AnimatedGridPattern
+				client:only="react"
+				numSquares={30}
+				maxOpacity={0.1}
+				duration={3}
+				repeatDelay={1}
+				className={cn(
+					'[mask-image:radial-gradient(60vw_circle_at_center,white,transparent)]',
+					'inset-x-0 inset-y-[-30%] h-[200%] -skew-y-12'
+				)}
+			/>
+		</section>
+		<section class="bg-[#f6f3ee] py-20">
+			<div class="w-content-narrow text-center text-2xl leading-relaxed">
+				<p>
+					The University Genome Note Repository enables the affordable, open publication
+					of vast numbers of genome notes, along with their technical reviews, data, and
+					public commentary. It serves as a common, interoperable home for work that
+					exists in other databases and systems, making it easy for projects to connect
+					without disrupting established workflows.
+				</p>
+			</div>
 		</section>
 	</main>
 </Layout>
