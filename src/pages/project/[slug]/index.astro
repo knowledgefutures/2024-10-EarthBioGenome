@@ -6,6 +6,7 @@ import genomes from '~/data/genomes.json';
 import projectGenomeNotes from '~/data/projectGenomeNotes.json';
 import ProjectHeader from '~/components/ProjectHeader.astro';
 import { getGenomeNote, getGenome } from '~/lib/populateData';
+import GenomeList from '~/components/GenomeList';
 
 export function getStaticPaths() {
 	return projects.map((project) => {
@@ -23,10 +24,10 @@ if (!activeProject) {
 const activeProjectGenomeNotes = projectGenomeNotes.filter((projectGenomeNote) => {
 	return projectGenomeNote.projectId === activeProject.id;
 });
-const populatedProjectGenomeNotes = activeProjectGenomeNotes.map((projectGenomeNote) => {
+const activeGenomes = activeProjectGenomeNotes.map((projectGenomeNote) => {
 	const genomeNote = getGenomeNote(projectGenomeNote.genomeNoteId);
 	const genome = getGenome(genomeNote.genomeId);
-	return { ...projectGenomeNote, genomeNote, genome };
+	return { ...genome, genomeNote };
 });
 ---
 
@@ -34,17 +35,7 @@ const populatedProjectGenomeNotes = activeProjectGenomeNotes.map((projectGenomeN
 	<main class="">
 		<ProjectHeader project={activeProject} />
 		<section class="w-content-narrow">
-			{
-				populatedProjectGenomeNotes.map(({ genome }) => {
-					return (
-						<div>
-							<a href={`/genome/${genome.slug}`}>
-								{genome.species} · {genome.commonName}
-							</a>
-						</div>
-					);
-				})
-			}
+			<GenomeList genomes={activeGenomes} client:only="react" />
 		</section>
 	</main>
 </Layout>
