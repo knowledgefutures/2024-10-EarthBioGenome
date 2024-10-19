@@ -8,9 +8,9 @@ const links = [
 ];
 ---
 
-<section class={`bg-[url('/header-bg.jpg')] bg-cover bg-bottom mt-20 py-16 text-white`}>
+<section class={`bg-[url('/header-bg.jpg')] bg-cover bg-bottom py-20 text-white`}>
 	<div class="w-content flex justify-between">
-		<div><DemoCard /></div>
+		<div><DemoCard client:load /></div>
 		<div class="flex flex-col items-end space-y-4">
 			{
 				links.map(({ text, href }) => {
