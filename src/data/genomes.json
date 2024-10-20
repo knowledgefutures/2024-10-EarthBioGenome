@@ -8,7 +8,7 @@
 		"order": "Pleuronectiformes",
 		"class": "Actinopterygii",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Linnaeus (1758)",
+		"taxonomyAuthor": "Linnaeus, 1758",
 		"ncbiTaxId": "90069"
 	},
 	{
@@ -20,7 +20,7 @@
 		"order": "Lepidoptera",
 		"class": "Insecta",
 		"phylum": "Arthropoda",
-		"taxonomyAuthor": "Linnaeus (1758)",
+		"taxonomyAuthor": "Linnaeus, 1758",
 		"ncbiTaxId": "203779"
 	},
 	{
@@ -32,7 +32,7 @@
 		"order": "Artiodactyla",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Gray (1846)",
+		"taxonomyAuthor": "Gray, 1846",
 		"ncbiTaxId": "27610"
 	},
 	{
@@ -44,7 +44,7 @@
 		"order": "Carnivora",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Linnaeus (1758)",
+		"taxonomyAuthor": "Linnaeus, 1758",
 		"ncbiTaxId": "9627"
 	},
 	{
@@ -56,7 +56,7 @@
 		"order": "Eulipotyphla",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Linnaeus (1758)",
+		"taxonomyAuthor": "Linnaeus, 1758",
 		"ncbiTaxId": "9365"
 	},
 	{
@@ -68,7 +68,7 @@
 		"order": "Anura",
 		"class": "Amphibia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Linnaeus (1758)",
+		"taxonomyAuthor": "Linnaeus, 1758",
 		"ncbiTaxId": "8384"
 	},
 	{
@@ -80,7 +80,7 @@
 		"order": "Strigiformes",
 		"class": "Aves",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Scopoli (1769)",
+		"taxonomyAuthor": "Scopoli, 1769",
 		"ncbiTaxId": "56313"
 	},
 	{
@@ -92,7 +92,7 @@
 		"order": "Anura",
 		"class": "Amphibia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Linnaeus (1758)",
+		"taxonomyAuthor": "Linnaeus, 1758",
 		"ncbiTaxId": "8407"
 	},
 	{
@@ -104,7 +104,7 @@
 		"order": "Perissodactyla",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999001"
 	},
 	{
@@ -116,7 +116,7 @@
 		"order": "Draconiformes",
 		"class": "Reptilia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999002"
 	},
 	{
@@ -128,7 +128,7 @@
 		"order": "Aves",
 		"class": "Aves",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999003"
 	},
 	{
@@ -140,7 +140,7 @@
 		"order": "Griffiformes",
 		"class": "Aves",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999004"
 	},
 	{
@@ -152,7 +152,7 @@
 		"order": "Sireniformes",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999005"
 	},
 	{
@@ -164,7 +164,7 @@
 		"order": "Centauriformes",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999006"
 	},
 	{
@@ -176,7 +176,7 @@
 		"order": "Carnivora",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999007"
 	},
 	{
@@ -188,7 +188,7 @@
 		"order": "Squamata",
 		"class": "Reptilia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999008"
 	},
 	{
@@ -200,7 +200,7 @@
 		"order": "Carnivora",
 		"class": "Mammalia",
 		"phylum": "Chordata",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999009"
 	},
 	{
@@ -212,7 +212,7 @@
 		"order": "Cephalopoda",
 		"class": "Cephalopoda",
 		"phylum": "Mollusca",
-		"taxonomyAuthor": "Merlinus (1022)",
+		"taxonomyAuthor": "Merlinus, 1022",
 		"ncbiTaxId": "999010"
 	}
 ]

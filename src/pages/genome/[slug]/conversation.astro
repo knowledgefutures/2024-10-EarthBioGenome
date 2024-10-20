@@ -50,7 +50,7 @@ const nestedComments = nestComments(activeComments);
 <Layout title={`${activeGenome.commonName} · UGNR`}>
 	<main class="">
 		<GenomeHeader genome={activeGenome} />
-		<section class="">
+		<section class="min-h-96">
 			<pre>{JSON.stringify(nestedComments, null, 2)}</pre>
 		</section>
 	</main>

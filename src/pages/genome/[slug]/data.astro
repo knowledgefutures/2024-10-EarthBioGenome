@@ -24,7 +24,7 @@ const activeGenomeNote = genomeNotes.find((genomeNote) => {
 <Layout title={`${activeGenome.commonName} · UGNR`}>
 	<main class="">
 		<GenomeHeader genome={activeGenome} />
-		<section class="">
+		<section class="min-h-96">
 			<pre>{JSON.stringify({...activeGenome, ...activeGenomeNote}, null, 2)}</pre>
 		</section>
 	</main>

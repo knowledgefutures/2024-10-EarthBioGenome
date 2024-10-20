@@ -3,7 +3,17 @@ import genomeNotes from '~/data/genomeNotes.json';
 import posts from '~/data/posts.json';
 import authors from '~/data/authors.json';
 import projects from '~/data/projects.json';
-import type { Genome, GenomeNote, Post, Author, Project } from '~/types/pubs';
+import technicalReviews from '~/data/technicalReviews.json';
+import manualReviews from '~/data/manualReviews.json';
+import type {
+	Genome,
+	GenomeNote,
+	Post,
+	Author,
+	Project,
+	TechnicalReview,
+	ManualReview,
+} from '~/types/pubs';
 
 export const getGenomeNote = (genomeNoteId: string): GenomeNote => {
 	const genomeNote = genomeNotes.find((genomeNote) => {
@@ -53,4 +63,16 @@ export const getProject = (projectId: string): Project => {
 		throw new Error(`Incorrect projectId somewhere! ${projectId}`);
 	}
 	return project;
+};
+
+export const getTechnicalReviews = (genomeNoteId: string): TechnicalReview[] => {
+	return technicalReviews.filter((technicalReview) => {
+		return technicalReview.genomeNoteId === genomeNoteId;
+	});
+};
+
+export const getManualReviews = (genomeNoteId: string): ManualReview[] => {
+	return manualReviews.filter((manualReview) => {
+		return manualReview.genomeNoteId === genomeNoteId;
+	});
 };

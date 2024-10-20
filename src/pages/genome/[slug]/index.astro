@@ -3,6 +3,8 @@ import Layout from '~/layouts/Layout.astro';
 import genomeNotes from '~/data/genomeNotes.json';
 import genomes from '~/data/genomes.json';
 import GenomeHeader from '~/components/GenomeHeader.astro';
+import GenomeNoteContent from '~/components/GenomeNoteContent.astro';
+import GenomeNoteSide from '~/components/GenomeNoteSide.astro';
 
 export function getStaticPaths() {
 	return genomes.map((genome) => {
@@ -16,11 +18,22 @@ const activeGenome = genomes.find((genome) => {
 if (!activeGenome) {
 	return null;
 }
+const activeGenomeNote = genomeNotes.find((genomeNote) => {
+	return genomeNote.genomeId === activeGenome.id;
+});
+if (!activeGenomeNote) {
+	return null;
+}
 ---
 
 <Layout title={`${activeGenome.commonName} · UGNR`}>
 	<main class="">
 		<GenomeHeader genome={activeGenome} />
-		<section class="">Some genome note content here</section>
+		<section
+			class="mt-8 mb-32 min-h-96 w-content grid grid-cols-1 md:grid-cols-[1fr_minmax(auto,400px)] gap-8"
+		>
+			<GenomeNoteContent genome={activeGenome} genomeNote={activeGenomeNote} />
+			<GenomeNoteSide genome={activeGenome} genomeNote={activeGenomeNote} />
+		</section>
 	</main>
 </Layout>

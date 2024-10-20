@@ -1,5 +1,17 @@
 ---
 import type { Genome } from '~/types/pubs';
+import projectGenomeNotes from '~/data/projectGenomeNotes.json';
+import genomeNotes from '~/data/genomeNotes.json';
+
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbSeparator,
+} from '~/components/ui/breadcrumb';
+import { getProject } from '~/lib/populateData';
+import { getContributors } from '~/lib/contributors.tsx';
 
 interface Props {
 	genome: Genome;
@@ -7,6 +19,21 @@ interface Props {
 
 const { genome } = Astro.props;
 // const genome = getGenome(genomeNote.genomeId);
+const activeGenomeNote = genomeNotes.find((genomeNote) => {
+	return genomeNote.genomeId === genome.id;
+});
+if (!activeGenomeNote) {
+	return null;
+}
+const activeProjectGenomeNote = projectGenomeNotes.find((projectGenomeNote) => {
+	return projectGenomeNote.genomeNoteId === activeGenomeNote.id;
+});
+if (!activeProjectGenomeNote) {
+	return null;
+}
+const activeProject = getProject(activeProjectGenomeNote.projectId);
+const populatedContributors = getContributors(activeGenomeNote.id);
+
 const tabs = [
 	{
 		title: 'Genome Note',
@@ -19,6 +46,11 @@ const tabs = [
 		active: Astro.url.pathname.endsWith('/data'),
 	},
 	{
+		title: 'Contributors',
+		href: `/genome/${genome.slug}/contributors`,
+		active: Astro.url.pathname.endsWith('/contributors'),
+	},
+	{
 		title: 'Conversation',
 		href: `/genome/${genome.slug}/conversation`,
 		active: Astro.url.pathname.endsWith('/conversation'),
@@ -28,17 +60,98 @@ const tabs = [
 
 <section class="bg-[#f6f3ee] mb-12">
 	<div class="w-content">
-		<div class="py-8">
-			<h2 class="text-4xl font-bold">{genome.commonName} · {genome.species}</h2>
+		<div class="py-12">
+			<div class="pb-2">
+				<Breadcrumb>
+					<BreadcrumbList>
+						<BreadcrumbItem>
+							<BreadcrumbLink href={`/explore?phylum=${genome.phylum}`}
+								>{genome.phylum}</BreadcrumbLink
+							>
+						</BreadcrumbItem>
+						<BreadcrumbSeparator />
+						<BreadcrumbItem>
+							<BreadcrumbLink href={`/explore?class=${genome.class}`}
+								>{genome.class}</BreadcrumbLink
+							>
+						</BreadcrumbItem>
+						<BreadcrumbSeparator />
+						<BreadcrumbItem>
+							<BreadcrumbLink href={`/explore?order=${genome.order}`}
+								>{genome.order}</BreadcrumbLink
+							>
+						</BreadcrumbItem>
+						<BreadcrumbSeparator />
+						<BreadcrumbItem>
+							<BreadcrumbLink href={`/explore?family=${genome.family}`}
+								>{genome.family}</BreadcrumbLink
+							>
+						</BreadcrumbItem>
+					</BreadcrumbList>
+				</Breadcrumb>
+			</div>
+			<h2 class="text-4xl font-bold capitalize pb-6">
+				{genome.commonName}
+				<span class="italic opacity-70">· {genome.species} ({genome.taxonomyAuthor})</span>
+			</h2>
+			<div class="my-6">
+				<div class="opacity-50 text-sm">
+					<span class="font-bold uppercase">Contributors</span>
+					<a href={`/genome/${genome.slug}/contributors`}>(view full details)</a>
+				</div>
+				<div class="truncate text-lg">
+					{
+						populatedContributors.map((populatedContributor, index) => {
+							const { slug, name } = populatedContributor.author;
+							return (
+								<span class="inline-block">
+									{index > 0 && <span>, </span>}
+									<a href={`/author/${slug}`}>{name}</a>
+								</span>
+							);
+						})
+					}
+				</div>
+			</div>
+
+			<div class="flex space-x-20">
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">Project:</span>
+					</span>
+					<span class="">
+						<a href={`/project/${activeProject.slug}`}>{activeProject.name}</a>
+					</span>
+				</div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">DOI:</span>
+					</span>
+					<span class=""><a href={`https://dx.doi.org`}>{activeGenomeNote.DOI}</a></span>
+				</div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">NCBI:</span>
+					</span>
+					<span class="">
+						<a
+							href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${genome.ncbiTaxId}`}
+							>{genome.ncbiTaxId}</a
+						>
+					</span>
+				</div>
+			</div>
 		</div>
-		<div class="flex space-x-8 py-4">
+		<div class="flex space-x-8 pt-4">
 			{
 				tabs.map((tab) => {
 					return (
 						<a
 							href={tab.href}
 							class={
-								tab.active ? 'underline underline-offset-4' : 'underline-offset-4'
+								tab.active
+									? 'underline underline-offset-4 decoration-2'
+									: 'underline-offset-4'
 							}
 						>
 							{tab.title}

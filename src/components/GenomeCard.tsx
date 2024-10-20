@@ -14,7 +14,6 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 				</div>
 				<div className="text-base text-neutral-500 -mt-1">
 					<span className="italic">People's names here</span>
-					{/* <span class="italic">by {getArticleAuthors(article.id)}</span> */}
 				</div>
 			</a>
 		</div>

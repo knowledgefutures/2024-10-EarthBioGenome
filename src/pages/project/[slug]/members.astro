@@ -32,7 +32,7 @@ const populatedProjectMembers = activeProjectMembers.map((projectMember) => {
 <Layout title={`${activeProject.name} · UGNR`}>
 	<main class="">
 		<ProjectHeader project={activeProject} />
-		<section class="w-content-narrow">
+		<section class="w-content-narrow min-h-96">
 			{
 				populatedProjectMembers.map(({ author }) => {
 					return (

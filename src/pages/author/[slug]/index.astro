@@ -41,7 +41,7 @@ const activeGenomes: PopulatedGenome[] = populatedContributors.map((populatedCon
 <Layout title={`${activeAuthor.name} · UGNR`}>
 	<main class="">
 		<AuthorHeader author={activeAuthor} />
-		<section class="w-content-narrow">
+		<section class="w-content-narrow min-h-96">
 			<GenomeList genomes={activeGenomes} client:only="react" />
 		</section>
 	</main>

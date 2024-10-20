@@ -31,7 +31,7 @@ const populatedComments = activeComments.map((comment) => {
 <Layout title={`${activeAuthor.name} · UGNR`}>
 	<main class="">
 		<AuthorHeader author={activeAuthor} />
-		<section class="w-content-narrow">
+		<section class="w-content-narrow min-h-96">
 			{
 				populatedComments.map((populatedComment) => {
 					const { genome, post } = populatedComment;

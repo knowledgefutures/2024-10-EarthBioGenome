@@ -19,8 +19,8 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 			<Table>
 				<TableHeader>
 					<TableRow className="hover:bg-white">
-						<TableHead className="">Species</TableHead>
 						<TableHead>Common Name</TableHead>
+						<TableHead className="">Species</TableHead>
 						<TableHead>QV</TableHead>
 						<TableHead className="text-right">Assembly Percent</TableHead>
 					</TableRow>
@@ -30,13 +30,13 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 						return (
 							<TableRow
 								key={genome.id}
-								className={index % 2 === 0 ? 'bg-muted/40' : ''}
+								className={index % 2 === 0 ? '' : 'bg-muted/40'}
 							>
-								<TableCell className="font-medium">
-									<a href={`/genome/${genome.slug}`}>{genome.species}</a>
-								</TableCell>
-								<TableCell>
+								<TableCell className="font-medium capitalize">
 									<a href={`/genome/${genome.slug}`}>{genome.commonName}</a>
+								</TableCell>
+								<TableCell className="italic">
+									<a href={`/genome/${genome.slug}`}>{genome.species}</a>
 								</TableCell>
 								<TableCell>{genome.genomeNote.QV}</TableCell>
 								<TableCell className="text-right">
