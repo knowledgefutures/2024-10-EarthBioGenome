@@ -3,6 +3,14 @@ import Layout from '~/layouts/Layout.astro';
 import genomeNotes from '~/data/genomeNotes.json';
 import genomes from '~/data/genomes.json';
 import GenomeHeader from '~/components/GenomeHeader.astro';
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from '~/components/ui/table';
 
 export function getStaticPaths() {
 	return genomes.map((genome) => {
@@ -19,13 +27,45 @@ if (!activeGenome) {
 const activeGenomeNote = genomeNotes.find((genomeNote) => {
 	return genomeNote.genomeId === activeGenome.id;
 });
+if (!activeGenomeNote) {
+	return null;
+}
 ---
 
 <Layout title={`${activeGenome.commonName} · UGNR`}>
 	<main class="">
 		<GenomeHeader genome={activeGenome} />
-		<section class="min-h-96">
-			<pre>{JSON.stringify({...activeGenome, ...activeGenomeNote}, null, 2)}</pre>
+		<section class="mt-8 mb-32 min-h-96 w-content">
+			<div class="border rounded max-w-screen-md">
+				<Table>
+					<TableHeader>
+						<TableRow className="hover:bg-white">
+							<TableHead>Metric</TableHead>
+							<TableHead className="">Value</TableHead>
+						</TableRow>
+					</TableHeader>
+					<TableBody>
+						{
+							Object.keys(activeGenomeNote).map((key, index) => {
+								const skipKeys = ['id', 'genomeId', 'content'];
+								if (skipKeys.includes(key)) {
+									return null;
+								}
+								return (
+									<TableRow
+										key={key}
+										className={index % 2 === 0 ? 'bg-muted/40' : ''}
+									>
+										<TableCell className="font-bold">{key}</TableCell>
+										{/* @ts-ignore */}
+										<TableCell className=" font-mono">{activeGenomeNote[key]}</TableCell>
+									</TableRow>
+								);
+							})
+						}
+					</TableBody>
+				</Table>
+			</div>
 		</section>
 	</main>
 </Layout>
