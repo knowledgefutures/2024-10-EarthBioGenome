@@ -7,6 +7,8 @@ import { getTechnicalReviews, getManualReviews } from '~/lib/populateData';
 import TechnicalReviewCard from '~/components/TechnicalReviewCard';
 import ManualReviewCard from '~/components/ManualReviewCard';
 import PermissionToSequenceCard from './PermissionToSequenceCard';
+import ConflictsCard from './ConflictsCard';
+import DataAvailabilityCard from './DataAvailabilityCard';
 
 interface Props {
 	genome: Genome;
@@ -57,7 +59,9 @@ const manualReviews = getManualReviews(genomeNote.id);
 			<CardDescription> Statements made by the contributing team. </CardDescription>
 		</CardHeader>
 		<CardContent>
-			<PermissionToSequenceCard manualReview={{}} client:load />
+			<PermissionToSequenceCard client:load />
+			<ConflictsCard client:load />
+			<DataAvailabilityCard genome={genome} genomeNote={genomeNote} client:load />
 		</CardContent>
 	</Card>
 </div>
