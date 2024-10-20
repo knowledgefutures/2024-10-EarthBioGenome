@@ -2,6 +2,7 @@
 import type { Genome } from '~/types/pubs';
 import projectGenomeNotes from '~/data/projectGenomeNotes.json';
 import genomeNotes from '~/data/genomeNotes.json';
+import { Award, ShieldCheck } from 'lucide-react';
 
 import {
 	Breadcrumb,
@@ -10,6 +11,8 @@ import {
 	BreadcrumbList,
 	BreadcrumbSeparator,
 } from '~/components/ui/breadcrumb';
+import { Badge } from '~/components/ui/badge';
+
 import { getProject } from '~/lib/populateData';
 import { getContributors } from '~/lib/contributors.tsx';
 
@@ -94,6 +97,11 @@ const tabs = [
 				{genome.commonName}
 				<span class="italic opacity-70">· {genome.species} ({genome.taxonomyAuthor})</span>
 			</h2>
+			<div class="flex space-x-4">
+				<Badge><Award size={20} className="mr-1" /> EBP Reference Genome</Badge>
+				<Badge><ShieldCheck size={20} className="mr-1" />Permission to Sequence</Badge>
+			</div>
+
 			<div class="my-6">
 				<div class="opacity-50 text-sm">
 					<span class="font-bold uppercase">Contributors</span>
@@ -113,8 +121,8 @@ const tabs = [
 					}
 				</div>
 			</div>
-
-			<div class="flex space-x-20">
+			<!-- <div class="flex space-x-20"> -->
+			<div>
 				<div>
 					<span class="opacity-50 text-sm">
 						<span class="font-bold uppercase">Project:</span>

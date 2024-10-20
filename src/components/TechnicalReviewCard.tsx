@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { GenomeNote, TechnicalReview } from '~/types/pubs';
 import { Button } from '~/components/ui/button';
-import { BadgeCheck, ChevronDown, ChevronUp, CircleMinus, CircleSlash } from 'lucide-react';
+import { Award, BadgeCheck, ChevronDown, ChevronUp, CircleMinus, CircleSlash } from 'lucide-react';
 import {
 	Table,
 	TableBody,
@@ -82,7 +82,7 @@ const TechnicalReviewCard: React.FC<Props> = ({ genomeNote, technicalReview }) =
 			<div className="flex justify-between items-center">
 				<div>Technical Review</div>
 				<div className="flex items-center space-x-2">
-					{overallPass ? <BadgeCheck color="green" /> : <CircleSlash color="red" />}
+					{overallPass ? <Award color="green" /> : <CircleSlash color="red" />}
 
 					<Button
 						variant="ghost"

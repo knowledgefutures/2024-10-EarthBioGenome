@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/com
 import { getTechnicalReviews, getManualReviews } from '~/lib/populateData';
 import TechnicalReviewCard from '~/components/TechnicalReviewCard';
 import ManualReviewCard from '~/components/ManualReviewCard';
+import PermissionToSequenceCard from './PermissionToSequenceCard';
 
 interface Props {
 	genome: Genome;
@@ -23,7 +24,7 @@ const manualReviews = getManualReviews(genomeNote.id);
 		<Button variant="outline" size="sm"><Download />Download</Button>
 		<Button variant="outline" size="sm"><Share />Share</Button>
 	</div>
-	<Card>
+	<Card className="mb-8">
 		<CardHeader>
 			<CardTitle>Reviews</CardTitle>
 			<CardDescription>
@@ -34,7 +35,13 @@ const manualReviews = getManualReviews(genomeNote.id);
 		<CardContent>
 			{
 				technicalReviews.map((technicalReview) => {
-					return <TechnicalReviewCard genomeNote={genomeNote} technicalReview={technicalReview} client:load />;
+					return (
+						<TechnicalReviewCard
+							genomeNote={genomeNote}
+							technicalReview={technicalReview}
+							client:load
+						/>
+					);
 				})
 			}
 			{
@@ -42,6 +49,15 @@ const manualReviews = getManualReviews(genomeNote.id);
 					return <ManualReviewCard manualReview={manualReview} client:load />;
 				})
 			}
+		</CardContent>
+	</Card>
+	<Card className="mb-8">
+		<CardHeader>
+			<CardTitle>Assertions</CardTitle>
+			<CardDescription> Statements made by the contributing team. </CardDescription>
+		</CardHeader>
+		<CardContent>
+			<PermissionToSequenceCard manualReview={{}} client:load />
 		</CardContent>
 	</Card>
 </div>
