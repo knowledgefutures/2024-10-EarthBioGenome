@@ -34,7 +34,7 @@ const GenomeList: React.FC<Props> = ({ genomes }) => {
 			{genomeListMode === 'cards' &&
 				currentGenomes.map((genome) => {
 					return (
-						<div key={genome.id} className="mb-4">
+						<div key={genome.id} className="mb-6">
 							<GenomeCard genome={genome} />
 						</div>
 					);

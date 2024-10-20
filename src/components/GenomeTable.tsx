@@ -21,8 +21,10 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 					<TableRow className="hover:bg-white">
 						<TableHead>Common Name</TableHead>
 						<TableHead className="">Species</TableHead>
-						<TableHead>QV</TableHead>
-						<TableHead className="text-right">Assembly Percent</TableHead>
+						<TableHead>DOI</TableHead>
+						<TableHead>NCBI</TableHead>
+						<TableHead className="text-right">QV</TableHead>
+						{/* <TableHead className="text-right">Assembly Percent</TableHead> */}
 					</TableRow>
 				</TableHeader>
 				<TableBody>
@@ -38,10 +40,17 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 								<TableCell className="italic">
 									<a href={`/genome/${genome.slug}`}>{genome.species}</a>
 								</TableCell>
-								<TableCell>{genome.genomeNote.QV}</TableCell>
-								<TableCell className="text-right">
-									{genome.genomeNote.assemblyPercent}%
+								<TableCell>
+									<a href={`https://dx.doi.org`}>{genome.genomeNote.DOI}</a>
 								</TableCell>
+								<TableCell>
+									<a
+										href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${genome.ncbiTaxId}`}
+									>
+										{genome.ncbiTaxId}
+									</a>
+								</TableCell>
+								<TableCell className="text-right">{genome.genomeNote.QV}</TableCell>
 							</TableRow>
 						);
 					})}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getContributors } from '~/lib/contributors';
 import type { PopulatedGenome } from '~/types/pubs';
 
 type Props = {
@@ -6,16 +7,58 @@ type Props = {
 };
 
 const GenomeCard: React.FC<Props> = ({ genome }) => {
+	const populatedContributors = getContributors(genome.genomeNote.id);
 	return (
-		<div className="max-w-sm rounded overflow-hidden border p-2">
-			<a href={`/genome/${genome.slug}`}>
-				<div className="text-xl font-bold truncate capitalize">
-					{genome.commonName} · <i>{genome.species}</i>
+		<div className="rounded overflow-hidden border border-neutral-300 p-4">
+			<div className="text-xl font-bold truncate capitalize">
+				<a href={`/genome/${genome.slug}`}>
+					{genome.commonName}
+					<span className="italic opacity-70">
+						{' '}
+						· {genome.species} ({genome.taxonomyAuthor})
+					</span>
+				</a>
+			</div>
+
+			<div className="text-base text-neutral-500 my-1 italic truncate">
+				{populatedContributors.map((populatedContributor, index) => {
+					const { slug, name } = populatedContributor.author;
+					return (
+						<span className="inline-block italic">
+							{index > 0 && <span>, </span>}
+							<a href={`/author/${slug}`}>{name}</a>
+						</span>
+					);
+				})}
+			</div>
+			<div className="flex space-x-8">
+				<div>
+					<span className="opacity-50 text-sm pr-2">
+						<span className="font-bold uppercase">DOI:</span>
+					</span>
+					<span className="">
+						<a href={`https://dx.doi.org`}>{genome.genomeNote.DOI}</a>
+					</span>
 				</div>
-				<div className="text-base text-neutral-500 -mt-1">
-					<span className="italic">People's names here</span>
+				<div>
+					<span className="opacity-50 text-sm pr-2">
+						<span className="font-bold uppercase">NCBI:</span>
+					</span>
+					<span className="">
+						<a
+							href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${genome.ncbiTaxId}`}
+						>
+							{genome.ncbiTaxId}
+						</a>
+					</span>
 				</div>
-			</a>
+				<div>
+					<span className="opacity-50 text-sm pr-2">
+						<span className="font-bold uppercase">QV:</span>
+					</span>
+					<span className="">{genome.genomeNote.QV}</span>
+				</div>
+			</div>
 		</div>
 	);
 };
