@@ -10,7 +10,7 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 	const populatedContributors = getContributors(genome.genomeNote.id);
 	return (
 		<div className="rounded overflow-hidden border border-neutral-300 p-4">
-			<div className="text-xl font-bold truncate capitalize">
+			<div className="text-xl font-bold truncate">
 				<a href={`/genome/${genome.slug}`}>
 					{genome.commonName}
 					<span className="italic opacity-70">

@@ -34,7 +34,7 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 								key={genome.id}
 								className={index % 2 === 0 ? '' : 'bg-muted/40'}
 							>
-								<TableCell className="font-medium capitalize">
+								<TableCell className="font-medium">
 									<a href={`/genome/${genome.slug}`}>{genome.commonName}</a>
 								</TableCell>
 								<TableCell className="italic">
