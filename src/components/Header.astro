@@ -20,7 +20,7 @@ const links = [
 ---
 
 <section class={`bg-[url('/header-bg.jpg')] bg-cover`}>
-	<nav class={`w-content py-4 flex justify-between items-center border-b-neutral-300 text-white`}>
+	<nav class={`w-content py-4 flex flex-col md:flex-row justify-between items-center border-b-neutral-300 text-white`}>
 		<a href="/"><Image class="h-16 w-auto" src={logoWhite} alt="logo" /></a>
 		<div class="flex space-x-8">
 			{
@@ -41,7 +41,7 @@ const links = [
 	</nav>
 	{
 		isLanding && (
-			<div class="flex items-center max-w-screen-sm mx-auto">
+			<div class="flex items-center max-w-screen-sm mx-auto px-4 md:px-0">
 				<div class="w-full mt-48 mb-32">
 					<LandingInput client:load />
 					<div class="text-white/70 mt-4 text-lg">

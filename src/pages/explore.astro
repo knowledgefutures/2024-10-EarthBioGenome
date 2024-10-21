@@ -18,7 +18,7 @@ const populatedGenomes: PopulatedGenome[] = genomeNotes.map((genomeNote) => {
 		<section class="mt-8 mb-32 min-h-96 w-content">
 			<h2 class="text-4xl font-bold mb-8">Explore</h2>
 
-			<div class="grid grid-cols-[250px,1fr] gap-8">
+			<div class="grid md:grid-cols-[250px,1fr] gap-8">
 				<div class="bg-neutral-200 rounded mb-6 p-2">Filters...</div>
 				<GenomeList genomes={populatedGenomes} client:only="react" />
 			</div>

@@ -21,7 +21,7 @@ const GenomeList: React.FC<Props> = ({ genomes }) => {
 	const currentGenomes = genomes.slice(startIndex, endIndex);
 	const maxPages = Math.ceil(genomes.length / genomesPerPage);
 	return (
-		<div>
+		<div className="w-full overflow-hidden">
 			<div className="flex justify-between items-center mb-8">
 				<div className="font-bold">{genomes.length} Genome Notes</div>
 				<div className="flex space-x-4">

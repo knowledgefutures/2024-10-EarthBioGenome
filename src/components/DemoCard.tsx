@@ -6,12 +6,12 @@ export default function DemoCard() {
 	const links = [
 		{ text: 'Writeup', href: writeupLink },
 		{ text: 'Code', href: githubLink },
-		{ text: 'Admin', href: '/admin' },
+		{ text: 'Admin', href: '/admin/types' },
 		{ text: 'Reset Demo', onClick: () => {}, skip: true },
 	];
 
 	return (
-		<div className="w-96 bg-white border border-neutral-300 p-4 rounded text-neutral-700 text-sm">
+		<div className="max-w-96 bg-white border border-neutral-300 p-4 rounded text-neutral-700 text-sm">
 			<div className="">
 				<div className="float-left pr-2">
 					<a href={writeupLink}>

@@ -41,7 +41,7 @@ const populatedContributors = getContributors(activeGenomeNote.id);
 						{ label: 'RNA Collector', value: populatedContributor.rnaCollector },
 					];
 					return (
-						<div class="rounded overflow-hidden border border-neutral-300 p-4 mb-6">
+						<div class="rounded overflow-hidden border border-neutral-300 p-4 mb-6 max-w-screen-md">
 							<div class="text-lg font-bold">
 								<a href={`/author/${slug}`}>{name}</a>
 							</div>
