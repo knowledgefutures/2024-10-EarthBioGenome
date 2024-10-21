@@ -13,7 +13,7 @@ interface Props {
 const { genome, genomeNote } = Astro.props;
 ---
 
-<div class="prose font-serif text-lg">
+<div class="prose font-serif text-lg break-words">
 	<h2>Abstract</h2>
 	<p>
 		We present a genome assembly from an individual {genomeNote.observedSex}
@@ -308,14 +308,14 @@ const { genome, genomeNote } = Astro.props;
 
 	<h2>Figures</h2>
 	<figure class="mb-20">
-		<Image src={figure1} alt="Figure 1" class="max-w-96" />
+		<Image src={figure1} alt="Figure 1" class="max-w-full md:max-w-96" />
 		<figcaption>
 			<b>Figure 1: Genome assembly of {genome.species}, {genomeNote.assemblyName}: metrics.</b
 			> The BlobToolKit snail plot shows N50 metrics and BUSCO gene completeness.
 		</figcaption>
 	</figure>
 	<figure class="mb-20">
-		<Image src={figure2} alt="Figure 2" class="max-w-96" />
+		<Image src={figure2} alt="Figure 2" class="max-w-full md:max-w-96" />
 		<figcaption>
 			<b>
 				Figure 2: Genome assembly of {genome.species}, {genomeNote.assemblyName}:
@@ -327,7 +327,7 @@ const { genome, genomeNote } = Astro.props;
 		</figcaption>
 	</figure>
 	<figure class="mb-20">
-		<Image src={figure3} alt="Figure 3" class="max-w-96" />
+		<Image src={figure3} alt="Figure 3" class="max-w-full md:max-w-96" />
 		<figcaption>
 			<b>
 				Figure 3: Genome assembly of {genome.species}
@@ -337,7 +337,7 @@ const { genome, genomeNote } = Astro.props;
 		</figcaption>
 	</figure>
 	<figure class="mb-20">
-		<Image src={figure4} alt="Figure 4" class="max-w-96" />
+		<Image src={figure4} alt="Figure 4" class="max-w-full md:max-w-96" />
 		<figcaption>
 			<b>
 				Figure 4: Genome assembly of {genome.species}
