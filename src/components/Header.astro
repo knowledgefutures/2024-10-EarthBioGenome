@@ -20,8 +20,13 @@ const links = [
 ---
 
 <section class={`bg-[url('/header-bg.jpg')] bg-cover`}>
-	<nav class={`w-content py-4 flex flex-col md:flex-row justify-between items-center border-b-neutral-300 text-white`}>
-		<a href="/"><Image class="h-16 w-auto" src={logoWhite} alt="logo" /></a>
+	<nav
+		class={`w-content py-4 flex flex-col md:flex-row justify-between items-center border-b-neutral-300 text-white`}
+	>
+		<div class="relative">
+			<a href="/"><Image class="h-16 w-auto" src={logoWhite} alt="logo" /></a>
+			<div class="text-sm tracking-wide absolute top-11 left-[35px] italic opacity-60">A resource of the Earth BioGenome Project</div>
+		</div>
 		<div class="flex space-x-8">
 			{
 				links.map((link) => {

@@ -42,7 +42,7 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 				</div>
 				<div>
 					<span className="opacity-50 text-sm pr-2">
-						<span className="font-bold uppercase">NCBI:</span>
+						<span className="font-bold uppercase">NCBI TaxID:</span>
 					</span>
 					<span className="">
 						<a

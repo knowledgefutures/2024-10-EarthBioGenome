@@ -1,9 +1,9 @@
 ---
-import GenomeList from '~/components/GenomeList';
 import Layout from '~/layouts/Layout.astro';
 import genomeNotes from '~/data/genomeNotes.json';
 import type { PopulatedGenome } from '~/types/pubs';
 import { getGenome } from '~/lib/populateData';
+import GenomeExplore from '~/components/GenomeExplore';
 const populatedGenomes: PopulatedGenome[] = genomeNotes.map((genomeNote) => {
 	const genome = getGenome(genomeNote.genomeId);
 	return {
@@ -19,8 +19,7 @@ const populatedGenomes: PopulatedGenome[] = genomeNotes.map((genomeNote) => {
 			<h2 class="text-4xl font-bold mb-8">Explore</h2>
 
 			<div class="grid md:grid-cols-[250px,1fr] gap-8">
-				<div class="bg-neutral-200 rounded mb-6 p-2">Filters...</div>
-				<GenomeList genomes={populatedGenomes} client:only="react" />
+				<GenomeExplore allGenomes={populatedGenomes} client:only="react" />
 			</div>
 		</section>
 	</main></Layout

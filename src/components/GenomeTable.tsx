@@ -22,7 +22,7 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 						<TableHead>Common Name</TableHead>
 						<TableHead className="">Species</TableHead>
 						<TableHead>DOI</TableHead>
-						<TableHead>NCBI</TableHead>
+						<TableHead>NCBI TaxID</TableHead>
 						<TableHead className="text-right">QV</TableHead>
 						{/* <TableHead className="text-right">Assembly Percent</TableHead> */}
 					</TableRow>
