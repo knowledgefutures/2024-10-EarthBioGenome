@@ -7,7 +7,7 @@ export default function DemoCard() {
 		{ text: 'Writeup', href: writeupLink },
 		{ text: 'Code', href: githubLink },
 		{ text: 'Admin', href: '/admin' },
-		// { text: 'Reset Demo', onClick: () => {} },
+		{ text: 'Reset Demo', onClick: () => {}, skip: true },
 	];
 
 	return (
@@ -39,20 +39,22 @@ export default function DemoCard() {
 			</div>
 
 			<div className="font-mono mt-4 pt-4 border-t border-t-neutral-300 flex space-x-4 justify-between">
-				{links.map(({ text, href, onClick }) => {
-					if (href) {
+				{links
+					.filter((item) => !item.skip)
+					.map(({ text, href, onClick }) => {
+						if (href) {
+							return (
+								<a key={text} href={href}>
+									{text}
+								</a>
+							);
+						}
 						return (
-							<a key={text} href={href}>
+							<button className="hover:underline" onClick={onClick} key={text}>
 								{text}
-							</a>
+							</button>
 						);
-					}
-					return (
-						<button className="hover:underline" onClick={onClick} key={text}>
-							{text}
-						</button>
-					);
-				})}
+					})}
 			</div>
 		</div>
 	);

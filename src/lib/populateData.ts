@@ -72,7 +72,7 @@ export const getTechnicalReviews = (genomeNoteId: string): TechnicalReview[] => 
 };
 
 export const getManualReviews = (genomeNoteId: string): ManualReview[] => {
-	return manualReviews.filter((manualReview) => {
+	return manualReviews.filter((manualReview: ManualReview) => {
 		return manualReview.genomeNoteId === genomeNoteId;
 	});
 };
