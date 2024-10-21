@@ -1,0 +1,99 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import genomeNotes from '~/data/genomeNotes.json';
+import genomes from '~/data/genomes.json';
+import GenomeHeader from '~/components/GenomeHeader.astro';
+import { getContributors } from '~/lib/contributors';
+import { Badge } from '~/components/ui/badge';
+import { Square, SquareCheck } from 'lucide-react';
+
+export function getStaticPaths() {
+	return genomes.map((genome) => {
+		return { params: { slug: genome.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeGenome = genomes.find((genome) => {
+	return genome.slug === slug;
+});
+if (!activeGenome) {
+	return null;
+}
+const activeGenomeNote = genomeNotes.find((genomeNote) => {
+	return genomeNote.genomeId === activeGenome.id;
+});
+if (!activeGenomeNote) {
+	return null;
+}
+const populatedContributors = getContributors(activeGenomeNote.id);
+---
+
+<Layout title={`${activeGenome.commonName} · UGNR`}>
+	<main class="">
+		<GenomeHeader genome={activeGenome} />
+		<section class="mt-8 mb-32 min-h-96 w-content">
+			{
+				populatedContributors.map((populatedContributor) => {
+					const { slug, name, affiliation, orcid } = populatedContributor.author;
+					const collectors = [
+						{ label: 'HiC Collector', value: populatedContributor.hicCollector },
+						{ label: 'PacBio Collector', value: populatedContributor.pacbioCollector },
+						{ label: 'RNA Collector', value: populatedContributor.rnaCollector },
+					];
+					return (
+						<div class="rounded overflow-hidden border border-neutral-300 p-4 mb-6">
+							<div class="text-lg font-bold">
+								<a href={`/author/${slug}`}>{name}</a>
+							</div>
+							<div class="space-y-1">
+								<div>
+									<span class="font-bold uppercase opacity-50 text-sm pr-2">
+										Affiliation:
+									</span>
+									{affiliation}
+								</div>
+								<div>
+									<span class="font-bold uppercase opacity-50 text-sm pr-2">
+										ORCID:
+									</span>{' '}
+									{orcid}
+								</div>
+								<div class="flex items-center">
+									<span class="font-bold uppercase opacity-50 text-sm pr-2">
+										Collection Roles:
+									</span>
+									{collectors.map((collector) => {
+										return (
+											<div class="flex space-x-1 items-center mr-8">
+												<div>
+													{collector.value ? (
+														<SquareCheck size={16} />
+													) : (
+														<Square size={16} />
+													)}
+												</div>
+												<div>{collector.label}</div>
+											</div>
+										);
+									})}
+								</div>
+								<div class="flex items-center">
+									<div class="font-bold uppercase opacity-50 text-sm pr-2">
+										Roles:
+									</div>
+									{populatedContributor.roles.map((role) => {
+										return (
+											<Badge variant="secondary" className="mr-4">
+												{role}
+											</Badge>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+					);
+				})
+			}
+		</section>
+	</main>
+</Layout>
