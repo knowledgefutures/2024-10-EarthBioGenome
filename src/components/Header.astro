@@ -41,12 +41,23 @@ const links = [
 	</nav>
 	{
 		isLanding && (
-			<div class="flex items-center">
-				<Input
-					className="mt-48 mb-32 max-w-screen-sm mx-auto text-xl py-8 bg-white/75"
-					placeholder="Search by species or common name..."
-				/>
+			<div class="flex items-center max-w-screen-sm mx-auto">
+				<div class="w-full mt-48 mb-32">
+					<Input
+						className="text-xl py-8 bg-white/75"
+						placeholder="Search by species, project, or author..."
+					/>
+					<div class="text-white/60 mt-4 text-lg">
+						<span class="">Examples:</span>
+						<a href="/genome/large-blue-butterfly">Large Blue Butterfly</a>
+						<span>•</span>
+						<a href="/project/sao-paulo-genome-alliance">São Paulo Genome Alliance</a>
+						<span>•</span>
+						<a href="/author/jane-thompson">Jane Thompson</a>
+					</div>
+				</div>
 			</div>
+			//
 		)
 	}
 </section>

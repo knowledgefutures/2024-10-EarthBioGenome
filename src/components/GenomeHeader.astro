@@ -13,8 +13,9 @@ import {
 } from '~/components/ui/breadcrumb';
 import { Badge } from '~/components/ui/badge';
 
-import { getProject } from '~/lib/populateData';
+import { getProject, getTechnicalReviews } from '~/lib/populateData';
 import { getContributors } from '~/lib/contributors.tsx';
+import { getOverallPass } from '~/lib/technicalReviews';
 
 interface Props {
 	genome: Genome;
@@ -36,6 +37,9 @@ if (!activeProjectGenomeNote) {
 }
 const activeProject = getProject(activeProjectGenomeNote.projectId);
 const populatedContributors = getContributors(activeGenomeNote.id);
+const activeTechnicalReview = getTechnicalReviews(activeGenomeNote.id)[0];
+
+const overallPass = getOverallPass(activeGenomeNote, activeTechnicalReview);
 
 const tabs = [
 	{
@@ -98,7 +102,13 @@ const tabs = [
 				<span class="italic opacity-70">· {genome.species} ({genome.taxonomyAuthor})</span>
 			</h2>
 			<div class="flex space-x-4">
-				<Badge><Award size={20} className="mr-1" /> EBP Reference Genome</Badge>
+				{
+					overallPass && (
+						<Badge>
+							<Award size={20} className="mr-1" /> EBP Reference Genome
+						</Badge>
+					)
+				}
 				<Badge><ShieldCheck size={20} className="mr-1" />Permission to Sequence</Badge>
 			</div>
 

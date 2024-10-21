@@ -34,7 +34,7 @@ const activeGenomes = activeProjectGenomeNotes.map((projectGenomeNote) => {
 <Layout title={`${activeProject.name} · UGNR`}>
 	<main class="">
 		<ProjectHeader project={activeProject} />
-		<section class="w-content-narrow min-h-96">
+		<section class="w-content-narrow min-h-96 mb-32">
 			<GenomeList genomes={activeGenomes} client:only="react" />
 		</section>
 	</main>

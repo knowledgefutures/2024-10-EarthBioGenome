@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import type { GenomeNote, TechnicalReview } from '~/types/pubs';
 import { Button } from '~/components/ui/button';
-import { Award, BadgeCheck, Check, ChevronDown, ChevronUp, CircleMinus, CircleSlash, SquareCheck, SquareSlash } from 'lucide-react';
+import {
+	Award,
+	BadgeCheck,
+	Check,
+	ChevronDown,
+	ChevronUp,
+	CircleMinus,
+	CircleSlash,
+	SquareCheck,
+	SquareSlash,
+} from 'lucide-react';
 import {
 	Table,
 	TableBody,
@@ -10,7 +20,7 @@ import {
 	TableHeader,
 	TableRow,
 } from '~/components/ui/table';
-
+import { getTechReviewRows, getOverallPass } from '~/lib/technicalReviews';
 type Props = {
 	genomeNote: GenomeNote;
 	technicalReview: TechnicalReview;
@@ -18,65 +28,8 @@ type Props = {
 
 const TechnicalReviewCard: React.FC<Props> = ({ genomeNote, technicalReview }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const rows = [
-		{
-			metric: 'Contig N50 length (Mb)',
-			value: `${genomeNote.contigN50} Mb`,
-			benchmark: '>1 Mb',
-			passed: technicalReview.contigN50Pass,
-		},
-		{
-			metric: 'Scaffold N50 length (Mb)',
-			value: `${genomeNote.scaffoldN50} Mb`,
-			benchmark: '>10 Mb',
-			passed: technicalReview.scaffoldN50Pass,
-		},
-		{
-			metric: 'Number of Gaps',
-			value: `${genomeNote.gapCount} Total`,
-			benchmark: '<200 per Gb',
-			passed: technicalReview.gapsPass,
-		},
-		{
-			metric: 'Consensus quality (QV)',
-			value: genomeNote.QV,
-			benchmark: '≥50',
-			passed: technicalReview.qvPass,
-		},
-		{
-			metric: 'k-mer completeness',
-			value: `${genomeNote.k_mer}%`,
-			benchmark: '≥95%',
-			passed: technicalReview.kmerPass,
-		},
-		{
-			metric: 'BUSCO',
-			value: genomeNote.buscoString,
-			benchmark: 'C ≥ 95%',
-			passed: technicalReview.buscoPass,
-		},
-		{
-			metric: 'Percentage of assembly mapped to chromosomes',
-			value: `${genomeNote.assemblyPercent}%`,
-			benchmark: '≥95%',
-			passed: technicalReview.percentAssemblyPass,
-		},
-		{
-			metric: 'Sex chromosomes',
-			value: genomeNote.sexChromosomes,
-			benchmark: 'Identified',
-			passed: technicalReview.sexChromosomePass,
-		},
-		{
-			metric: 'Organelles',
-			value: `${genomeNote.lengthMitoKb} kb`,
-			benchmark: 'One complete allele',
-			passed: technicalReview.organellePass,
-		},
-	];
-	const overallPass = rows.reduce((prev, curr) => {
-		return prev && curr.passed;
-	}, true);
+	const rows = getTechReviewRows(genomeNote, technicalReview);
+	const overallPass = getOverallPass(genomeNote, technicalReview);
 	return (
 		<div className="border border-neutral-200 py-1 px-2 mb-2 rounded">
 			<div className="flex justify-between items-center">
