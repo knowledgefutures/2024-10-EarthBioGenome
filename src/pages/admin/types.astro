@@ -1,0 +1,50 @@
+---
+import TypeBlock from '~/components/TypeBlock.astro';
+import AdminLayout from '~/layouts/AdminLayout.astro';
+
+import genomes from '~/data/genomes.json';
+import authors from '~/data/authors.json';
+import comments from '~/data/comments';
+import contributors from '~/data/contributors.json';
+import genomeNotes from '~/data/genomeNotes.json';
+import manualReviews from '~/data/manualReviews.json';
+import posts from '~/data/posts.json';
+import projects from '~/data/projects.json';
+import protocols from '~/data/protocols.json';
+import technicalReviews from '~/data/technicalReviews.json';
+
+import type { PubType } from '~/types/pubs';
+const getTypeFields = (item: Record<string, any>) => {
+	return Object.keys(item).map((key) => {
+		return { key, value: typeof item[key] };
+	});
+};
+
+const types: PubType[] = [
+	{ name: 'Project', fields: getTypeFields(projects[0]) },
+	{ name: 'Genome', fields: getTypeFields(genomes[0]) },
+	{ name: 'Genome Note', fields: getTypeFields(genomeNotes[0]) },
+	{ name: 'Author', fields: getTypeFields(authors[0]) },
+	{ name: 'Contributor', fields: getTypeFields(contributors[0]) },
+	{ name: 'Technical Review', fields: getTypeFields(technicalReviews[0]) },
+	{ name: 'Manual Review', fields: getTypeFields(manualReviews[0]) },
+	{ name: 'Comment', fields: getTypeFields(comments[0]) },
+	{ name: 'Post', fields: getTypeFields(posts[0]) },
+	{ name: 'Protocol', fields: getTypeFields(protocols[0]) },
+];
+---
+
+<AdminLayout title="Types · Admin">
+	<div>
+		<div class="flex items-center">
+			<h1 class="text-lg font-semibold md:text-2xl">Types</h1>
+		</div>
+		<div class="grid grid-cols-3 gap-6 my-8">
+			{
+				types.map((type) => {
+					return <TypeBlock type={type} />;
+				})
+			}
+		</div>
+	</div>
+</AdminLayout>

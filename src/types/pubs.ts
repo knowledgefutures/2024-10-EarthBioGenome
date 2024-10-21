@@ -187,3 +187,8 @@ export interface ProjectGenomeNote {
 export type PopulatedGenome = Genome & { genomeNote: GenomeNote };
 
 export type NestedComment = Comment & { replies: NestedComment[] };
+
+export type PubType = {
+	name: string;
+	fields: { key: string; value: string }[];
+};
