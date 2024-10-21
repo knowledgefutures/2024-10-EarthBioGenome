@@ -45,7 +45,7 @@ const GenomePagination: React.FC<Props> = ({ pageNumber, maxPages }) => {
 				)}
 				{pageNumbers.map((pn) => {
 					return (
-						<PaginationItem>
+						<PaginationItem key={pn}>
 							<PaginationLink
 								isActive={pageNumber === pn}
 								href={pn === 1 ? window.location.pathname : `?page=${pn}`}

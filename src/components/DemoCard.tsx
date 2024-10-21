@@ -1,11 +1,13 @@
 export default function DemoCard() {
 	const title = '2024-10 Earth BioGenome';
-	const writeupLink = 'https://www.knowledgefutures.org/rd/002';
+	const writeupLink = 'https://www.knowledgefutures.org/rd/2024-10-EarthBioGenome';
+	const githubLink = 'https://github.com/knowledgefutures/2024-10-EarthBioGenome';
+
 	const links = [
 		{ text: 'Writeup', href: writeupLink },
-		{ text: 'Code', href: '/' },
-		{ text: 'Admin', href: '/' },
-		{ text: 'Reset Demo', onClick: () => {} },
+		{ text: 'Code', href: githubLink },
+		{ text: 'Admin', href: '/admin' },
+		// { text: 'Reset Demo', onClick: () => {} },
 	];
 
 	return (

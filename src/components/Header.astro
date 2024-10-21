@@ -8,7 +8,7 @@
 
 import logoWhite from '~/assets/logoWhite.png';
 import { Image } from 'astro:assets';
-import { Input } from '~/components/ui/input';
+import LandingInput from '~/components/LandingInput';
 
 const isLanding = Astro.url.pathname === '/';
 const links = [
@@ -43,11 +43,8 @@ const links = [
 		isLanding && (
 			<div class="flex items-center max-w-screen-sm mx-auto">
 				<div class="w-full mt-48 mb-32">
-					<Input
-						className="text-xl py-8 bg-white/75"
-						placeholder="Search by species, project, or author..."
-					/>
-					<div class="text-white/60 mt-4 text-lg">
+					<LandingInput client:load />
+					<div class="text-white/70 mt-4 text-lg">
 						<span class="">Examples:</span>
 						<a href="/genome/large-blue-butterfly">Large Blue Butterfly</a>
 						<span>•</span>

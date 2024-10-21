@@ -24,7 +24,7 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 				{populatedContributors.map((populatedContributor, index) => {
 					const { slug, name } = populatedContributor.author;
 					return (
-						<span className="inline-block italic">
+						<span key={slug} className="inline-block italic">
 							{index > 0 && <span>, </span>}
 							<a href={`/author/${slug}`}>{name}</a>
 						</span>
