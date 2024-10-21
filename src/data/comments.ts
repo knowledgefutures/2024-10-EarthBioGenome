@@ -122,7 +122,7 @@ const werewolfConvo = [
 		authorId: '6w4z1y2u-ttty-4x6f-8y33-a9z0a0a9x49z',
 		genomeId: '550e8400-f111-41d4-a716-446655440155',
 		postId: '',
-		parentCommentId: '1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p',
+		parentCommentId: '',
 		content: 'Did anyone else find the high number of repetitive elements surprising?',
 	},
 	{
@@ -157,7 +157,7 @@ const werewolfConvo = [
 		authorId: '0a8d5c2y-xxxc-4b0f-8c37-e3d4e4e3b83d',
 		genomeId: '550e8400-f111-41d4-a716-446655440155',
 		postId: '',
-		parentCommentId: '5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t',
+		parentCommentId: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
 		content:
 			'I wonder if the high GC content in certain regions has any functional significance.',
 	},

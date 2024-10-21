@@ -1,0 +1,18 @@
+---
+import type { NestedComment as NestedCommentType } from '~/types/pubs';
+import NestedComment from '~/components/NestedComment';
+
+interface Props {
+	nestedComments: NestedCommentType[];
+}
+
+const { nestedComments } = Astro.props;
+---
+
+<div>
+	{
+		nestedComments.map((nestedComment) => {
+			return <NestedComment nestedComment={nestedComment} client:load />;
+		})
+	}
+</div>

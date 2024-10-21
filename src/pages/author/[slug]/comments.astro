@@ -40,7 +40,9 @@ const populatedComments = activeComments.map((comment) => {
 							<div>
 								Commented on
 								{genome && (
-									<a href={`/genomes/${genome.slug}`}>{genome.commonName}</a>
+									<a href={`/genome/${genome.slug}/conversation`}>
+										{genome.commonName}
+									</a>
 								)}
 								{post && <a href={`/posts/${post.slug}`}>{post.title}</a>}
 							</div>

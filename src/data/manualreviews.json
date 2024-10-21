@@ -61,7 +61,7 @@
 	},
 	{
 		"id": "g7h8i9j0-k1l2-3m4n-5o6p-q7r8s9t0u1v2",
-		"authorId": "9f7i4h5d-ccgd-4g9h-9f16-j2i3j3j2g72i",
+		"authorId": "6c4f1e2a-99da-4d6f-8e13-g9f0g0g9d49f",
 		"genomeNoteId": "550e8400-e88b-41d4-a716-446655440077",
 		"content": "The genome assembly presented in this note is of high quality, with impressive contig and scaffold N50 values. The use of multiple sequencing technologies, including PacBio, Hi-C, and RNA sequencing, ensures comprehensive coverage and accuracy. The BUSCO completeness score is high, indicating a well-assembled genome. The methods used are appropriate and should be sufficient for replication by other researchers.",
 		"sufficientMethodsForReplication": true,
@@ -71,7 +71,7 @@
 	},
 	{
 		"id": "h8i9j0k1-l2m3-4n5o-6p7q-r8s9t0u1v2w3",
-		"authorId": "0g8j5i6e-ddhe-4h0i-9f17-k3j4k4k3h83j",
+		"authorId": "7d5g2f2b-aaeb-4e7f-9f14-h0g1h1h0e50g",
 		"genomeNoteId": "550e8400-e88b-41d4-a716-446655440077",
 		"content": "This genome note provides a detailed account of the assembly process and the resulting metrics. The use of PacBio, Hi-C, and RNA sequencing technologies is commendable and ensures high-quality data. The assembly statistics, including contig N50 and scaffold N50, are within acceptable ranges, and the BUSCO scores indicate a high level of completeness. The methods described are thorough and should be sufficient for replication by other researchers.",
 		"sufficientMethodsForReplication": true,
