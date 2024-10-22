@@ -21,7 +21,8 @@
 		"class": "Insecta",
 		"phylum": "Arthropoda",
 		"taxonomyAuthor": "Linnaeus, 1758",
-		"ncbiTaxId": "203779"
+		"ncbiTaxId": "203779",
+		"pressFeed": true
 	},
 	{
 		"id": "550e8400-e44b-41d4-a716-446655440033",
@@ -69,7 +70,8 @@
 		"class": "Amphibia",
 		"phylum": "Chordata",
 		"taxonomyAuthor": "Linnaeus, 1758",
-		"ncbiTaxId": "8384"
+		"ncbiTaxId": "8384",
+		"pressFeed": true
 	},
 	{
 		"id": "550e8400-e88b-41d4-a716-446655440077",
@@ -105,7 +107,8 @@
 		"class": "Mammalia",
 		"phylum": "Chordata",
 		"taxonomyAuthor": "Merlinus, 1022",
-		"ncbiTaxId": "999001"
+		"ncbiTaxId": "999001",
+		"pressFeed": true
 	},
 	{
 		"id": "550e8400-ebbb-41d4-a716-446655440100",
@@ -177,7 +180,8 @@
 		"class": "Mammalia",
 		"phylum": "Chordata",
 		"taxonomyAuthor": "Merlinus, 1022",
-		"ncbiTaxId": "999007"
+		"ncbiTaxId": "999007",
+		"pressFeed": true
 	},
 	{
 		"id": "550e8400-f222-41d4-a716-446655440166",

@@ -9,6 +9,7 @@ export interface Genome {
 	family: string;
 	taxonomyAuthor: string;
 	ncbiTaxId: string;
+	pressFeed?: boolean;
 }
 
 export interface GenomeNote {
@@ -184,7 +185,7 @@ export interface ProjectGenomeNote {
 	projectId: string;
 }
 
-export type PopulatedGenome = Genome & { genomeNote: GenomeNote, project: Project };
+export type PopulatedGenome = Genome & { genomeNote: GenomeNote; project: Project };
 
 export type NestedComment = Comment & { replies: NestedComment[] };
 
