@@ -3,12 +3,15 @@ import Layout from '~/layouts/Layout.astro';
 import genomeNotes from '~/data/genomeNotes.json';
 import type { PopulatedGenome } from '~/types/pubs';
 import { getGenome } from '~/lib/populateData';
+import { getProjectFromGenome } from '~/lib/genomeHelpers';
 import GenomeExplore from '~/components/GenomeExplore';
 const populatedGenomes: PopulatedGenome[] = genomeNotes.map((genomeNote) => {
 	const genome = getGenome(genomeNote.genomeId);
+	const project = getProjectFromGenome(genome.id);
 	return {
 		...genome,
 		genomeNote,
+		project,
 	};
 });
 ---

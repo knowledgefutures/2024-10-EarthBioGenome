@@ -60,8 +60,11 @@ export const getTechReviewRows = (genomeNote: GenomeNote, technicalReview: Techn
 };
 
 export const getOverallPass = (genomeNote: GenomeNote, technicalReview: TechnicalReview) => {
-	const rows = getTechReviewRows(genomeNote, technicalReview);
-	return rows.reduce((prev, curr) => {
-		return prev && curr.passed;
-	}, true);
+	// const rows = getTechReviewRows(genomeNote, technicalReview);
+	// return rows.reduce((prev, curr) => {
+	// 	return prev && curr.passed;
+	// }, true);
+	return (
+		technicalReview.contigN50Pass && technicalReview.scaffoldN50Pass && technicalReview.qvPass
+	);
 };

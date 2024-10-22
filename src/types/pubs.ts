@@ -184,7 +184,7 @@ export interface ProjectGenomeNote {
 	projectId: string;
 }
 
-export type PopulatedGenome = Genome & { genomeNote: GenomeNote };
+export type PopulatedGenome = Genome & { genomeNote: GenomeNote, project: Project };
 
 export type NestedComment = Comment & { replies: NestedComment[] };
 

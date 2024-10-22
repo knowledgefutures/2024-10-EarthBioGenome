@@ -8,6 +8,8 @@ import {
 	TableHeader,
 	TableRow,
 } from '~/components/ui/table';
+import { getProjectFromGenome, getTechReviewPassFromGenome } from '~/lib/genomeHelpers';
+import { Award, SquareSlash } from 'lucide-react';
 
 type Props = {
 	genomes: PopulatedGenome[];
@@ -18,17 +20,20 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 		<div className="border rounded">
 			<Table>
 				<TableHeader>
-					<TableRow className="hover:bg-white">
+					<TableRow className="hover:bg-white whitespace-nowrap ">
 						<TableHead>Common Name</TableHead>
 						<TableHead className="">Species</TableHead>
+						<TableHead className="">Project</TableHead>
 						<TableHead>DOI</TableHead>
 						<TableHead>NCBI TaxID</TableHead>
-						<TableHead className="text-right">QV</TableHead>
+						<TableHead className="text-right ">EBP Ref</TableHead>
 						{/* <TableHead className="text-right">Assembly Percent</TableHead> */}
 					</TableRow>
 				</TableHeader>
 				<TableBody>
 					{genomes.map((genome, index) => {
+						const project = genome.project;
+						const techReviewPass = getTechReviewPassFromGenome(genome.id);
 						return (
 							<TableRow
 								key={genome.id}
@@ -40,6 +45,9 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 								<TableCell className="italic">
 									<a href={`/genome/${genome.slug}`}>{genome.species}</a>
 								</TableCell>
+								<TableCell className="italic">
+									<a href={`/project/${project.slug}`}>{project.name}</a>
+								</TableCell>
 								<TableCell>
 									<a href={`https://dx.doi.org`}>{genome.genomeNote.DOI}</a>
 								</TableCell>
@@ -50,7 +58,13 @@ const GenomeTable: React.FC<Props> = ({ genomes }) => {
 										{genome.ncbiTaxId}
 									</a>
 								</TableCell>
-								<TableCell className="text-right">{genome.genomeNote.QV}</TableCell>
+								<TableCell className="flex justify-end">
+									{techReviewPass ? (
+										<Award color="green" />
+									) : (
+										<SquareSlash color="red" />
+									)}
+								</TableCell>
 							</TableRow>
 						);
 					})}

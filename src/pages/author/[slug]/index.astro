@@ -8,6 +8,7 @@ import AuthorHeader from '~/components/AuthorHeader.astro';
 import { getGenomeNote, getGenome } from '~/lib/populateData';
 import GenomeList from '~/components/GenomeList';
 import type { PopulatedGenome } from '~/types/pubs';
+import { getProjectFromGenome } from '~/lib/genomeHelpers';
 
 export function getStaticPaths() {
 	return authors.map((author) => {
@@ -34,6 +35,7 @@ const activeGenomes: PopulatedGenome[] = populatedContributors.map((populatedCon
 	return {
 		...populatedContributors.genome,
 		genomeNote: populatedContributors.genomeNote,
+		project: getProjectFromGenome(populatedContributors.genome.id),
 	};
 });
 ---

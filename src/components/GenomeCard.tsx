@@ -1,5 +1,7 @@
+import { Award, SquareSlash } from 'lucide-react';
 import React from 'react';
 import { getContributors } from '~/lib/contributors';
+import { getProjectFromGenome, getTechReviewPassFromGenome } from '~/lib/genomeHelpers';
 import type { PopulatedGenome } from '~/types/pubs';
 
 type Props = {
@@ -8,6 +10,9 @@ type Props = {
 
 const GenomeCard: React.FC<Props> = ({ genome }) => {
 	const populatedContributors = getContributors(genome.genomeNote.id);
+	const project = genome.project;
+	const techReviewPass = getTechReviewPassFromGenome(genome.id);
+
 	return (
 		<div className="rounded overflow-hidden border border-neutral-300 p-4">
 			<div className="text-xl font-bold truncate">
@@ -32,7 +37,15 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 				})}
 			</div>
 			<div className="flex space-x-8">
-				<div>
+				<div className="whitespace-nowrap">
+					<span className="opacity-50 text-sm pr-2">
+						<span className="font-bold uppercase">Project:</span>
+					</span>
+					<span className="">
+						<a href={`/project/${project.slug}`}>{project.name}</a>
+					</span>
+				</div>
+				<div className="whitespace-nowrap truncate">
 					<span className="opacity-50 text-sm pr-2">
 						<span className="font-bold uppercase">DOI:</span>
 					</span>
@@ -40,7 +53,7 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 						<a href={`https://dx.doi.org`}>{genome.genomeNote.DOI}</a>
 					</span>
 				</div>
-				<div>
+				<div className="whitespace-nowrap">
 					<span className="opacity-50 text-sm pr-2">
 						<span className="font-bold uppercase">NCBI TaxID:</span>
 					</span>
@@ -52,11 +65,18 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 						</a>
 					</span>
 				</div>
-				<div>
+
+				<div className="whitespace-nowrap flex items-center">
 					<span className="opacity-50 text-sm pr-2">
-						<span className="font-bold uppercase">QV:</span>
+						<span className="font-bold uppercase">EBP Reference Genome:</span>
 					</span>
-					<span className="">{genome.genomeNote.QV}</span>
+					<span className="">
+						{techReviewPass ? (
+							<Award color="green" />
+						) : (
+							<SquareSlash color="red" />
+						)}
+					</span>
 				</div>
 			</div>
 		</div>
