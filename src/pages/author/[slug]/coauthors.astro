@@ -3,8 +3,10 @@ import Layout from '~/layouts/Layout.astro';
 import authors from '~/data/authors.json';
 import contributors from '~/data/contributors.json';
 import AuthorHeader from '~/components/AuthorHeader.astro';
+import CoauthorGraph2 from '~/components/CoauthorGraph2';
 import { getGenome, getGenomeNote, getAuthor } from '~/lib/populateData';
-import type { Author, Contributor, Genome } from '~/types/pubs';
+import type { Author, Contributor, Genome, CoauthorContributor } from '~/types/pubs';
+import CoauthorGraph from '~/components/CoauthorGraph';
 
 export function getStaticPaths() {
 	return authors.map((author) => {
@@ -26,7 +28,7 @@ const genomeNoteIdsWithAuthor = contributors
 	.map((contributor) => {
 		return contributor.genomeNoteId;
 	});
-type CoauthorContributor = Contributor & { genomes: Genome[]; author: Author };
+
 const coauthorContributors = contributors
 	.filter((contributor) => {
 		return genomeNoteIdsWithAuthor.includes(contributor.genomeNoteId);
@@ -71,6 +73,8 @@ const coauthorContributors = contributors
 	<main class="">
 		<AuthorHeader author={activeAuthor} />
 		<section class="w-content-narrow min-h-96">
+			<!-- <CoauthorGraph2 coauthorContributors={coauthorContributors} client:load/> -->
+			<CoauthorGraph coauthorContributors={coauthorContributors} client:load/>
 			{
 				coauthorContributors.map((coauthorContributor) => {
 					return (

@@ -193,3 +193,5 @@ export type PubType = {
 	name: string;
 	fields: { key: string; value: string }[];
 };
+
+export type CoauthorContributor = Contributor & { genomes: Genome[]; author: Author };
