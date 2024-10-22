@@ -3,9 +3,8 @@ import Layout from '~/layouts/Layout.astro';
 import authors from '~/data/authors.json';
 import contributors from '~/data/contributors.json';
 import AuthorHeader from '~/components/AuthorHeader.astro';
-import CoauthorGraph2 from '~/components/CoauthorGraph2';
 import { getGenome, getGenomeNote, getAuthor } from '~/lib/populateData';
-import type { Author, Contributor, Genome, CoauthorContributor } from '~/types/pubs';
+import type { CoauthorContributor } from '~/types/pubs';
 import CoauthorGraph from '~/components/CoauthorGraph';
 
 export function getStaticPaths() {
@@ -72,10 +71,9 @@ const coauthorContributors = contributors
 <Layout title={`${activeAuthor.name} · UGNR`}>
 	<main class="">
 		<AuthorHeader author={activeAuthor} />
-		<section class="w-content-narrow min-h-96">
-			<!-- <CoauthorGraph2 coauthorContributors={coauthorContributors} client:load/> -->
-			<CoauthorGraph coauthorContributors={coauthorContributors} client:load/>
-			{
+		<section class="w-content-narrow min-h-96 mb-32">
+			<CoauthorGraph coauthorContributors={coauthorContributors} client:load />
+			<!-- {
 				coauthorContributors.map((coauthorContributor) => {
 					return (
 						<div>
@@ -98,7 +96,7 @@ const coauthorContributors = contributors
 						</div>
 					);
 				})
-			}
+			} -->
 		</section>
 	</main>
 </Layout>
