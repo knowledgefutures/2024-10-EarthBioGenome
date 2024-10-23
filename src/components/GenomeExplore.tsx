@@ -27,6 +27,7 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 	const [query, setQuery] = useState('');
 	const [family, setFamily] = useState('');
 	const [order, setOrder] = useState('');
+	const [genus, setGenus] = useState('');
 	const [classT, setClassT] = useState('');
 	const [phylum, setPhylum] = useState('');
 	const [project, setProject] = useState('');
@@ -53,6 +54,9 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 			if (phylum && genome.phylum !== phylum) {
 				return false;
 			}
+			if (genus && genome.genus !== genus) {
+				return false;
+			}
 
 			const ebpRefPass = getTechReviewPassFromGenome(genome.id);
 			if (ebpRef === 'passed' && !ebpRefPass) {
@@ -75,7 +79,7 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 			return false;
 		});
 		setActiveGenomes(activeGenomes);
-	}, [query, project, family, order, classT, phylum, ebpRef]);
+	}, [query, project, family, order, genus, classT, phylum, ebpRef]);
 	const updateSearchParams = (key: string, value: string) => {
 		clearTimeout(timeout.current);
 		timeout.current = window.setTimeout(() => {
@@ -116,6 +120,12 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 					filterKey="name"
 					value={project}
 					setValue={setProject}
+				/>
+				<ExploreTaxonomyFilter
+					allGenomes={allGenomes}
+					filterKey="genus"
+					value={genus}
+					setValue={setGenus}
 				/>
 				<ExploreTaxonomyFilter
 					allGenomes={allGenomes}

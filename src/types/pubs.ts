@@ -3,6 +3,7 @@ export interface Genome {
 	slug: string;
 	commonName: string;
 	species: string;
+	genus: string;
 	phylum: string;
 	class: string;
 	order: string;

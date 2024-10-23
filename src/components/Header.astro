@@ -19,47 +19,62 @@ const links = [
 ];
 ---
 
-<section class={`bg-[url('/header-bg.jpg')] bg-cover`}>
-	<nav
-		class={`w-content py-4 flex flex-col md:flex-row justify-between items-center border-b-neutral-300 text-white`}
-	>
-		<div class="relative">
-			<a href="/"><Image class="h-16 w-auto" src={logoWhite} alt="logo" /></a>
-			<div class="text-sm tracking-wide absolute top-11 left-[35px] italic opacity-60">A resource of the Earth BioGenome Project</div>
-		</div>
-		<div class="flex space-x-8">
-			{
-				links.map((link) => {
-					return (
-						<a
-							href={link.href}
-							class={
-								link.active ? 'underline underline-offset-4' : 'underline-offset-4'
-							}
-						>
-							{link.title}
-						</a>
-					);
-				})
-			}
-		</div>
-	</nav>
-	{
-		isLanding && (
-			<div class="flex items-center max-w-screen-sm mx-auto px-4 md:px-0">
-				<div class="w-full mt-48 mb-32">
-					<LandingInput client:load />
-					<div class="text-white/70 mt-4 text-lg">
-						<span class="">Examples:</span>
-						<a href="/genome/large-blue-butterfly">Large Blue Butterfly</a>
-						<span>•</span>
-						<a href="/project/sao-paulo-genome-alliance">São Paulo Genome Alliance</a>
-						<span>•</span>
-						<a href="/author/jane-thompson">Jane Thompson</a>
-					</div>
+<section
+	class={`${isLanding ? "bg-[url('/header-bg2.jpg')]" : "bg-[url('/header-bg2bare.jpg')]"} bg-cover relative`}
+>
+	<!-- <div class={`absolute bg-[url('/bird.png')] w-[50%] h-[50%]`} /> -->
+	<div class="w-content relative">
+		<!-- <img class="absolute h-full -left-[300px] -z-1 grayscale-[70%]" src="/bird.png" /> -->
+
+		<nav
+			class={`py-4 flex flex-col md:flex-row space-y-8 md:space-y-0 justify-between items-center border-b-neutral-300 text-white`}
+		>
+			<div class="relative">
+				<a href="/"><Image class="h-16 w-auto" src={logoWhite} alt="logo" /></a>
+				<div class="text-sm tracking-wide absolute top-11 left-[35px] italic opacity-60">
+					A resource of the <a href="https://www.earthbiogenome.org/"
+						>Earth BioGenome Project</a
+					>
 				</div>
 			</div>
-			//
-		)
-	}
+			<div class="flex space-x-8">
+				{
+					links.map((link) => {
+						return (
+							<a
+								href={link.href}
+								class={
+									link.active
+										? 'underline underline-offset-4'
+										: 'underline-offset-4'
+								}
+							>
+								{link.title}
+							</a>
+						);
+					})
+				}
+			</div>
+		</nav>
+		{
+			isLanding && (
+				<div class="flex items-center max-w-screen-sm mx-auto px-4 md:px-0">
+					<div class="w-full mt-48 mb-32">
+						<LandingInput client:load />
+						<div class="text-white/70 mt-4 text-lg">
+							<span class="">Examples:</span>
+							<a href="/genome/large-blue-butterfly">Large Blue Butterfly</a>
+							<span>•</span>
+							<a href="/project/sao-paulo-genome-alliance">
+								São Paulo Genome Alliance
+							</a>
+							<span>•</span>
+							<a href="/author/jane-thompson">Jane Thompson</a>
+						</div>
+					</div>
+				</div>
+				//
+			)
+		}
+	</div>
 </section>
