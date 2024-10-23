@@ -1,6 +1,7 @@
 ---
 import type { Project } from '~/types/pubs';
 import ProjectAvatar from '~/components/ProjectAvatar.astro';
+import HeaderTabs from './HeaderTabs.astro';
 
 interface Props {
 	project: Project;
@@ -31,21 +32,6 @@ const tabs = [
 				<div>{project.website}</div>
 			</div>
 		</div>
-		<div class="flex space-x-8 py-4">
-			{
-				tabs.map((tab) => {
-					return (
-						<a
-							href={tab.href}
-							class={
-								tab.active ? 'text-nowrap underline underline-offset-4' : 'text-nowrap underline-offset-4'
-							}
-						>
-							{tab.title}
-						</a>
-					);
-				})
-			}
-		</div>
+		<HeaderTabs tabs={tabs} />
 	</div>
 </section>

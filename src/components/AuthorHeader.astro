@@ -3,6 +3,7 @@ import type { Author, ProjectMember } from '~/types/pubs';
 import projectMembers from '~/data/projectMembers.json';
 import { getProject } from '~/lib/populateData';
 import AuthorAvatar from './AuthorAvatar.astro';
+import HeaderTabs from './HeaderTabs.astro';
 
 interface Props {
 	author: Author;
@@ -62,21 +63,6 @@ const tabs = [
 				}
 			</div>
 		</div>
-		<div class="flex space-x-8 py-4">
-			{
-				tabs.map((tab) => {
-					return (
-						<a
-							href={tab.href}
-							class={
-								tab.active ? 'text-nowrap underline underline-offset-4' : 'text-nowrap underline-offset-4'
-							}
-						>
-							{tab.title}
-						</a>
-					);
-				})
-			}
-		</div>
+		<HeaderTabs tabs={tabs} />
 	</div>
 </section>

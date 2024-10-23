@@ -79,8 +79,10 @@ export interface GenomeNote {
 export interface Protocol {
 	id: string;
 	name: string;
+	slug: string;
 	protocolUrl: string; // link to protocols.io
 	content: string; // freeform markdown
+	doi: string;
 }
 
 export interface ProtocolUse {

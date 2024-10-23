@@ -140,7 +140,7 @@ const CoauthorGraph: React.FC<Props> = ({ coauthorContributors }) => {
 							}}
 						>
 							<a
-								href={`/author/${author.slug}`}
+								href={`/author/${author.slug}/coauthors`}
 								className="p-2 whitespace-nowrap hover:no-underline flex items-center justify-center"
 							>
 								<span className="pl-4">{author.name}</span>{' '}

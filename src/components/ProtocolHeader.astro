@@ -1,0 +1,57 @@
+---
+import type { Protocol } from '~/types/pubs';
+import HeaderTabs from './HeaderTabs.astro';
+
+interface Props {
+	protocol: Protocol;
+}
+
+const { protocol } = Astro.props;
+const tabs = [
+	{
+		title: 'Details',
+		href: `/protocol/${protocol.slug}`,
+		active: Astro.url.pathname.endsWith(protocol.slug),
+	},
+	{
+		title: 'Used By',
+		href: `/protocol/${protocol.slug}/usedby`,
+		active: Astro.url.pathname.endsWith('/usedby'),
+	},
+];
+---
+
+<section class="bg-[#f6f3ee] mb-12">
+	<div class="w-content-narrow">
+		<div class="py-12">
+			<h2 class="text-4xl font-bold pb-6">
+				<span class="font-mono">Protocol: </span>
+				{protocol.name}
+			</h2>
+
+			<div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">DOI:</span>
+					</span>
+					<span class="">
+						<a href={`https://doi.org`}>{protocol.doi}</a>
+					</span>
+				</div>
+				{
+					protocol.protocolUrl && (
+						<div>
+							<span class="opacity-50 text-sm">
+								<span class="font-bold uppercase">Protocol Source:</span>
+							</span>
+							<span class="">
+								<a href={protocol.protocolUrl}>{protocol.protocolUrl}</a>
+							</span>
+						</div>
+					)
+				}
+			</div>
+		</div>
+		<HeaderTabs tabs={tabs} />
+	</div>
+</section>

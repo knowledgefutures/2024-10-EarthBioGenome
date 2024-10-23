@@ -1,0 +1,27 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import protocols from '~/data/protocols.json';
+import ProtocolHeader from '~/components/ProtocolHeader.astro';
+
+export function getStaticPaths() {
+	return protocols.map((protocol) => {
+		return { params: { slug: protocol.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeProtocol = protocols.find((protocol) => {
+	return protocol.slug === slug;
+});
+if (!activeProtocol) {
+	return null;
+}
+---
+
+<Layout title={`${activeProtocol.name} · UGNR`}>
+	<main class="">
+		<ProtocolHeader protocol={activeProtocol} />
+		<section class="w-content-narrow min-h-96 mb-32">
+			<div class="prose">{activeProtocol.content}</div>
+		</section>
+	</main>
+</Layout>

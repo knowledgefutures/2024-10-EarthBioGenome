@@ -16,6 +16,7 @@ import { Badge } from '~/components/ui/badge';
 import { getProject, getTechnicalReviews } from '~/lib/populateData';
 import { getContributors } from '~/lib/contributors.tsx';
 import { getOverallPass } from '~/lib/technicalReviews';
+import HeaderTabs from './HeaderTabs.astro';
 
 interface Props {
 	genome: Genome;
@@ -160,23 +161,6 @@ const tabs = [
 				</div>
 			</div>
 		</div>
-		<div class="flex space-x-8 pt-4 overflow-scroll">
-			{
-				tabs.map((tab) => {
-					return (
-						<a
-							href={tab.href}
-							class={
-								tab.active
-									? 'text-nowrap underline underline-offset-4 decoration-2'
-									: 'text-nowrap underline-offset-4'
-							}
-						>
-							{tab.title}
-						</a>
-					);
-				})
-			}
-		</div>
+		<HeaderTabs tabs={tabs} />
 	</div>
 </section>

@@ -1,0 +1,41 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import protocols from '~/data/protocols.json';
+import protocolUses from '~/data/protocolUses.json';
+import { getGenomeNote, getGenome } from '~/lib/populateData';
+import GenomeList from '~/components/GenomeList';
+import { getProjectFromGenome } from '~/lib/genomeHelpers';
+import ProtocolHeader from '~/components/ProtocolHeader.astro';
+
+export function getStaticPaths() {
+	return protocols.map((protocol) => {
+		return { params: { slug: protocol.slug } };
+	});
+}
+const { slug } = Astro.params;
+const activeProtocol = protocols.find((protocol) => {
+	return protocol.slug === slug;
+});
+if (!activeProtocol) {
+	return null;
+}
+const activeProtocolUses = protocolUses.filter((protocolUse) => {
+	return protocolUse.protocolId === activeProtocol.id;
+});
+
+const usedByGenomes = activeProtocolUses.map((protocolUse) => {
+	const genomeNote = getGenomeNote(protocolUse.genomeNoteId);
+	const genome = getGenome(genomeNote.genomeId);
+	const project = getProjectFromGenome(genome.id);
+	return { ...genome, genomeNote, project };
+});
+---
+
+<Layout title={`${activeProtocol.name} · UGNR`}>
+	<main class="">
+		<ProtocolHeader protocol={activeProtocol} />
+		<section class="w-content-narrow min-h-96 mb-32">
+			<GenomeList genomes={usedByGenomes} client:only="react" />
+		</section>
+	</main>
+</Layout>

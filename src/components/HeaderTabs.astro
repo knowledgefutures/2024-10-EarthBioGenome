@@ -1,0 +1,31 @@
+---
+type Tab = {
+	title: string;
+	href: string;
+	active: boolean;
+};
+interface Props {
+	tabs: Tab[];
+}
+
+const { tabs } = Astro.props;
+---
+
+<div class="flex space-x-8 pt-4 overflow-scroll">
+	{
+		tabs.map((tab) => {
+			return (
+				<a
+					href={tab.href}
+					class={
+						tab.active
+							? 'text-nowrap underline underline-offset-4 decoration-2'
+							: 'text-nowrap underline-offset-4'
+					}
+				>
+					{tab.title}
+				</a>
+			);
+		})
+	}
+</div>
