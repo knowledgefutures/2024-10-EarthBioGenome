@@ -20,12 +20,9 @@ const links = [
 ---
 
 <section
-	class={`${isLanding ? "bg-[url('/header-bg2.jpg')]" : "bg-[url('/header-bg2bare.jpg')]"} bg-cover relative`}
+	class={`bg-[url('/header-bg2bare.jpg')] ${isLanding ? "md:bg-[url('/header-bg2.jpg')]" : ''} bg-cover relative`}
 >
-	<!-- <div class={`absolute bg-[url('/bird.png')] w-[50%] h-[50%]`} /> -->
 	<div class="w-content relative">
-		<!-- <img class="absolute h-full -left-[300px] -z-1 grayscale-[70%]" src="/bird.png" /> -->
-
 		<nav
 			class={`py-4 flex flex-col md:flex-row space-y-8 md:space-y-0 justify-between items-center border-b-neutral-300 text-white`}
 		>
@@ -59,7 +56,7 @@ const links = [
 		{
 			isLanding && (
 				<div class="flex items-center max-w-screen-sm mx-auto px-4 md:px-0">
-					<div class="w-full mt-48 mb-32">
+					<div class="w-full mt-32 md:mt-48 mb-32">
 						<LandingInput client:load />
 						<div class="text-white/70 mt-4 text-lg">
 							<span class="">Examples:</span>
