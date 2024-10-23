@@ -116,7 +116,7 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 				</div>
 				<ExploreTaxonomyFilter
 					allGenomes={projects}
-					label="Project"
+					label="project"
 					filterKey="name"
 					value={project}
 					setValue={setProject}
@@ -173,8 +173,8 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 							setEbpRef(newVal);
 						}}
 					>
-						<SelectTrigger className="bg-white text-black">
-							<SelectValue placeholder="Select Reference Status" />
+						<SelectTrigger className="bg-white text-black hover:border-neutral-400">
+							<SelectValue placeholder={<span className="opacity-60">Select Reference Status</span>} />
 						</SelectTrigger>
 						<SelectContent>
 							<SelectItem value={'passed'}>
