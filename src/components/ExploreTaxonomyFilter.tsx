@@ -23,16 +23,18 @@ import {
 } from '~/components/ui/select';
 import { Button } from './ui/button';
 import { useState, type Dispatch, type SetStateAction } from 'react';
+import type { FilterState, FilterKeys } from '~/components/GenomeExplore';
 
 type Props = {
 	allGenomes: Genome[] | Project[];
-	label?: string;
-	filterKey: string;
-	value: string;
-	setValue: Dispatch<SetStateAction<string>>;
+	label?: 'project';
+	filterKey: FilterKeys;
+	valueObject: FilterState;
+	setValue: Dispatch<SetStateAction<FilterState>>;
 };
 
-const ExploreTaxonomyFilter = ({ allGenomes, label, filterKey, value, setValue }: Props) => {
+const ExploreTaxonomyFilter = ({ allGenomes, label, filterKey, valueObject, setValue }: Props) => {
+	const value = valueObject[label || filterKey];
 	const [open, setOpen] = useState(false);
 	const items = Array.from(
 		new Set(allGenomes.map((genome) => genome[filterKey as keyof (Genome | Project)]))
@@ -48,7 +50,7 @@ const ExploreTaxonomyFilter = ({ allGenomes, label, filterKey, value, setValue }
 						size="sm"
 						className="opacity-70 h-4 p-2 bg-transparent hover:bg-neutral-200"
 						onClick={() => {
-							setValue('');
+							setValue({ ...valueObject, [label || filterKey]: '' });
 						}}
 					>
 						clear
@@ -95,9 +97,11 @@ const ExploreTaxonomyFilter = ({ allGenomes, label, filterKey, value, setValue }
 											key={item}
 											value={item}
 											onSelect={(currentValue) => {
-												setValue(
-													currentValue === value ? '' : currentValue
-												);
+												setValue({
+													...valueObject,
+													[label || filterKey]:
+														currentValue === value ? '' : currentValue,
+												});
 												setOpen(false);
 											}}
 										>

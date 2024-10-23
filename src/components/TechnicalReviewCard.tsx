@@ -84,14 +84,14 @@ const TechnicalReviewCard: React.FC<Props> = ({ genomeNote, technicalReview }) =
 										EBP Reference Criteria
 									</div>
 								)}
-								{index === 3 && (
+								{index === 4 && (
 									<div className="mt-12 font-bold opacity-50 text-sm uppercase">
 										Additional Metrics
 									</div>
 								)}
 								<div
 									key={row.metric}
-									className={`pt-4 mb-4 ${index === 0 || index === 3 ? '' : 'border-t'} ${index >= 3 ? 'opacity-80' : ''} border-neutral-300 text-sm flex justify-between items-start space-x-8`}
+									className={`pt-4 mb-4 ${index === 0 || index === 4 ? '' : 'border-t'} ${index >= 3 ? 'opacity-80' : ''} border-neutral-300 text-sm flex justify-between items-start space-x-8`}
 								>
 									<div>
 										<div className="font-bold">{row.metric}</div>
@@ -108,12 +108,12 @@ const TechnicalReviewCard: React.FC<Props> = ({ genomeNote, technicalReview }) =
 									</div>
 									<div>
 										{row.passed ? (
-											index >= 3 ? (
+											index >= 4 ? (
 												<Check size="20" color="green" />
 											) : (
 												<SquareCheck color="green" />
 											)
-										) : index >= 3 ? (
+										) : index >= 4 ? (
 											<Slash size="16" color="red" />
 										) : (
 											<SquareSlash color="red" />

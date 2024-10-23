@@ -21,24 +21,74 @@ type Props = {
 	allGenomes: PopulatedGenome[];
 };
 
+const defaultState = {
+	query: '',
+	family: '',
+	order: '',
+	genus: '',
+	class: '',
+	phylum: '',
+	project: '',
+	ebpRef: '',
+};
+export type FilterState = typeof defaultState;
+export type FilterKeys = keyof typeof defaultState;
+
 const GenomeExplore = ({ allGenomes }: Props) => {
 	const timeout = useRef<number | undefined>(undefined);
 	const [activeGenomes, setActiveGenomes] = useState(allGenomes);
-	const [query, setQuery] = useState('');
-	const [family, setFamily] = useState('');
-	const [order, setOrder] = useState('');
-	const [genus, setGenus] = useState('');
-	const [classT, setClassT] = useState('');
-	const [phylum, setPhylum] = useState('');
-	const [project, setProject] = useState('');
-	const [ebpRef, setEbpRef] = useState('');
+	// const [query, setQuery] = useState('');
+	// const [family, setFamily] = useState('');
+	// const [order, setOrder] = useState('');
+	// const [genus, setGenus] = useState('');
+	// const [class, setclass] = useState('');
+	// const [phylum, setPhylum] = useState('');
+	// const [project, setProject] = useState('');
+	// const [ebpRef, setEbpRef] = useState('');
+	const [filterStates, setFilterStates] = useState({
+		query: '',
+		family: '',
+		order: '',
+		genus: '',
+		class: '',
+		phylum: '',
+		project: '',
+		ebpRef: '',
+	});
 	useEffect(() => {
 		const params = new URLSearchParams(window.location.search);
-		const query = params.get('q') || '';
-		setQuery(query.toLowerCase());
+		const queryVal = params.get('q') || '';
+		const projectVal = params.get('project') || '';
+		const familyVal = params.get('family') || '';
+		const orderVal = params.get('order') || '';
+		const genusVal = params.get('genus') || '';
+		const classVal = params.get('class') || '';
+		const phylumVal = params.get('phylum') || '';
+		const ebpRefVal = params.get('ebpref') || '';
+		const newFilterState = {
+			query: queryVal,
+			project: projectVal,
+			family: familyVal,
+			order: orderVal,
+			genus: genusVal,
+			class: classVal,
+			phylum: phylumVal,
+			ebpRef: ebpRefVal,
+		};
+		setFilterStates(newFilterState);
 	}, []);
 	useEffect(() => {
 		const activeGenomes = allGenomes.filter((genome) => {
+			const {
+				query,
+				family,
+				order,
+				genus,
+				class: classT,
+				phylum,
+				project,
+				ebpRef,
+			} = filterStates;
 			if (project && genome.project.name !== project) {
 				return false;
 			}
@@ -66,26 +116,50 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 				return false;
 			}
 
-			if (genome.commonName.toLowerCase().includes(query)) {
+			if (genome.commonName.toLowerCase().includes(query.toLowerCase())) {
 				return true;
 			}
-			if (genome.species.toLowerCase().includes(query)) {
+			if (genome.species.toLowerCase().includes(query.toLowerCase())) {
 				return true;
 			}
-			if (genome.taxonomyAuthor.toLowerCase().includes(query)) {
+			if (genome.taxonomyAuthor.toLowerCase().includes(query.toLowerCase())) {
 				return true;
 			}
 
 			return false;
 		});
 		setActiveGenomes(activeGenomes);
-	}, [query, project, family, order, genus, classT, phylum, ebpRef]);
-	const updateSearchParams = (key: string, value: string) => {
+		updateSearchParams();
+	}, [filterStates]);
+	const updateSearchParams = () => {
+		const {
+			query,
+			family,
+			order,
+			genus,
+			class: classT,
+			phylum,
+			project,
+			ebpRef,
+		} = filterStates;
+		const searchParamFields = [
+			{ key: 'q', value: query },
+			{ key: 'project', value: project },
+			{ key: 'genus', value: genus },
+			{ key: 'family', value: family },
+			{ key: 'order', value: order },
+			{ key: 'class', value: classT },
+			{ key: 'phylum', value: phylum },
+			{ key: 'ebpref', value: ebpRef },
+		];
 		clearTimeout(timeout.current);
 		timeout.current = window.setTimeout(() => {
 			const params = new URLSearchParams(window.location.search);
-			params.set(key, value);
-			params.forEach((value, key) => {
+			searchParamFields.forEach(({ key, value }) => {
+				params.set(key, value);
+			});
+			searchParamFields.forEach(({ key }) => {
+				const value = params.get(key);
 				if (value === '') {
 					params.delete(key);
 				}
@@ -107,9 +181,9 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 					<Input
 						className="bg-white"
 						placeholder="Search..."
-						value={query}
+						value={filterStates.query}
 						onChange={(evt) => {
-							setQuery(evt.target.value);
+							setFilterStates({ ...filterStates, query: evt.target.value });
 							// updateSearchParams('q', evt.target.value);
 						}}
 					/>
@@ -117,50 +191,51 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 				<ExploreTaxonomyFilter
 					allGenomes={projects}
 					label="project"
+					/* @ts-ignore */
 					filterKey="name"
-					value={project}
-					setValue={setProject}
+					valueObject={filterStates}
+					setValue={setFilterStates}
 				/>
 				<ExploreTaxonomyFilter
 					allGenomes={allGenomes}
 					filterKey="genus"
-					value={genus}
-					setValue={setGenus}
+					valueObject={filterStates}
+					setValue={setFilterStates}
 				/>
 				<ExploreTaxonomyFilter
 					allGenomes={allGenomes}
 					filterKey="family"
-					value={family}
-					setValue={setFamily}
+					valueObject={filterStates}
+					setValue={setFilterStates}
 				/>
 				<ExploreTaxonomyFilter
 					allGenomes={allGenomes}
 					filterKey="order"
-					value={order}
-					setValue={setOrder}
+					valueObject={filterStates}
+					setValue={setFilterStates}
 				/>
 				<ExploreTaxonomyFilter
 					allGenomes={allGenomes}
 					filterKey="class"
-					value={classT}
-					setValue={setClassT}
+					valueObject={filterStates}
+					setValue={setFilterStates}
 				/>
 				<ExploreTaxonomyFilter
 					allGenomes={allGenomes}
 					filterKey="phylum"
-					value={phylum}
-					setValue={setPhylum}
+					valueObject={filterStates}
+					setValue={setFilterStates}
 				/>
 				<div className="">
 					<Label className="flex justify-between items-center h-6">
 						<span className="capitalize">EBP Reference Genome</span>{' '}
-						{ebpRef && (
+						{filterStates.ebpRef && (
 							<Button
 								variant="ghost"
 								size="sm"
 								className="opacity-70 h-4 p-2 bg-transparent hover:bg-neutral-200"
 								onClick={() => {
-									setEbpRef('');
+									setFilterStates({ ...filterStates, ebpRef: '' });
 								}}
 							>
 								clear
@@ -168,13 +243,17 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 						)}
 					</Label>
 					<Select
-						value={ebpRef}
+						value={filterStates.ebpRef}
 						onValueChange={(newVal) => {
-							setEbpRef(newVal);
+							setFilterStates({ ...filterStates, ebpRef: newVal });
 						}}
 					>
 						<SelectTrigger className="bg-white text-black hover:border-neutral-400">
-							<SelectValue placeholder={<span className="opacity-60">Select Reference Status</span>} />
+							<SelectValue
+								placeholder={
+									<span className="opacity-60">Select Reference Status</span>
+								}
+							/>
 						</SelectTrigger>
 						<SelectContent>
 							<SelectItem value={'passed'}>
@@ -184,7 +263,8 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 							</SelectItem>
 							<SelectItem value={'failed'}>
 								<span className="flex items-center">
-									<SquareSlash color="red" size={16} className="mr-1" /> Failed
+									<SquareSlash color="red" size={16} className="mr-1" /> Not
+									Passed
 								</span>
 							</SelectItem>
 						</SelectContent>

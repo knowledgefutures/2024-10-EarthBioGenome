@@ -21,6 +21,12 @@ export const getTechReviewRows = (genomeNote: GenomeNote, technicalReview: Techn
 			passed: technicalReview.qvPass,
 		},
 		{
+			metric: 'Percentage of assembly mapped to chromosomes',
+			value: `${genomeNote.assemblyPercent}%`,
+			benchmark: '≥95%',
+			passed: technicalReview.percentAssemblyPass,
+		},
+		{
 			metric: 'Number of Gaps',
 			value: `${genomeNote.gapCount} Total`,
 			benchmark: '<200 per Gb',
@@ -37,12 +43,6 @@ export const getTechReviewRows = (genomeNote: GenomeNote, technicalReview: Techn
 			value: genomeNote.buscoString,
 			benchmark: 'C ≥ 95%',
 			passed: technicalReview.buscoPass,
-		},
-		{
-			metric: 'Percentage of assembly mapped to chromosomes',
-			value: `${genomeNote.assemblyPercent}%`,
-			benchmark: '≥95%',
-			passed: technicalReview.percentAssemblyPass,
 		},
 		{
 			metric: 'Sex chromosomes',
@@ -65,6 +65,9 @@ export const getOverallPass = (genomeNote: GenomeNote, technicalReview: Technica
 	// 	return prev && curr.passed;
 	// }, true);
 	return (
-		technicalReview.contigN50Pass && technicalReview.scaffoldN50Pass && technicalReview.qvPass
+		technicalReview.contigN50Pass &&
+		technicalReview.scaffoldN50Pass &&
+		technicalReview.qvPass &&
+		technicalReview.percentAssemblyPass
 	);
 };

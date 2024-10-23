@@ -29,17 +29,30 @@ const GenomePagination: React.FC<Props> = ({ pageNumber, maxPages }) => {
 	const pageNumbers = getPageNumbers(pageNumber, maxPages);
 	const prevPageNumber = pageNumber - 1;
 	const nextPageNumber = pageNumber + 1;
+	const updateSearchParams = (value: string) => {
+		const params = new URLSearchParams(window.location.search);
+		if (value) {
+			params.set('page', value);
+		} else {
+			params.delete('page');
+		}
+		const paramsString = params.toString();
+		window.history.replaceState(
+			{},
+			'',
+			`${window.location.pathname}${paramsString.length ? '?' : ''}${paramsString}`
+		);
+		window.location.reload();
+	};
 	return (
 		<Pagination>
 			<PaginationContent>
 				{!!prevPageNumber && (
 					<PaginationItem>
 						<PaginationPrevious
-							href={
-								prevPageNumber === 1
-									? window.location.pathname
-									: `?page=${prevPageNumber}`
-							}
+							onClick={() => {
+								updateSearchParams(prevPageNumber === 1 ? '' : `${prevPageNumber}`);
+							}}
 						/>
 					</PaginationItem>
 				)}
@@ -48,7 +61,9 @@ const GenomePagination: React.FC<Props> = ({ pageNumber, maxPages }) => {
 						<PaginationItem key={pn}>
 							<PaginationLink
 								isActive={pageNumber === pn}
-								href={pn === 1 ? window.location.pathname : `?page=${pn}`}
+								onClick={() => {
+									updateSearchParams(pn === 1 ? '' : `${pn}`);
+								}}
 							>
 								{pn}
 							</PaginationLink>
@@ -57,7 +72,11 @@ const GenomePagination: React.FC<Props> = ({ pageNumber, maxPages }) => {
 				})}
 				{nextPageNumber <= maxPages && (
 					<PaginationItem>
-						<PaginationNext href={`?page=${nextPageNumber}`} />
+						<PaginationNext
+							onClick={() => {
+								updateSearchParams(`${nextPageNumber}`);
+							}}
+						/>
 					</PaginationItem>
 				)}
 			</PaginationContent>
