@@ -9,6 +9,7 @@ import ManualReviewCard from '~/components/ManualReviewCard';
 import PermissionToSequenceCard from './PermissionToSequenceCard';
 import ConflictsCard from './ConflictsCard';
 import DataAvailabilityCard from './DataAvailabilityCard';
+import { getProtocolsFromGenome } from '~/lib/genomeHelpers';
 
 interface Props {
 	genome: Genome;
@@ -18,6 +19,7 @@ interface Props {
 const { genome, genomeNote } = Astro.props;
 const technicalReviews = getTechnicalReviews(genomeNote.id);
 const manualReviews = getManualReviews(genomeNote.id);
+const protocols = getProtocolsFromGenome(genome.id);
 ---
 
 <div class="">
@@ -62,6 +64,26 @@ const manualReviews = getManualReviews(genomeNote.id);
 			<PermissionToSequenceCard client:load />
 			<ConflictsCard client:load />
 			<DataAvailabilityCard genome={genome} genomeNote={genomeNote} client:load />
+		</CardContent>
+	</Card>
+	<Card className="mb-8">
+		<CardHeader>
+			<CardTitle>Protocols Used</CardTitle>
+			<CardDescription> Linked, re-usable protocols used by this genome note. </CardDescription>
+		</CardHeader>
+		<CardContent>
+			{
+				protocols.map((protocol) => {
+					return (
+						<a
+							class="block border border-neutral-200 p-2 mb-2 rounded truncate"
+							href={`/protocol/${protocol.slug}`}
+						>
+							{protocol.name}
+						</a>
+					);
+				})
+			}
 		</CardContent>
 	</Card>
 </div>
