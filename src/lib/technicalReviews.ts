@@ -15,16 +15,16 @@ export const getTechReviewRows = (genomeNote: GenomeNote, technicalReview: Techn
 			passed: technicalReview.scaffoldN50Pass,
 		},
 		{
-			metric: 'Number of Gaps',
-			value: `${genomeNote.gapCount} Total`,
-			benchmark: '<200 per Gb',
-			passed: technicalReview.gapsPass,
-		},
-		{
 			metric: 'Consensus quality (QV)',
 			value: genomeNote.QV,
 			benchmark: '≥50',
 			passed: technicalReview.qvPass,
+		},
+		{
+			metric: 'Number of Gaps',
+			value: `${genomeNote.gapCount} Total`,
+			benchmark: '<200 per Gb',
+			passed: technicalReview.gapsPass,
 		},
 		{
 			metric: 'k-mer completeness',

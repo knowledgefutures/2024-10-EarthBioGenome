@@ -3,12 +3,10 @@ import type { GenomeNote, TechnicalReview } from '~/types/pubs';
 import { Button } from '~/components/ui/button';
 import {
 	Award,
-	BadgeCheck,
 	Check,
 	ChevronDown,
 	ChevronUp,
-	CircleMinus,
-	CircleSlash,
+	Slash,
 	SquareCheck,
 	SquareSlash,
 } from 'lucide-react';
@@ -80,29 +78,49 @@ const TechnicalReviewCard: React.FC<Props> = ({ genomeNote, technicalReview }) =
 					</div> */}
 					{rows.map((row, index) => {
 						return (
-							<div
-								key={row.metric}
-								className={`pt-4 mb-4 ${index === 0 ? '' : 'border-t'} border-neutral-300 text-sm flex justify-between items-start space-x-8`}
-							>
-								<div className="">
-									<div className="font-bold">{row.metric}</div>
-									<div className="font-mono grid grid-cols-[100px,1fr]">
-										<div className="uppercase font-bold opacity-50">
-											Benchmark:
+							<>
+								{index === 0 && (
+									<div className="font-bold opacity-50 text-sm uppercase">
+										EBP Reference Criteria
+									</div>
+								)}
+								{index === 3 && (
+									<div className="mt-12 font-bold opacity-50 text-sm uppercase">
+										Additional Metrics
+									</div>
+								)}
+								<div
+									key={row.metric}
+									className={`pt-4 mb-4 ${index === 0 || index === 3 ? '' : 'border-t'} ${index >= 3 ? 'opacity-80' : ''} border-neutral-300 text-sm flex justify-between items-start space-x-8`}
+								>
+									<div>
+										<div className="font-bold">{row.metric}</div>
+										<div className="font-mono grid grid-cols-[100px,1fr]">
+											<div className="uppercase font-bold opacity-50">
+												Benchmark:
+											</div>
+											<div>{row.benchmark}</div>
+											<div className="uppercase font-bold opacity-50">
+												Value:
+											</div>
+											<div className="break-all">{row.value}</div>
 										</div>
-										<div>{row.benchmark}</div>
-										<div className="uppercase font-bold opacity-50">Value:</div>
-										<div className="break-all">{row.value}</div>
+									</div>
+									<div>
+										{row.passed ? (
+											index >= 3 ? (
+												<Check size="20" color="green" />
+											) : (
+												<SquareCheck color="green" />
+											)
+										) : index >= 3 ? (
+											<Slash size="16" color="red" />
+										) : (
+											<SquareSlash color="red" />
+										)}
 									</div>
 								</div>
-								<div>
-									{row.passed ? (
-										<SquareCheck color="green" />
-									) : (
-										<SquareSlash color="red" />
-									)}
-								</div>
-							</div>
+							</>
 						);
 					})}
 				</>
