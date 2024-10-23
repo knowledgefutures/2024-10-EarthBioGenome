@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import type { ManualReview } from '~/types/pubs';
 import { Button } from '~/components/ui/button';
-import { ShieldCheck, ChevronDown, ChevronUp, CircleSlash } from 'lucide-react';
+import {
+	ShieldCheck,
+	ChevronDown,
+	ChevronUp,
+	CircleSlash,
+	SquareCheck,
+	Square,
+} from 'lucide-react';
 
 type Props = {};
 
@@ -9,10 +15,16 @@ const PermissionToSequenceCard: React.FC<Props> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const overallPass = true;
+	const declaredValues = [
+		{ text: 'Permission to sample from location', value: true },
+		{ text: 'Permission to sample species', value: true },
+		{ text: 'Permission to sample and sequence', value: true },
+		{ text: 'Local consent', value: true },
+	];
 	return (
 		<div className="border border-neutral-200 py-1 px-2 mb-2 rounded">
 			<div className="flex justify-between items-center">
-				<div>Permission To Sequence</div>
+				<div>Permissions Declared</div>
 				<div className="flex items-center space-x-2">
 					{overallPass ? <ShieldCheck color="green" /> : <CircleSlash color="red" />}
 
@@ -30,6 +42,22 @@ const PermissionToSequenceCard: React.FC<Props> = (props) => {
 			{isOpen && (
 				<>
 					<hr className="my-2" />
+					<div className="mb-4">
+						{declaredValues.map((declaredValue) => {
+							return (
+								<div className="flex space-x-1 items-center mr-8">
+									<div>
+										{declaredValue.value ? (
+											<SquareCheck size={16} color="green" />
+										) : (
+											<Square size={16} />
+										)}
+									</div>
+									<div>{declaredValue.text}</div>
+								</div>
+							);
+						})}
+					</div>
 					<div className="prose text-sm text-black">
 						<p>
 							The Wellcome Sanger Institute employs a process whereby due diligence is

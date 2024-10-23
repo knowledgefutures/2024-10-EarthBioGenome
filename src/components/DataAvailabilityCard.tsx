@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Genome, GenomeNote, ManualReview } from '~/types/pubs';
+import type { Genome, GenomeNote } from '~/types/pubs';
 import { Button } from '~/components/ui/button';
 import { ChevronDown, ChevronUp, CircleSlash, BadgeCheck, CircleCheck } from 'lucide-react';
 

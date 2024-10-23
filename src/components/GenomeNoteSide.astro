@@ -10,6 +10,7 @@ import PermissionToSequenceCard from './PermissionToSequenceCard';
 import ConflictsCard from './ConflictsCard';
 import DataAvailabilityCard from './DataAvailabilityCard';
 import { getProtocolsFromGenome } from '~/lib/genomeHelpers';
+import GrantInformationCard from './GrantInformationCard';
 
 interface Props {
 	genome: Genome;
@@ -62,14 +63,17 @@ const protocols = getProtocolsFromGenome(genome.id);
 		</CardHeader>
 		<CardContent>
 			<PermissionToSequenceCard client:load />
-			<ConflictsCard client:load />
 			<DataAvailabilityCard genome={genome} genomeNote={genomeNote} client:load />
+			<ConflictsCard client:load />
+			<GrantInformationCard client:load />
 		</CardContent>
 	</Card>
 	<Card className="mb-8">
 		<CardHeader>
 			<CardTitle>Protocols Used</CardTitle>
-			<CardDescription> Linked, re-usable protocols used by this genome note. </CardDescription>
+			<CardDescription>
+				Linked, re-usable protocols used by this genome note.
+			</CardDescription>
 		</CardHeader>
 		<CardContent>
 			{

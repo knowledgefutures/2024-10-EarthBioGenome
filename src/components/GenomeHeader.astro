@@ -2,7 +2,7 @@
 import type { Genome } from '~/types/pubs';
 import projectGenomeNotes from '~/data/projectGenomeNotes.json';
 import genomeNotes from '~/data/genomeNotes.json';
-import { Award, ShieldCheck } from 'lucide-react';
+import { Award, ShieldCheck, Database } from 'lucide-react';
 
 import {
 	Breadcrumb,
@@ -110,7 +110,8 @@ const tabs = [
 						</Badge>
 					)
 				}
-				<Badge><ShieldCheck size={20} className="mr-1" />Permission to Sequence</Badge>
+				<Badge><ShieldCheck size={20} className="mr-1" />Permissions Declared</Badge>
+				<Badge><Database size={20} className="mr-1" />Openly Accessible Data</Badge>
 			</div>
 
 			<div class="my-6">
