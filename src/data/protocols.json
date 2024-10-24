@@ -9,8 +9,8 @@
 	},
 	{
 		"id": "81b48400-e29b-41d4-a716-446655440000",
-		"name": "DebM Library Prep 2021",
-		"slug": "debm-library-prep-2021",
+		"name": "DebM Prep 2021",
+		"slug": "debm-prep-2021",
 		"protocolUrl": "https://protocols.io/view/library-prep-1",
 		"content": "Pacific Biosciences SMRTbell libraries were constructed using the Revio HiFi prep kit, according to the manufacturers' instructions. DNA sequencing was performed by the Scientific Operations core at the WSI on a Pacific Biosciences Revio instrument.\nFor Hi-C library preparation, DNA was fragmented to a size of 400 to 600 bp using a Covaris E220 sonicator. The DNA was then enriched, barcoded, and amplified using the NEBNext Ultra II DNA Library Prep Kit following manufacturers' instructions. The Hi-C sequencing was performed using paired-end sequencing with a read length of 150 bp on an Illumina NovaSeq 6000 instrument.\nPoly(A) RNA-Seq libraries were constructed using the NEB Ultra II RNA Library Prep kit, following the manufacturer's instructions. RNA sequencing was performed on the Illumina NovaSeq 6000 instrument.",
 		"doi": "10.1000/proto.124"

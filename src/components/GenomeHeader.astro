@@ -107,26 +107,26 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 				{genome.commonName}
 				<span class="italic opacity-70">· {genome.species} ({genome.taxonomyAuthor})</span>
 			</h2>
-			<div class="flex space-x-4">
+			<div class="flex flex-wrap">
 				{
 					overallPass && (
-						<Badge>
+						<Badge className='text-nowrap mr-4 mb-2'>
 							<Award size={20} className="mr-1" /> EBP Reference Genome
 						</Badge>
 					)
 				}
-				<Badge><ShieldCheck size={20} className="mr-1" />Permissions Declared</Badge>
-				<Badge><Database size={20} className="mr-1" />Openly Accessible Data</Badge>
+				<Badge className='text-nowrap mr-4 mb-2'><ShieldCheck size={20} className="mr-1" />Permissions Declared</Badge>
+				<Badge className='text-nowrap mr-4 mb-2'><Database size={20} className="mr-1" />Openly Accessible Data</Badge>
 			</div>
 
-			<div class="flex items-start justify-between">
-				<div>
+			<div class="flex items-start justify-between w-full">
+				<div class="w-full">
 					<div class="my-6">
 						<div class="opacity-50 text-sm">
 							<span class="font-bold uppercase">Contributors</span>
 							<a href={`/genome/${genome.slug}/contributors`}>(view full details)</a>
 						</div>
-						<div class="truncate text-lg">
+						<div class="truncate text-lg max-w-full">
 							{
 								populatedContributors.map((populatedContributor, index) => {
 									const { slug, name } = populatedContributor.author;

@@ -8,6 +8,14 @@ import figure3 from '~/assets/genomeNote/figure3.png';
 import figure4 from '~/assets/genomeNote/figure4.jpg';
 import { getProtocolsFromGenome } from '~/lib/genomeHelpers';
 import { ListChecks, Terminal } from 'lucide-react';
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from '~/components/ui/table';
 interface Props {
 	genome: Genome;
 	genomeNote: GenomeNote;
@@ -15,6 +23,15 @@ interface Props {
 
 const { genome, genomeNote } = Astro.props;
 const protocols = getProtocolsFromGenome(genome.id);
+const methods = [
+	{ name: 'Sample preparation', protocol: protocols[0] || '' },
+	{ name: 'Sample homogenisation', protocol: { name: 'Crowley et al., 2023', slug: 'crowley' } },
+	{ name: 'DNA extraction, fragmentation and purification', protocol: protocols[1] || '' },
+	{ name: 'RNA extraction', protocol: protocols[2] || '' },
+	{ name: 'Hi-C preparation', protocol: { name: 'Twyford et al., 2024', slug: 'twyford' } },
+	{ name: 'Library preparation', protocol: protocols[3] || '' },
+	{ name: 'Sequencing', protocol: { name: 'Narváez-Gómez et al., 2023', slug: 'gomez' } },
+];
 ---
 
 <div class="prose font-serif text-lg break-words">
@@ -112,7 +129,43 @@ const protocols = getProtocolsFromGenome(genome.id);
 					This genome note uses linked prototocols.
 				</AlertTitle>
 				<AlertDescription>
-					<div class="flex flex-wrap">
+					<Table>
+						{/* <TableHeader>
+							<TableRow className="hover:bg-white whitespace-nowrap ">
+								<TableHead>Common Name</TableHead>
+								<TableHead className="">Species</TableHead>
+								<TableHead className="">Project</TableHead>
+								<TableHead>DOI</TableHead>
+								<TableHead>NCBI TaxID</TableHead>
+								<TableHead className="text-right ">EBP Ref</TableHead>
+							</TableRow>
+						</TableHeader> */}
+						<TableBody>
+							{methods.map((method, index) => {
+								const { name, protocol } = method;
+								return (
+									<TableRow
+										key={name}
+										className={index % 2 === 0 ? '' : 'bg-muted/40'}
+									>
+										<TableCell className="font-bold">{name}</TableCell>
+
+										<TableCell className="text-right">
+											{protocol && (
+												<a
+													class="truncate no-underline"
+													href={`/protocol/${protocol.slug}`}
+												>
+													{protocol.name}
+												</a>
+											)}
+										</TableCell>
+									</TableRow>
+								);
+							})}
+						</TableBody>
+					</Table>
+					{/* <div class="flex flex-wrap">
 						{protocols.map((protocol) => {
 							return (
 								<a
@@ -123,7 +176,7 @@ const protocols = getProtocolsFromGenome(genome.id);
 								</a>
 							);
 						})}
-					</div>
+					</div> */}
 				</AlertDescription>
 			</Alert>
 		)
@@ -320,7 +373,10 @@ const protocols = getProtocolsFromGenome(genome.id);
 
 	<h2>Figures</h2>
 	<figure class="mb-20">
-		<Image src={figure1} alt="Figure 1" class="max-w-full md:max-w-96" />
+		<!-- <Image src={figure1} alt="Figure 1" class="max-w-full md:max-w-96" /> -->
+		<iframe
+			src="https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/snail"
+			class="max-w-full md:max-w-96"></iframe>
 		<figcaption>
 			<b>Figure 1: Genome assembly of {genome.species}, {genomeNote.assemblyName}: metrics.</b
 			> The BlobToolKit snail plot shows N50 metrics and BUSCO gene completeness.
