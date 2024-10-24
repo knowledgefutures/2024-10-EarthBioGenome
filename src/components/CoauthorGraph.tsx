@@ -115,7 +115,6 @@ const CoauthorGraph: React.FC<Props> = ({ coauthorContributors }) => {
 				return genome.id;
 			});
 	const activeGenomes = activeGenomesOnGenome || activeGenomesOnAuthor;
-	console.log(inactiveAuthorIds);
 	return (
 		<div id="coauthor-container" className="flex justify-between relative">
 			<div id="left" className="space-y-6">
