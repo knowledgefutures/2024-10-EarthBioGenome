@@ -10,6 +10,7 @@ export interface Genome {
 	family: string;
 	taxonomyAuthor: string;
 	ncbiTaxId: string;
+	image: string;
 	pressFeed?: boolean;
 }
 
@@ -169,6 +170,16 @@ export interface Contributor {
 	pacbioCollector: boolean;
 	rnaCollector: boolean;
 	hicCollector: boolean;
+}
+
+export interface CollectiveAuthor {
+	id: string;
+	title: string;
+	authorId: string[];
+	genomeNoteId: string;
+	description: string;
+	roles: typeof roles;
+	doi: string;
 }
 
 export interface Project {

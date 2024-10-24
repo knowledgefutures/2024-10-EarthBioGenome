@@ -1,0 +1,16 @@
+[
+	{
+		"id": "550e8400-e29b-41d4-a716-446655440000",
+		"title": "Darwin Tree of Life Consortium",
+		"authorIds": [
+			"123e4567-e89b-12d3-a456-426614174000",
+			"123e4567-e89b-12d3-a456-426614174001",
+			"123e4567-e89b-12d3-a456-426614174002",
+			"123e4567-e89b-12d3-a456-426614174003"
+		],
+		"genomeNoteId": "550e8400-e29b-41d4-a716-446655440001",
+		"doi": "10.214/collauth.12418",
+		"description": "string",
+		"roles": "string"
+	}
+]

@@ -17,7 +17,6 @@ import { getProject, getTechnicalReviews } from '~/lib/populateData';
 import { getContributors } from '~/lib/contributors.tsx';
 import { getOverallPass } from '~/lib/technicalReviews';
 import HeaderTabs from './HeaderTabs.astro';
-import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
@@ -66,9 +65,6 @@ const tabs = [
 		active: Astro.url.pathname.endsWith('/conversation'),
 	},
 ];
-const images = import.meta.glob<{ default: ImageMetadata }>(
-	'~/assets/species/*.{jpeg,jpg,png,gif}'
-);
 ---
 
 <section class="bg-[#f6f3ee] mb-12">
@@ -110,13 +106,17 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 			<div class="flex flex-wrap">
 				{
 					overallPass && (
-						<Badge className='text-nowrap mr-4 mb-2'>
+						<Badge className="text-nowrap mr-4 mb-2">
 							<Award size={20} className="mr-1" /> EBP Reference Genome
 						</Badge>
 					)
 				}
-				<Badge className='text-nowrap mr-4 mb-2'><ShieldCheck size={20} className="mr-1" />Permissions Declared</Badge>
-				<Badge className='text-nowrap mr-4 mb-2'><Database size={20} className="mr-1" />Openly Accessible Data</Badge>
+				<Badge className="text-nowrap mr-4 mb-2"
+					><ShieldCheck size={20} className="mr-1" />Permissions Declared</Badge
+				>
+				<Badge className="text-nowrap mr-4 mb-2"
+					><Database size={20} className="mr-1" />Openly Accessible Data</Badge
+				>
 			</div>
 
 			<div class="flex items-start justify-between w-full">
@@ -141,7 +141,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 						</div>
 					</div>
 					<!-- <div class="flex space-x-20"> -->
-					<div>
+					<div class="">
 						<div>
 							<span class="opacity-50 text-sm">
 								<span class="font-bold uppercase">Project:</span>
@@ -171,13 +171,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 						</div>
 					</div>
 				</div>
-				<!-- <Image
-					class="rounded mr-4 border-2 border-neutral-600 filter sepia opacity-[.6] hover:sepia-0 hover:opacity-100 drop-shadow"
-					width={200}
-					height={200}
-					src={images[genome.image]()}
-					alt={genome.commonName}
-				/> -->
 			</div>
 		</div>
 		<HeaderTabs tabs={tabs} />

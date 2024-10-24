@@ -12,6 +12,7 @@ import posts from '~/data/posts.json';
 import projects from '~/data/projects.json';
 import protocols from '~/data/protocols.json';
 import technicalReviews from '~/data/technicalReviews.json';
+import collectiveAuthors from '~/data/collectiveAuthors.json';
 
 import type { PubType } from '~/types/pubs';
 const getTypeFields = (item: Record<string, any>) => {
@@ -31,6 +32,7 @@ const types: PubType[] = [
 	{ name: 'Comment', fields: getTypeFields(comments[0]) },
 	{ name: 'Post', fields: getTypeFields(posts[0]) },
 	{ name: 'Protocol', fields: getTypeFields(protocols[0]) },
+	{ name: 'Collective Author', fields: getTypeFields(collectiveAuthors[0]) },
 ];
 ---
 

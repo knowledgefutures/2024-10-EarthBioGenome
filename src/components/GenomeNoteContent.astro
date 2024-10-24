@@ -42,12 +42,13 @@ const methods = [
 			genome.family
 		}). The genome sequence has a total length of {genomeNote.lengthTotalMb} megabases. Most of the
 		assembly ({genomeNote.assemblyPercent}%) is scaffolded into {genomeNote.chromosomeCount} chromosomal
-		pseudomolecules, including the {genomeNote.sexChromosomes} sex chromosome. The mitochondrial
+		pseudomolecules, including the {genomeNote.sexChromosomes} sex chromosome.
+		<!-- The mitochondrial
 		and plastid genome assemblies have lengths of {genomeNote.lengthMitoKb} kilobases and {
 			genomeNote.lengthPlastidKb
-		} kilobases, respectively. Gene annotation of this assembly on Ensembl identified {
-			genomeNote.proteinGeneCount
-		} protein-coding genes.
+		} kilobases, respectively. -->
+		Gene annotation of this assembly on Ensembl identified {genomeNote.proteinGeneCount} protein-coding
+		genes.
 	</p>
 	<h2>Background</h2>
 	<p>
@@ -60,11 +61,14 @@ const methods = [
 	</p>
 	<h2>Genome sequence report</h2>
 	<p>
-		The genome of {genome.species} (Figure 1) was sequenced using Pacific Biosciences single-molecule
-		HiFi long reads, generating a total of {genomeNote.pacbioBasesGb} Gb (gigabases) from {
-			genomeNote.pacbioReadsMillions
-		} million reads, providing an estimated {genomeNote.lrCov}-fold coverage. Primary assembly
-		contigs were scaffolded with chromosome conformation Hi-C data, which produced {
+		The genome of {genome.species} (Figure 1 <Image
+			src={figure1}
+			alt="Figure 1"
+			class="max-w-10 inline-block m-0 hover:max-w-96 hover:absolute hover:border hover:drop-shadow-sm"
+		/>) was sequenced using Pacific Biosciences single-molecule HiFi long reads, generating a
+		total of {genomeNote.pacbioBasesGb} Gb (gigabases) from {genomeNote.pacbioReadsMillions} million
+		reads, providing an estimated {genomeNote.lrCov}-fold coverage. Primary assembly contigs
+		were scaffolded with chromosome conformation Hi-C data, which produced {
 			genomeNote.hicBaseCountGb
 		} Gb from {genomeNote.hicReadsMillions} million reads, yielding an approximate coverage of {
 			genomeNote.lrCov
@@ -121,16 +125,14 @@ const methods = [
 		https://links.tol.sanger.ac.uk/species/{genome.ncbiTaxId}.
 	</p>
 	<h2>Methods</h2>
-	{
-		!!protocols.length && (
-			<Alert className="font-sans bg-neutral-50 shadow-lg">
-				<ListChecks className="h-4 w-4" />
-				<AlertTitle className="text-base">
-					This genome note uses linked prototocols.
-				</AlertTitle>
-				<AlertDescription>
-					<Table>
-						{/* <TableHeader>
+
+	<Alert className="font-sans bg-neutral-50 shadow-lg">
+		<ListChecks className="h-4 w-4" />
+		<AlertTitle className="text-base"> This genome note uses linked protocols. </AlertTitle>
+		<AlertDescription>
+			<Table>
+				{
+					/* <TableHeader>
 							<TableRow className="hover:bg-white whitespace-nowrap ">
 								<TableHead>Common Name</TableHead>
 								<TableHead className="">Species</TableHead>
@@ -139,33 +141,37 @@ const methods = [
 								<TableHead>NCBI TaxID</TableHead>
 								<TableHead className="text-right ">EBP Ref</TableHead>
 							</TableRow>
-						</TableHeader> */}
-						<TableBody>
-							{methods.map((method, index) => {
-								const { name, protocol } = method;
-								return (
-									<TableRow
-										key={name}
-										className={index % 2 === 0 ? '' : 'bg-muted/40'}
-									>
-										<TableCell className="font-bold">{name}</TableCell>
+						</TableHeader> */
+				}
+				<TableBody>
+					{
+						methods.map((method, index) => {
+							const { name, protocol } = method;
+							return (
+								<TableRow
+									key={name}
+									className={index % 2 === 0 ? '' : 'bg-muted/40'}
+								>
+									<TableCell className="font-bold">{name}</TableCell>
 
-										<TableCell className="text-right">
-											{protocol && (
-												<a
-													class="truncate no-underline"
-													href={`/protocol/${protocol.slug}`}
-												>
-													{protocol.name}
-												</a>
-											)}
-										</TableCell>
-									</TableRow>
-								);
-							})}
-						</TableBody>
-					</Table>
-					{/* <div class="flex flex-wrap">
+									<TableCell className="text-right">
+										{protocol && (
+											<a
+												class="truncate no-underline"
+												href={`/protocol/${protocol.slug}`}
+											>
+												{protocol.name}
+											</a>
+										)}
+									</TableCell>
+								</TableRow>
+							);
+						})
+					}
+				</TableBody>
+			</Table>
+			{
+				/* <div class="flex flex-wrap">
 						{protocols.map((protocol) => {
 							return (
 								<a
@@ -176,11 +182,11 @@ const methods = [
 								</a>
 							);
 						})}
-					</div> */}
-				</AlertDescription>
-			</Alert>
-		)
-	}
+					</div> */
+			}
+		</AlertDescription>
+	</Alert>
+
 	<h3>Sample acquisition and DNA barcoding</h3>
 	<p>
 		A {genomeNote.observedSex}
