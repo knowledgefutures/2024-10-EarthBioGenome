@@ -43,11 +43,11 @@ export default function DemoCard() {
 
 			<div className="mt-4 pt-4 border-t border-t-neutral-300">
 				This work has been supported by the{' '}
-				<a href="https://www.sanger.ac.uk/">Wellcome Sanger Insitute</a> and{' '}
+				<a href="https://www.sanger.ac.uk/programme/tree-of-life/">Wellcome Sanger Insitute</a> and{' '}
 				<a href="https://globalfutures.asu.edu/">Arizona State University</a>.
 				<div className="mt-2 flex space-x-4 items-center">
 					<div>
-						<a href="https://www.sanger.ac.uk/">
+						<a href="https://www.sanger.ac.uk/programme/tree-of-life/">
 							<img
 								src={sangerLogo.src}
 								className="w-16 grayscale hover:grayscale-0"

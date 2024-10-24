@@ -38,11 +38,17 @@ const methods = [
 	<h2>Abstract</h2>
 	<p>
 		We present a genome assembly from an individual {genomeNote.observedSex}
-		{genome.species} ({genome.commonName}; {genome.phylum}; {genome.class}; {genome.order}; {
-			genome.family
-		}). The genome sequence has a total length of {genomeNote.lengthTotalMb} megabases. Most of the
-		assembly ({genomeNote.assemblyPercent}%) is scaffolded into {genomeNote.chromosomeCount} chromosomal
-		pseudomolecules, including the {genomeNote.sexChromosomes} sex chromosome.
+		<i>{genome.species}</i> ({genome.commonName}; {genome.phylum}; {genome.class}; {
+			genome.order
+		}; {genome.family}). The genome sequence has a total length of {genomeNote.lengthTotalMb} megabases.
+		Most of the assembly ({genomeNote.assemblyPercent}%) is scaffolded into {
+			genomeNote.chromosomeCount
+		} chromosomal pseudomolecules, including the {
+			genomeNote.sexChromosomes.length === 2
+				? `${genomeNote.sexChromosomes[0]} and ${genomeNote.sexChromosomes[1]}`
+				: genomeNote.sexChromosomes
+		} sex chromosome{genomeNote.sexChromosomes.length === 2 ? 's' : ''}. The mitochondrial genome
+		assembly is {genomeNote.lengthMitoKb} kilobases long.
 		<!-- The mitochondrial
 		and plastid genome assemblies have lengths of {genomeNote.lengthMitoKb} kilobases and {
 			genomeNote.lengthPlastidKb
@@ -379,10 +385,10 @@ const methods = [
 
 	<h2>Figures</h2>
 	<figure class="mb-20">
-		<!-- <Image src={figure1} alt="Figure 1" class="max-w-full md:max-w-96" /> -->
-		<iframe
+		<Image src={figure1} alt="Figure 1" class="max-w-full md:max-w-96" />
+		<!-- <iframe
 			src="https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/snail"
-			class="max-w-full md:max-w-96"></iframe>
+			class="max-w-full md:max-w-96"></iframe> -->
 		<figcaption>
 			<b>Figure 1: Genome assembly of {genome.species}, {genomeNote.assemblyName}: metrics.</b
 			> The BlobToolKit snail plot shows N50 metrics and BUSCO gene completeness.

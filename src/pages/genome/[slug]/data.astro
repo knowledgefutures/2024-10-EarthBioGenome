@@ -42,6 +42,7 @@ if (!activeGenomeNote) {
 						<TableRow className="hover:bg-white">
 							<TableHead>Metric</TableHead>
 							<TableHead className="">Value</TableHead>
+							<TableHead className="text-right">Links</TableHead>
 						</TableRow>
 					</TableHeader>
 					<TableBody>
@@ -51,6 +52,7 @@ if (!activeGenomeNote) {
 								if (skipKeys.includes(key)) {
 									return null;
 								}
+								console.log(index);
 								return (
 									<TableRow
 										key={key}
@@ -58,7 +60,22 @@ if (!activeGenomeNote) {
 									>
 										<TableCell className="font-bold">{key}</TableCell>
 										{/* @ts-ignore */}
-										<TableCell className=" font-mono">{activeGenomeNote[key]}</TableCell>
+										<TableCell className=" font-mono">
+											{activeGenomeNote[key]}
+										</TableCell>
+
+										<TableCell className="text-nowrap">
+											{[4,5].includes(index) && (
+												<>
+													<a href="">NCBI</a> · <a href="">ENA</a>
+												</>
+											)}
+											{[18,19,20,22,23,24].includes(index) && (
+												<>
+													<a href="">Definition</a>
+												</>
+											)}
+										</TableCell>
 									</TableRow>
 								);
 							})

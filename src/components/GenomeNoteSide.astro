@@ -7,6 +7,7 @@ import { getTechnicalReviews, getManualReviews } from '~/lib/populateData';
 import TechnicalReviewCard from '~/components/TechnicalReviewCard';
 import ManualReviewCard from '~/components/ManualReviewCard';
 import PermissionToSequenceCard from './PermissionToSequenceCard';
+import LocalContextsCard from './LocalContextsCard';
 import ConflictsCard from './ConflictsCard';
 import DataAvailabilityCard from './DataAvailabilityCard';
 import { getProtocolsFromGenome } from '~/lib/genomeHelpers';
@@ -97,6 +98,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 			<DataAvailabilityCard genome={genome} genomeNote={genomeNote} client:load />
 			<ConflictsCard client:load />
 			<GrantInformationCard client:load />
+			<LocalContextsCard client:load />
 		</CardContent>
 	</Card>
 	<Card className="mb-8">
