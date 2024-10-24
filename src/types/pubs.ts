@@ -11,6 +11,7 @@ export interface Genome {
 	taxonomyAuthor: string;
 	ncbiTaxId: string;
 	image: string;
+	imageAttribution: string;
 	pressFeed?: boolean;
 }
 
