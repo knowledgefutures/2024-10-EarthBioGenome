@@ -175,103 +175,104 @@ const GenomeExplore = ({ allGenomes }: Props) => {
 
 	return (
 		<>
-			<div className="bg-neutral-100 border border-neutral-300 rounded mb-6 p-3 space-y-8">
-				<div className="">
-					<Label>Text Search</Label>
-					<Input
-						className="bg-white"
-						placeholder="Search..."
-						value={filterStates.query}
-						onChange={(evt) => {
-							setFilterStates({ ...filterStates, query: evt.target.value });
-							// updateSearchParams('q', evt.target.value);
-						}}
+			<div>
+				<div className="bg-neutral-100 border border-neutral-300 rounded mb-6 p-3 space-y-8">
+					<div className="">
+						<Label>Text Search</Label>
+						<Input
+							className="bg-white"
+							placeholder="Search..."
+							value={filterStates.query}
+							onChange={(evt) => {
+								setFilterStates({ ...filterStates, query: evt.target.value });
+								// updateSearchParams('q', evt.target.value);
+							}}
+						/>
+					</div>
+					<ExploreTaxonomyFilter
+						allGenomes={projects}
+						label="project"
+						/* @ts-ignore */
+						filterKey="name"
+						valueObject={filterStates}
+						setValue={setFilterStates}
 					/>
-				</div>
-				<ExploreTaxonomyFilter
-					allGenomes={projects}
-					label="project"
-					/* @ts-ignore */
-					filterKey="name"
-					valueObject={filterStates}
-					setValue={setFilterStates}
-				/>
-				<ExploreTaxonomyFilter
-					allGenomes={allGenomes}
-					filterKey="genus"
-					valueObject={filterStates}
-					setValue={setFilterStates}
-				/>
-				<ExploreTaxonomyFilter
-					allGenomes={allGenomes}
-					filterKey="family"
-					valueObject={filterStates}
-					setValue={setFilterStates}
-				/>
-				<ExploreTaxonomyFilter
-					allGenomes={allGenomes}
-					filterKey="order"
-					valueObject={filterStates}
-					setValue={setFilterStates}
-				/>
-				<ExploreTaxonomyFilter
-					allGenomes={allGenomes}
-					filterKey="class"
-					valueObject={filterStates}
-					setValue={setFilterStates}
-				/>
-				<ExploreTaxonomyFilter
-					allGenomes={allGenomes}
-					filterKey="phylum"
-					valueObject={filterStates}
-					setValue={setFilterStates}
-				/>
-				<div className="">
-					<Label className="flex justify-between items-center h-6">
-						<span className="capitalize">EBP Reference Genome</span>{' '}
-						{filterStates.ebpRef && (
-							<Button
-								variant="ghost"
-								size="sm"
-								className="opacity-70 h-4 p-2 bg-transparent hover:bg-neutral-200"
-								onClick={() => {
-									setFilterStates({ ...filterStates, ebpRef: '' });
-								}}
-							>
-								clear
-							</Button>
-						)}
-					</Label>
-					<Select
-						value={filterStates.ebpRef}
-						onValueChange={(newVal) => {
-							setFilterStates({ ...filterStates, ebpRef: newVal });
-						}}
-					>
-						<SelectTrigger className="bg-white text-black hover:border-neutral-400">
-							<SelectValue
-								placeholder={
-									<span className="opacity-60">Select Reference Status</span>
-								}
-							/>
-						</SelectTrigger>
-						<SelectContent>
-							<SelectItem value={'passed'}>
-								<span className="flex items-center">
-									<Award color="green" size={16} className="mr-1" /> Passed
-								</span>
-							</SelectItem>
-							<SelectItem value={'failed'}>
-								<span className="flex items-center">
-									<SquareSlash color="red" size={16} className="mr-1" /> Not
-									Passed
-								</span>
-							</SelectItem>
-						</SelectContent>
-					</Select>
+					<ExploreTaxonomyFilter
+						allGenomes={allGenomes}
+						filterKey="genus"
+						valueObject={filterStates}
+						setValue={setFilterStates}
+					/>
+					<ExploreTaxonomyFilter
+						allGenomes={allGenomes}
+						filterKey="family"
+						valueObject={filterStates}
+						setValue={setFilterStates}
+					/>
+					<ExploreTaxonomyFilter
+						allGenomes={allGenomes}
+						filterKey="order"
+						valueObject={filterStates}
+						setValue={setFilterStates}
+					/>
+					<ExploreTaxonomyFilter
+						allGenomes={allGenomes}
+						filterKey="class"
+						valueObject={filterStates}
+						setValue={setFilterStates}
+					/>
+					<ExploreTaxonomyFilter
+						allGenomes={allGenomes}
+						filterKey="phylum"
+						valueObject={filterStates}
+						setValue={setFilterStates}
+					/>
+					<div className="">
+						<Label className="flex justify-between items-center h-6">
+							<span className="capitalize">EBP Reference Genome</span>{' '}
+							{filterStates.ebpRef && (
+								<Button
+									variant="ghost"
+									size="sm"
+									className="opacity-70 h-4 p-2 bg-transparent hover:bg-neutral-200"
+									onClick={() => {
+										setFilterStates({ ...filterStates, ebpRef: '' });
+									}}
+								>
+									clear
+								</Button>
+							)}
+						</Label>
+						<Select
+							value={filterStates.ebpRef}
+							onValueChange={(newVal) => {
+								setFilterStates({ ...filterStates, ebpRef: newVal });
+							}}
+						>
+							<SelectTrigger className="bg-white text-black hover:border-neutral-400">
+								<SelectValue
+									placeholder={
+										<span className="opacity-60">Select Reference Status</span>
+									}
+								/>
+							</SelectTrigger>
+							<SelectContent>
+								<SelectItem value={'passed'}>
+									<span className="flex items-center">
+										<Award color="green" size={16} className="mr-1" /> Passed
+									</span>
+								</SelectItem>
+								<SelectItem value={'failed'}>
+									<span className="flex items-center">
+										<SquareSlash color="red" size={16} className="mr-1" /> Not
+										Passed
+									</span>
+								</SelectItem>
+							</SelectContent>
+						</Select>
+					</div>
 				</div>
 			</div>
-
 			<GenomeList genomes={activeGenomes} />
 		</>
 	);

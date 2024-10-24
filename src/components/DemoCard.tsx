@@ -1,3 +1,6 @@
+import asuLogo from '~/assets/asuLogo.png';
+import sangerLogo from '~/assets/sangerLogo.svg';
+
 export default function DemoCard() {
 	const title = '2024-10 Earth BioGenome';
 	const writeupLink = 'https://www.knowledgefutures.org/rd/2024-10-EarthBioGenome';
@@ -38,6 +41,26 @@ export default function DemoCard() {
 				</div>
 			</div>
 
+			<div className="mt-4 pt-4 border-t border-t-neutral-300">
+				This work has been supported by the{' '}
+				<a href="https://www.sanger.ac.uk/">Wellcome Sanger Insitute</a> and{' '}
+				<a href="https://globalfutures.asu.edu/">Arizona State Univeristy</a>.
+				<div className="mt-2 flex space-x-4 items-center">
+					<div>
+						<a href="https://www.sanger.ac.uk/">
+							<img
+								src={sangerLogo.src}
+								className="w-16 grayscale hover:grayscale-0"
+							/>
+						</a>
+					</div>
+					<div>
+						<a href="https://globalfutures.asu.edu/">
+							<img src={asuLogo.src} className="w-12 grayscale hover:grayscale-0" />
+						</a>
+					</div>
+				</div>
+			</div>
 			<div className="font-mono mt-4 pt-4 border-t border-t-neutral-300 flex space-x-4 justify-between">
 				{links
 					.filter((item) => !item.skip)

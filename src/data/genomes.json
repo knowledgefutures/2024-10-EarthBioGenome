@@ -96,6 +96,7 @@
 		"id": "550e8400-e99b-41d4-a716-446655440088",
 		"slug": "common-frog",
 		"commonName": "Common frog",
+		"image": "/src/assets/species/commonfrog.jpg",
 		"species": "Rana temporaria",
 		"genus": "Rana",
 		"family": "Ranidae",

@@ -17,6 +17,8 @@ import { getProject, getTechnicalReviews } from '~/lib/populateData';
 import { getContributors } from '~/lib/contributors.tsx';
 import { getOverallPass } from '~/lib/technicalReviews';
 import HeaderTabs from './HeaderTabs.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
 	genome: Genome;
@@ -64,6 +66,9 @@ const tabs = [
 		active: Astro.url.pathname.endsWith('/conversation'),
 	},
 ];
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	'~/assets/species/*.{jpeg,jpg,png,gif}'
+);
 ---
 
 <section class="bg-[#f6f3ee] mb-12">
@@ -114,52 +119,65 @@ const tabs = [
 				<Badge><Database size={20} className="mr-1" />Openly Accessible Data</Badge>
 			</div>
 
-			<div class="my-6">
-				<div class="opacity-50 text-sm">
-					<span class="font-bold uppercase">Contributors</span>
-					<a href={`/genome/${genome.slug}/contributors`}>(view full details)</a>
-				</div>
-				<div class="truncate text-lg">
-					{
-						populatedContributors.map((populatedContributor, index) => {
-							const { slug, name } = populatedContributor.author;
-							return (
-								<span class="inline-block italic">
-									{index > 0 && <span>, </span>}
-									<a href={`/author/${slug}`}>{name}</a>
-								</span>
-							);
-						})
-					}
-				</div>
-			</div>
-			<!-- <div class="flex space-x-20"> -->
-			<div>
+			<div class="flex items-start justify-between">
 				<div>
-					<span class="opacity-50 text-sm">
-						<span class="font-bold uppercase">Project:</span>
-					</span>
-					<span class="">
-						<a href={`/project/${activeProject.slug}`}>{activeProject.name}</a>
-					</span>
+					<div class="my-6">
+						<div class="opacity-50 text-sm">
+							<span class="font-bold uppercase">Contributors</span>
+							<a href={`/genome/${genome.slug}/contributors`}>(view full details)</a>
+						</div>
+						<div class="truncate text-lg">
+							{
+								populatedContributors.map((populatedContributor, index) => {
+									const { slug, name } = populatedContributor.author;
+									return (
+										<span class="inline-block italic">
+											{index > 0 && <span>, </span>}
+											<a href={`/author/${slug}`}>{name}</a>
+										</span>
+									);
+								})
+							}
+						</div>
+					</div>
+					<!-- <div class="flex space-x-20"> -->
+					<div>
+						<div>
+							<span class="opacity-50 text-sm">
+								<span class="font-bold uppercase">Project:</span>
+							</span>
+							<span class="">
+								<a href={`/project/${activeProject.slug}`}>{activeProject.name}</a>
+							</span>
+						</div>
+						<div>
+							<span class="opacity-50 text-sm">
+								<span class="font-bold uppercase">DOI:</span>
+							</span>
+							<span class=""
+								><a href={`https://dx.doi.org`}>{activeGenomeNote.DOI}</a></span
+							>
+						</div>
+						<div>
+							<span class="opacity-50 text-sm">
+								<span class="font-bold uppercase">NCBI TaxId:</span>
+							</span>
+							<span class="">
+								<a
+									href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${genome.ncbiTaxId}`}
+									>{genome.ncbiTaxId}</a
+								>
+							</span>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="opacity-50 text-sm">
-						<span class="font-bold uppercase">DOI:</span>
-					</span>
-					<span class=""><a href={`https://dx.doi.org`}>{activeGenomeNote.DOI}</a></span>
-				</div>
-				<div>
-					<span class="opacity-50 text-sm">
-						<span class="font-bold uppercase">NCBI TaxId:</span>
-					</span>
-					<span class="">
-						<a
-							href={`https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=${genome.ncbiTaxId}`}
-							>{genome.ncbiTaxId}</a
-						>
-					</span>
-				</div>
+				<!-- <Image
+					class="rounded mr-4 border-2 border-neutral-600 filter sepia opacity-[.6] hover:sepia-0 hover:opacity-100 drop-shadow"
+					width={200}
+					height={200}
+					src={images[genome.image]()}
+					alt={genome.commonName}
+				/> -->
 			</div>
 		</div>
 		<HeaderTabs tabs={tabs} />
