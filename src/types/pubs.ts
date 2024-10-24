@@ -141,6 +141,8 @@ export interface Author {
 	slug: string;
 	orcid: string;
 	affiliation: string;
+	email?: string;
+	showEmail?: boolean;
 }
 
 export const roles = [
@@ -174,6 +176,7 @@ export interface Project {
 	name: string;
 	slug: string;
 	website: string;
+	bioprojectId: string;
 }
 
 export interface ProjectMember {

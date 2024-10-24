@@ -48,16 +48,36 @@ const tabs = [
 			class="py-8 flex flex-col items-center md:flex-row md:items-start space-x-4 text-center md:text-left"
 		>
 			<AuthorAvatar text={author.name[0]} />
-			<div class="p-4">
+
+			<div class="p-4 space-y-1">
 				<h2 class="text-4xl font-bold">{author.name}</h2>
-				<div>{author.affiliation}</div>
-				<div>ORCID: {author.orcid}</div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">Affiliation:</span>
+					</span>
+					<span class="">
+						{author.affiliation}
+					</span>
+				</div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">ORCID:</span>
+					</span>
+					<span class="">
+						<a href="https://orcid.org">{author.orcid}</a>
+					</span>
+				</div>
 				{
 					associatedProject && (
 						<div>
-							<a href={`/project/${associatedProject.slug}`}>
-								{associatedProject.name}
-							</a>
+							<span class="opacity-50 text-sm">
+								<span class="font-bold uppercase">Project:</span>
+							</span>
+							<span class="">
+								<a href={`/project/${associatedProject.slug}`}>
+									{associatedProject.name}
+								</a>
+							</span>
 						</div>
 					)
 				}

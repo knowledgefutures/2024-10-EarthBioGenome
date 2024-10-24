@@ -11,9 +11,14 @@ const { project } = Astro.props;
 
 const tabs = [
 	{
-		title: 'Genome Notes',
+		title: 'Overview',
 		href: `/project/${project.slug}`,
 		active: Astro.url.pathname.endsWith(project.slug),
+	},
+	{
+		title: 'Genome Notes',
+		href: `/project/${project.slug}/genomes`,
+		active: Astro.url.pathname.endsWith('/genomes'),
 	},
 	{
 		title: 'Members',
@@ -25,11 +30,28 @@ const tabs = [
 
 <section class="bg-[#f6f3ee] mb-12">
 	<div class="w-content-narrow">
-		<div class="py-8 flex flex-col items-center md:flex-row md:items-start text-center md:text-left">
+		<div
+			class="py-8 flex flex-col items-center md:flex-row md:items-start text-center md:text-left"
+		>
 			<ProjectAvatar text={project.name[0]} />
-			<div class="p-4">
+			<div class="p-4 space-y-1">
 				<h2 class="text-4xl font-bold">{project.name}</h2>
-				<div>{project.website}</div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">Website:</span>
+					</span>
+					<span class="">
+						<a href={`/project/${project.website}`}>{project.website}</a>
+					</span>
+				</div>
+				<div>
+					<span class="opacity-50 text-sm">
+						<span class="font-bold uppercase">Bioproject ID:</span>
+					</span>
+					<span class="">
+						<a href="https://goat.genomehubs.org/projects">{project.bioprojectId}</a>
+					</span>
+				</div>
 			</div>
 		</div>
 		<HeaderTabs tabs={tabs} />

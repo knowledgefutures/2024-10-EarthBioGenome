@@ -6,7 +6,6 @@ import genomes from '~/data/genomes.json';
 import projectGenomeNotes from '~/data/projectGenomeNotes.json';
 import ProjectHeader from '~/components/ProjectHeader.astro';
 import { getGenomeNote, getGenome } from '~/lib/populateData';
-import GenomeList from '~/components/GenomeList';
 import { getProjectFromGenome } from '~/lib/genomeHelpers';
 
 export function getStaticPaths() {
@@ -37,7 +36,35 @@ const activeGenomes = activeProjectGenomeNotes.map((projectGenomeNote) => {
 	<main class="">
 		<ProjectHeader project={activeProject} />
 		<section class="w-content-narrow min-h-96 mb-32">
-			<GenomeList genomes={activeGenomes} client:only="react" />
+			<div class="prose">
+				<p>
+					{activeProject.name} is a joint initiative involving a dozen organizations specializing
+					in biodiversity, genomics, and data analysis. Working together, we are collecting
+					and identifying samples, extracting and sequencing DNA and RNA, and assembling and
+					annotating the genomes of around 65,000 species that inhabit these regions. All data
+					will be made openly accessible for use in research, conservation, biotech innovations,
+					and more.
+				</p>
+
+				<p>
+					{activeProject.name} aims to eventually sequence all documented eukaryotic species
+					across Northern Isles and the continent, and we encourage the community to provide
+					input on which species to prioritize.
+				</p>
+				<p>
+					Our project is committed to fostering collaboration and knowledge sharing among
+					scientists, researchers, and enthusiasts worldwide. By creating a comprehensive
+					genomic database, we hope to unlock new insights into the evolutionary history
+					and biological diversity of these species.
+				</p>
+
+				<p>
+					We also aim to support conservation efforts by providing critical genetic
+					information that can help protect endangered species and their habitats. Through
+					this initiative, we strive to make a lasting impact on biodiversity preservation
+					and scientific discovery.
+				</p>
+			</div>
 		</section>
 	</main>
 </Layout>
