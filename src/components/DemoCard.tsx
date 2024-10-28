@@ -3,7 +3,7 @@ import sangerLogo from '~/assets/sangerLogo.svg';
 
 export default function DemoCard() {
 	const title = '2024-10 Earth BioGenome';
-	const writeupLink = 'https://www.knowledgefutures.org/rd/2024-10-EarthBioGenome';
+	const writeupLink = 'https://www.knowledgefutures.org/rd/2024-10-earthbiogenome';
 	const githubLink = 'https://github.com/knowledgefutures/2024-10-EarthBioGenome';
 
 	const links = [
