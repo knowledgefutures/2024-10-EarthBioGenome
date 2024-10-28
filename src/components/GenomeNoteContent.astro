@@ -25,12 +25,24 @@ const { genome, genomeNote } = Astro.props;
 const protocols = getProtocolsFromGenome(genome.id);
 const methods = [
 	{ name: 'Sample preparation', protocol: protocols[0] || '' },
-	{ name: 'Sample homogenisation', protocol: { name: 'Crowley et al., 2023', slug: 'crowley' } },
+	{
+		name: 'Sample homogenisation',
+		protocol: { name: 'Crowley et al., 2023', slug: 'nucleic-acid-extraction-method-2024-v8' },
+	},
 	{ name: 'DNA extraction, fragmentation and purification', protocol: protocols[1] || '' },
 	{ name: 'RNA extraction', protocol: protocols[2] || '' },
-	{ name: 'Hi-C preparation', protocol: { name: 'Twyford et al., 2024', slug: 'twyford' } },
+	{
+		name: 'Hi-C preparation',
+		protocol: { name: 'Twyford et al., 2024', slug: 'nucleic-acid-extraction-method-2024-v8' },
+	},
 	{ name: 'Library preparation', protocol: protocols[3] || '' },
-	{ name: 'Sequencing', protocol: { name: 'Narváez-Gómez et al., 2023', slug: 'gomez' } },
+	{
+		name: 'Sequencing',
+		protocol: {
+			name: 'Narváez-Gómez et al., 2023',
+			slug: 'nucleic-acid-extraction-method-2024-v8',
+		},
+	},
 ];
 ---
 
@@ -47,8 +59,8 @@ const methods = [
 			genomeNote.sexChromosomes.length === 2
 				? `${genomeNote.sexChromosomes[0]} and ${genomeNote.sexChromosomes[1]}`
 				: genomeNote.sexChromosomes
-		} sex chromosome{genomeNote.sexChromosomes.length === 2 ? 's' : ''}. The mitochondrial genome
-		assembly is {genomeNote.lengthMitoKb} kilobases long.
+		} sex chromosome{genomeNote.sexChromosomes.length === 2 ? 's' : ''}. The mitochondrial
+		genome assembly is {genomeNote.lengthMitoKb} kilobases long.
 		<!-- The mitochondrial
 		and plastid genome assemblies have lengths of {genomeNote.lengthMitoKb} kilobases and {
 			genomeNote.lengthPlastidKb
@@ -391,7 +403,11 @@ const methods = [
 			class="max-w-full md:max-w-96"></iframe> -->
 		<figcaption>
 			<b>Figure 1: Genome assembly of {genome.species}, {genomeNote.assemblyName}: metrics.</b
-			> The BlobToolKit snail plot shows N50 metrics and BUSCO gene completeness.
+			> The BlobToolKit snail plot shows N50 metrics and BUSCO gene completeness. An interactive
+			version of the figure is available at <a
+				href="https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/snail"
+				>https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/snail</a
+			>.
 		</figcaption>
 	</figure>
 	<figure class="mb-20">
@@ -403,7 +419,11 @@ const methods = [
 				content (horizontal axis).
 			</b> The circles represent scaffolds, with the size proportional to scaffold length and the
 			colour representing phylum membership. The histograms along the axes display the total length
-			of sequences distributed across different levels of coverage and GC content.
+			of sequences distributed across different levels of coverage and GC content. An interactive
+			version of the figure is available at <a
+				href="https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/blob"
+				>https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/blob</a
+			>.
 		</figcaption>
 	</figure>
 	<figure class="mb-20">
@@ -413,7 +433,11 @@ const methods = [
 				Figure 3: Genome assembly of {genome.species}
 				{genomeNote.assemblyName}: BlobToolKit cumulative sequence plot.
 			</b> The grey line shows cumulative length for all scaffolds. Coloured lines show cumulative
-			lengths of scaffolds assigned to each phylum using the buscogenes taxrule.
+			lengths of scaffolds assigned to each phylum using the buscogenes taxrule. An interactive
+			version of the figure is available at <a
+				href="https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/cumulative"
+				>https://blobtoolkit.genomehubs.org/view/fSolSol10_1/dataset/fSolSol10_1/cumulative</a
+			>.
 		</figcaption>
 	</figure>
 	<figure class="mb-20">
@@ -423,7 +447,11 @@ const methods = [
 				Figure 4: Genome assembly of {genome.species}
 				{genomeNote.assemblyName}: Hi-C contact map of the {genomeNote.assemblyName} assembly,
 				visualised using HiGlass.
-			</b> Chromosomes are shown in order of size from left to right and top to bottom.
+			</b> Chromosomes are shown in order of size from left to right and top to bottom. An interactive
+			version of the figure is available at <a
+				href="https://genome-note-higlass.tol.sanger.ac.uk/l/?d=FSUlLwVQRfiQQBsuU_Y3AQ"
+				>https://genome-note-higlass.tol.sanger.ac.uk/l/?d=FSUlLwVQRfiQQBsuU_Y3AQ</a
+			>.
 		</figcaption>
 	</figure>
 </div>

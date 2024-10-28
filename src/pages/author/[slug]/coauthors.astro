@@ -6,6 +6,7 @@ import AuthorHeader from '~/components/AuthorHeader.astro';
 import { getGenome, getGenomeNote, getAuthor } from '~/lib/populateData';
 import type { CoauthorContributor } from '~/types/pubs';
 import CoauthorGraph from '~/components/CoauthorGraph';
+import { SquareDashed } from 'lucide-react';
 
 export function getStaticPaths() {
 	return authors.map((author) => {
@@ -97,6 +98,14 @@ const coauthorContributors = contributors
 					);
 				})
 			} -->
+			{
+				!coauthorContributors.length && (
+					<div class="flex flex-col items-center opacity-50 space-y-4 my-20">
+						<SquareDashed size={96} className="" />
+						<div class="text-xl font-bold uppercase">No Coauthors</div>
+					</div>
+				)
+			}
 		</section>
 	</main>
 </Layout>

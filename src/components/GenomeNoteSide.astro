@@ -101,26 +101,28 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 			<LocalContextsCard client:load />
 		</CardContent>
 	</Card>
-	<Card className="mb-8">
-		<CardHeader>
-			<CardTitle>Protocols Used</CardTitle>
-			<CardDescription>
-				Linked, re-usable protocols used by this genome note.
-			</CardDescription>
-		</CardHeader>
-		<CardContent>
-			{
-				protocols.map((protocol) => {
-					return (
-						<a
-							class="block border border-neutral-200 p-2 mb-2 rounded truncate"
-							href={`/protocol/${protocol.slug}`}
-						>
-							{protocol.name}
-						</a>
-					);
-				})
-			}
-		</CardContent>
-	</Card>
+	{
+		!!protocols.length && (
+			<Card className="mb-8">
+				<CardHeader>
+					<CardTitle>Protocols Used</CardTitle>
+					<CardDescription>
+						Linked, re-usable protocols used by this genome note.
+					</CardDescription>
+				</CardHeader>
+				<CardContent>
+					{protocols.map((protocol) => {
+						return (
+							<a
+								class="block border border-neutral-200 p-2 mb-2 rounded truncate"
+								href={`/protocol/${protocol.slug}`}
+							>
+								{protocol.name}
+							</a>
+						);
+					})}
+				</CardContent>
+			</Card>
+		)
+	}
 </div>

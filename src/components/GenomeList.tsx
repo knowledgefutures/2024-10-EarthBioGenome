@@ -6,6 +6,7 @@ import GenomeCard from '~/components/GenomeCard';
 import GenomeTable from '~/components/GenomeTable';
 import GenomePagination from '~/components/GenomePagination';
 import GenomeListToggle from './GenomeListToggle';
+import { SquareDashed } from 'lucide-react';
 
 type Props = {
 	genomes: PopulatedGenome[];
@@ -40,6 +41,12 @@ const GenomeList: React.FC<Props> = ({ genomes }) => {
 					);
 				})}
 			{genomeListMode === 'table' && <GenomeTable genomes={currentGenomes} />}
+			{!currentGenomes.length && (
+				<div className="flex flex-col items-center opacity-50 space-y-4 my-20">
+					<SquareDashed size={96} className="" />
+					<div className="text-xl font-bold uppercase">No Genomes Notes</div>
+				</div>
+			)}
 		</div>
 	);
 };
