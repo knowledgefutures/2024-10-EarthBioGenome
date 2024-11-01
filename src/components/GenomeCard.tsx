@@ -18,9 +18,9 @@ const GenomeCard: React.FC<Props> = ({ genome }) => {
 			<div className="text-xl font-bold truncate">
 				<a href={`/genome/${genome.slug}`}>
 					{genome.commonName}
-					<span className="italic opacity-70">
+					<span className="opacity-70">
 						{' '}
-						· {genome.species} ({genome.taxonomyAuthor})
+						· <span className="italic">{genome.species}</span> ({genome.taxonomyAuthor})
 					</span>
 				</a>
 			</div>
